@@ -2,17 +2,17 @@
   import { activeTab } from "../assets/js/index.js";
 
   // Import gambar-gambar yang diperlukan
-  import aktifGaleri from "../assets/images/icon_menu_baru/aktif_galeri.png";
-  import aktifRealEstate from "../assets/images/icon_menu_baru/aktif_real-estate-agent.png";
-  import aktifFavorite from "../assets/images/icon_menu_baru/aktif_favorite.png";
-  import aktifMessenger from "../assets/images/icon_menu_baru/aktif_messenger.png";
-  import aktifMore from "../assets/images/icon_menu_baru/aktif_more.png";
-
   import nonaktifGaleri from "../assets/images/icon_menu_baru/nonaktif_aktif_galeri.png";
   import nonaktifRealEstate from "../assets/images/icon_menu_baru/nonaktif_aktif_real-estate-agent.png";
   import nonaktifFavorite from "../assets/images/icon_menu_baru/nonaktif_aktif_favorite.png";
   import nonaktifMessenger from "../assets/images/icon_menu_baru/nonaktif_aktif_messenger.png";
   import nonaktifMore from "../assets/images/icon_menu_baru/nonaktif_aktif_more.png";
+
+  import aktifGaleri from "../assets/images/icon_menu_baru/aktif_galeri.png";
+  import aktifRealEstate from "../assets/images/icon_menu_baru/aktif_real-estate-agent.png";
+  import aktifFavorite from "../assets/images/icon_menu_baru/aktif_favorite.png";
+  import aktifMessenger from "../assets/images/icon_menu_baru/aktif_messenger.png";
+  import aktifMore from "../assets/images/icon_menu_baru/aktif_more.png";
 
   // Array untuk menyimpan gambar-gambar aktif dan nonaktif
   let activeImages = [
@@ -116,7 +116,7 @@
             <img
               id="menu-icon-1"
               class="menu-icon"
-              src={activeImages[1]}
+              src={inactiveImages[1]}
               alt="Listing Baru"
             />
           </div>
@@ -151,7 +151,7 @@
             <img
               id="menu-icon-2"
               class="menu-icon"
-              src={activeImages[2]}
+              src={inactiveImages[2]}
               alt="Favorit"
             />
           </div>
@@ -186,7 +186,7 @@
             <img
               id="menu-icon-3"
               class="menu-icon"
-              src={activeImages[3]}
+              src={inactiveImages[3]}
               alt="Agen"
             />
           </div>
@@ -221,7 +221,7 @@
             <img
               id="menu-icon-4"
               class="menu-icon"
-              src={activeImages[4]}
+              src={inactiveImages[4]}
               alt="Pesan"
             />
             <div
