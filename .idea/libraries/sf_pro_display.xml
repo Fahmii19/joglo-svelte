@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="sf-pro-display">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/assets/font/sf-pro-display.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
