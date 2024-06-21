@@ -1,3 +1,19 @@
+<script>
+  import { activeTab } from "../assets/js/index.js";
+
+  function switchTab(tabIndex) {
+    activeTab.set(tabIndex);
+  }
+
+  function handleKey(event, tabIndex) {
+    if (event.key === "Enter" || event.key === " ") {
+      switchTab(tabIndex);
+    }
+  }
+
+  // Subscribe ke store activeTab
+</script>
+
 <!-- Sidebar & Peta -->
 <div class="grid grid-cols-[55px,1fr] border border-red-500">
   <!-- Semua Tab Menu Siderbar -->
@@ -10,27 +26,23 @@
     <!-- Main Button -->
     <div>
       <!-- Button Galeri -->
-      <div
-        class="flex col justify-center py-1"
-        data-tooltip-target="menu-beranda"
-        data-tooltip-placement="right"
-      >
+      <div class="flex col justify-center py-1">
         <div
           id="MenuSatuTab"
-          data-tabs-target="#MenuSatuContent"
-          type="button"
           role="tab"
-          aria-controls="MenuSatuContent"
-          aria-selected="false"
-          class="bg-aktif-menu BtntagSearchAgen BtnRemoveCard flex justify-center items-center flex-col menus w-11 h-11 cursor-pointer hover:bg-slate-200 hover:rounded-lg"
-          onclik="MenuTabList(4)"
+          aria-selected={$activeTab === 0}
+          tabindex="0"
+          class="{$activeTab === 0
+            ? 'bg-aktif-menu'
+            : 'bg-non-aktif-menu'} BtntagSearchAgen BtnRemoveCard flex justify-center items-center flex-col menus w-11 h-11 cursor-pointer hover:bg-slate-200 hover:rounded-lg"
+          on:click={() => switchTab(0)}
+          on:keydown={(event) => handleKey(event, 0)}
         >
           <div class="w-7 h-7 flex justify-center items-center relative">
             <img
               class="menu-icon"
-              data-menu="1"
               src="https://www.joglopro.com/bucket/soaraja/image/joglopro/icon_menu_baru/aktif_galeri.png"
-              alt=""
+              alt="Galeri"
             />
           </div>
         </div>
@@ -38,33 +50,32 @@
       <div
         id="menu-beranda"
         role="tooltip"
-        class="absolute z-10 invisible inline-block px-2 py-1 text-sm font-medium text-black bg-white rounded-lg shadow-sm opacity-0 tooltip"
+        class="{$activeTab === 0
+          ? 'absolute z-10 visible'
+          : 'absolute z-10 invisible'} inline-block px-2 py-1 text-sm font-medium text-black bg-white rounded-lg shadow-sm opacity-0 tooltip"
       >
         Galeri
         <div class="tooltip-arrow" data-popper-arrow></div>
       </div>
 
       <!-- Button Posting Listing -->
-      <div
-        class="flex col justify-center py-2"
-        data-tooltip-target="menu-posting"
-        data-tooltip-placement="right"
-      >
+      <div class="flex col justify-center py-2">
         <div
           id="MenuDelapanBelasTab"
-          data-tabs-target="#MenuDelapanBelasContent"
-          type="button"
           role="tab"
-          aria-controls="MenuDelapanBelasContent"
-          aria-selected="false"
-          class="flex justify-center items-center flex-col menus w-11 h-11 cursor-pointer hover:bg-slate-200 hover:rounded-lg"
+          aria-selected={$activeTab === 1}
+          tabindex="0"
+          class="{$activeTab === 1
+            ? 'bg-aktif-menu'
+            : 'bg-non-aktif-menu'} flex justify-center items-center flex-col menus w-11 h-11 cursor-pointer hover:bg-slate-200 hover:rounded-lg"
+          on:click={() => switchTab(1)}
+          on:keydown={(event) => handleKey(event, 1)}
         >
           <div class="w-6 h-6 flex justify-center items-center relative">
             <img
               class="menu-icon"
-              data-menu="2"
               src="https://www.joglopro.com/bucket/soaraja/image/joglopro/more.png"
-              alt=""
+              alt="Listing Baru"
             />
           </div>
         </div>
@@ -72,33 +83,32 @@
       <div
         id="menu-posting"
         role="tooltip"
-        class="absolute z-10 invisible inline-block px-2 py-1 text-sm font-medium text-black bg-white rounded-lg shadow-sm opacity-0 tooltip"
+        class="{$activeTab === 1
+          ? 'absolute z-10 visible'
+          : 'absolute z-10 invisible'} inline-block px-2 py-1 text-sm font-medium text-black bg-white rounded-lg shadow-sm opacity-0 tooltip"
       >
-        Listing Baru
+        Listing Baruu
         <div class="tooltip-arrow" data-popper-arrow></div>
       </div>
 
       <!-- Button Favorit -->
-      <div
-        class="flex col justify-center py-2"
-        data-tooltip-target="menu-favorit"
-        data-tooltip-placement="right"
-      >
+      <div class="flex col justify-center py-2">
         <div
           id="MenuTigaTab"
-          data-tabs-target="#MenuTigaContent"
-          type="button"
           role="tab"
-          aria-controls="MenuTigaContent"
-          aria-selected="false"
-          class="flex justify-center items-center flex-col menus w-11 h-11 cursor-pointer hover:bg-slate-200 hover:rounded-lg"
+          aria-selected={$activeTab === 2}
+          tabindex="0"
+          class="{$activeTab === 2
+            ? 'bg-aktif-menu'
+            : 'bg-non-aktif-menu'} flex justify-center items-center flex-col menus w-11 h-11 cursor-pointer hover:bg-slate-200 hover:rounded-lg"
+          on:click={() => switchTab(2)}
+          on:keydown={(event) => handleKey(event, 2)}
         >
           <div class="w-6 h-6 flex justify-center items-center relative">
             <img
               class="menu-icon"
-              data-menu="3"
               src="https://www.joglopro.com/bucket/soaraja/image/joglopro/favorite.png"
-              alt=""
+              alt="Favorit"
             />
           </div>
         </div>
@@ -106,33 +116,32 @@
       <div
         id="menu-favorit"
         role="tooltip"
-        class="absolute z-10 invisible inline-block px-2 py-1 text-sm font-medium text-black bg-white rounded-lg shadow-sm opacity-0 tooltip"
+        class="{$activeTab === 2
+          ? 'absolute z-10 visible'
+          : 'absolute z-10 invisible'} inline-block px-2 py-1 text-sm font-medium text-black bg-white rounded-lg shadow-sm opacity-0 tooltip"
       >
-        Favoritt
+        Favorit
         <div class="tooltip-arrow" data-popper-arrow></div>
       </div>
 
       <!-- Button Agen -->
-      <div
-        class="flex col justify-center py-2"
-        data-tooltip-target="tooltip-right4"
-        data-tooltip-placement="right"
-      >
+      <div class="flex col justify-center py-2">
         <div
           id="MenuEmpatTab"
-          data-tabs-target="#MenuEmpatContent"
-          type="button"
           role="tab"
-          aria-controls="MenuEmpatContent"
-          aria-selected="false"
-          class="flex justify-center items-center flex-col menus w-11 h-11 cursor-pointer hover:bg-slate-200 hover:rounded-lg"
+          aria-selected={$activeTab === 3}
+          tabindex="0"
+          class="{$activeTab === 3
+            ? 'bg-aktif-menu'
+            : 'bg-non-aktif-menu'} flex justify-center items-center flex-col menus w-11 h-11 cursor-pointer hover:bg-slate-200 hover:rounded-lg"
+          on:click={() => switchTab(3)}
+          on:keydown={(event) => handleKey(event, 3)}
         >
           <div class="w-6 h-6 flex justify-center items-center relative">
             <img
               class="menu-icon"
-              data-menu="4"
               src="https://www.joglopro.com/bucket/soaraja/image/joglopro/real-estate-agent.png"
-              alt=""
+              alt="Agen"
             />
           </div>
         </div>
@@ -140,35 +149,33 @@
       <div
         id="tooltip-right4"
         role="tooltip"
-        class="absolute z-10 invisible inline-block px-2 py-1 text-sm font-medium text-black bg-white rounded-lg shadow-sm opacity-0 tooltip"
+        class="{$activeTab === 3
+          ? 'absolute z-10 visible'
+          : 'absolute z-10 invisible'} inline-block px-2 py-1 text-sm font-medium text-black bg-white rounded-lg shadow-sm opacity-0 tooltip"
       >
         Agen
         <div class="tooltip-arrow" data-popper-arrow></div>
       </div>
 
       <!-- Button Pesan -->
-      <div
-        class="flex col justify-center py-2"
-        data-tooltip-target="menu-pesan"
-        data-tooltip-placement="right"
-      >
+      <div class="flex col justify-center py-2">
         <div
           id="MenuTujuhTab"
-          data-tabs-target="#MenuTujuhContent"
-          type="button"
           role="tab"
-          aria-controls="MenuTujuhContent"
-          aria-selected="false"
-          class="flex justify-center items-center flex-col menus w-11 h-11 cursor-pointer hover:bg-slate-200 hover:rounded-lg"
+          aria-selected={$activeTab === 4}
+          tabindex="0"
+          class="{$activeTab === 4
+            ? 'bg-aktif-menu'
+            : 'bg-non-aktif-menu'} flex justify-center items-center flex-col menus w-11 h-11 cursor-pointer hover:bg-slate-200 hover:rounded-lg"
+          on:click={() => switchTab(4)}
+          on:keydown={(event) => handleKey(event, 4)}
         >
           <div class="w-6 h-6 flex justify-center items-center relative">
             <img
               class="menu-icon"
-              data-menu="0"
               src="https://www.joglopro.com/bucket/soaraja/image/joglopro/messenger.png"
-              alt=""
+              alt="Pesan"
             />
-
             <div
               class="absolute inline-flex items-center justify-center px-1 min-w-[18px] h-[21px] text-[11px] font-bold text-white bg-red-600 border border-white rounded-full -top-[0.45rem] -right-[0.7rem]"
             >
@@ -180,14 +187,14 @@
       <div
         id="menu-pesan"
         role="tooltip"
-        class="absolute z-10 invisible inline-block px-2 py-1 text-sm font-medium text-black bg-white rounded-lg shadow-sm opacity-0 tooltip"
+        class="{$activeTab === 4
+          ? 'absolute z-10 visible'
+          : 'absolute z-10 invisible'} inline-block px-2 py-1 text-sm font-medium text-black bg-white rounded-lg shadow-sm opacity-0 tooltip"
       >
         Pesan
         <div class="tooltip-arrow" data-popper-arrow></div>
       </div>
-      <!--  -->
     </div>
-
     <!-- Menu Setting -->
     <div class="akun-login-soaraja hidden">
       <!--  -->

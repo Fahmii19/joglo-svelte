@@ -1,3 +1,7 @@
+import { writable } from "svelte/store";
+
+export const activeTab = writable(0);
+
 // Button Groups
 export function setupButtonGroups() {
   const buttons1 = document.querySelectorAll(".btn_chip_header1");
