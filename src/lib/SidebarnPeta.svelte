@@ -51,6 +51,9 @@
       switchTab(tabIndex);
     }
   }
+
+  import { Tooltip, Button } from "flowbite-svelte";
+  let placement = "left";
 </script>
 
 <!-- Sidebar & Peta -->
@@ -86,52 +89,36 @@
             />
           </div>
         </div>
-      </div>
-      <!-- Tooltip untuk Galeri -->
-      <div
-        id="menu-beranda"
-        role="tooltip"
-        class="{$activeTab === 0
-          ? 'absolute z-10 visible'
-          : 'absolute z-10 invisible'} inline-block px-2 py-1 text-sm font-medium text-black bg-white rounded-lg shadow-sm opacity-0 tooltip"
-      >
-        Galeri
-        <div class="tooltip-arrow" data-popper-arrow></div>
+        <Tooltip placement="right" color="light" triggeredBy="#MenuSatuTab"
+          >Galeri</Tooltip
+        >
       </div>
 
-      <!-- Button Posting Listing -->
+      <!-- Button Pesan -->
       <div class="flex col justify-center py-2">
         <div
-          id="MenuDelapanBelasTab"
+          id="MenuTujuhTab"
           role="tab"
-          aria-selected={$activeTab === 1}
+          aria-selected={$activeTab === 4}
           tabindex="0"
-          class="{$activeTab === 1
+          class="{$activeTab === 4
             ? 'bg-aktif-menu'
             : 'bg-non-aktif-menu'} flex justify-center items-center flex-col menus w-11 h-11 cursor-pointer hover:bg-slate-200 hover:rounded-lg"
-          on:click={() => switchTab(1)}
-          on:keydown={(event) => handleKey(event, 1)}
+          on:click={() => switchTab(4)}
+          on:keydown={(event) => handleKey(event, 4)}
         >
           <div class="w-6 h-6 flex justify-center items-center relative">
             <img
-              id="menu-icon-1"
+              id="menu-icon-4"
               class="menu-icon"
-              src={inactiveImages[1]}
-              alt="Listing Baru"
+              src={inactiveImages[4]}
+              alt="Pesan"
             />
           </div>
         </div>
-      </div>
-      <!-- Tooltip untuk Posting Listing -->
-      <div
-        id="menu-posting"
-        role="tooltip"
-        class="{$activeTab === 1
-          ? 'absolute z-10 visible'
-          : 'absolute z-10 invisible'} inline-block px-2 py-1 text-sm font-medium text-black bg-white rounded-lg shadow-sm opacity-0 tooltip"
-      >
-        Listing Baruu
-        <div class="tooltip-arrow" data-popper-arrow></div>
+        <Tooltip placement="right" color="light" triggeredBy="#MenuTujuhTab"
+          >Listing Baru</Tooltip
+        >
       </div>
 
       <!-- Button Favorit -->
@@ -156,17 +143,38 @@
             />
           </div>
         </div>
+        <Tooltip placement="right" color="light" triggeredBy="#MenuTigaTab"
+          >Favorit</Tooltip
+        >
       </div>
-      <!-- Tooltip untuk Favorit -->
-      <div
-        id="menu-favorit"
-        role="tooltip"
-        class="{$activeTab === 2
-          ? 'absolute z-10 visible'
-          : 'absolute z-10 invisible'} inline-block px-2 py-1 text-sm font-medium text-black bg-white rounded-lg shadow-sm opacity-0 tooltip"
-      >
-        Favorit
-        <div class="tooltip-arrow" data-popper-arrow></div>
+
+      <!-- Button Posting Listing -->
+      <div class="flex col justify-center py-2">
+        <div
+          id="MenuDelapanBelasTab"
+          role="tab"
+          aria-selected={$activeTab === 1}
+          tabindex="0"
+          class="{$activeTab === 1
+            ? 'bg-aktif-menu'
+            : 'bg-non-aktif-menu'} flex justify-center items-center flex-col menus w-11 h-11 cursor-pointer hover:bg-slate-200 hover:rounded-lg"
+          on:click={() => switchTab(1)}
+          on:keydown={(event) => handleKey(event, 1)}
+        >
+          <div class="w-6 h-6 flex justify-center items-center relative">
+            <img
+              id="menu-icon-1"
+              class="menu-icon"
+              src={inactiveImages[1]}
+              alt="Listing Baru"
+            />
+          </div>
+        </div>
+        <Tooltip
+          placement="right"
+          color="light"
+          triggeredBy="#MenuDelapanBelasTab">Agen</Tooltip
+        >
       </div>
 
       <!-- Button Agen -->
@@ -189,41 +197,6 @@
               src={inactiveImages[3]}
               alt="Agen"
             />
-          </div>
-        </div>
-      </div>
-      <!-- Tooltip untuk Agen -->
-      <div
-        id="tooltip-right4"
-        role="tooltip"
-        class="{$activeTab === 3
-          ? 'absolute z-10 visible'
-          : 'absolute z-10 invisible'} inline-block px-2 py-1 text-sm font-medium text-black bg-white rounded-lg shadow-sm opacity-0 tooltip"
-      >
-        Agen
-        <div class="tooltip-arrow" data-popper-arrow></div>
-      </div>
-
-      <!-- Button Pesan -->
-      <div class="flex col justify-center py-2">
-        <div
-          id="MenuTujuhTab"
-          role="tab"
-          aria-selected={$activeTab === 4}
-          tabindex="0"
-          class="{$activeTab === 4
-            ? 'bg-aktif-menu'
-            : 'bg-non-aktif-menu'} flex justify-center items-center flex-col menus w-11 h-11 cursor-pointer hover:bg-slate-200 hover:rounded-lg"
-          on:click={() => switchTab(4)}
-          on:keydown={(event) => handleKey(event, 4)}
-        >
-          <div class="w-6 h-6 flex justify-center items-center relative">
-            <img
-              id="menu-icon-4"
-              class="menu-icon"
-              src={inactiveImages[4]}
-              alt="Pesan"
-            />
             <div
               class="absolute inline-flex items-center justify-center px-1 min-w-[18px] h-[21px] text-[11px] font-bold text-white bg-red-600 border border-white rounded-full -top-[0.45rem] -right-[0.7rem]"
             >
@@ -231,17 +204,9 @@
             </div>
           </div>
         </div>
-      </div>
-      <!-- Tooltip untuk Pesan -->
-      <div
-        id="menu-pesan"
-        role="tooltip"
-        class="{$activeTab === 4
-          ? 'absolute z-10 visible'
-          : 'absolute z-10 invisible'} inline-block px-2 py-1 text-sm font-medium text-black bg-white rounded-lg shadow-sm opacity-0 tooltip"
-      >
-        Pesan
-        <div class="tooltip-arrow" data-popper-arrow></div>
+        <Tooltip placement="right" color="light" triggeredBy="#MenuEmpatTab"
+          >Pesan</Tooltip
+        >
       </div>
     </div>
     <!-- Menu Setting -->

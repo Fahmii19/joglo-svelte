@@ -1,7 +1,6 @@
 <script>
   import { activeTab } from "../assets/js/index.js";
   import { derived } from "svelte/store";
-
   // Derived store to get the current active tab value
   const currentTab = derived(activeTab, ($activeTab) => $activeTab);
 </script>
