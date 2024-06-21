@@ -3,13 +3,13 @@
 
   // Import gambar-gambar yang diperlukan
   import aktifGaleri from "../assets/images/icon_menu_baru/aktif_galeri.png";
-  // import aktifRealEstate from "../images/icon_menu_baru/aktif_real-estate-agent.png";
+  import aktifRealEstate from "../assets/images/icon_menu_baru/aktif_real-estate-agent.png";
   import aktifFavorite from "../assets/images/icon_menu_baru/aktif_favorite.png";
   import aktifMessenger from "../assets/images/icon_menu_baru/aktif_messenger.png";
   import aktifMore from "../assets/images/icon_menu_baru/aktif_more.png";
 
   import nonaktifGaleri from "../assets/images/icon_menu_baru/nonaktif_aktif_galeri.png";
-  // import nonaktifRealEstate from "../assets/images/icon_menu_baru/nonaktif_aktif_real-estate-agent.png";
+  import nonaktifRealEstate from "../assets/images/icon_menu_baru/nonaktif_aktif_real-estate-agent.png";
   import nonaktifFavorite from "../assets/images/icon_menu_baru/nonaktif_aktif_favorite.png";
   import nonaktifMessenger from "../assets/images/icon_menu_baru/nonaktif_aktif_messenger.png";
   import nonaktifMore from "../assets/images/icon_menu_baru/nonaktif_aktif_more.png";
@@ -17,7 +17,7 @@
   // Array untuk menyimpan gambar-gambar aktif dan nonaktif
   let activeImages = [
     aktifGaleri,
-    // aktifRealEstate,
+    aktifRealEstate,
     aktifFavorite,
     aktifMessenger,
     aktifMore,
@@ -25,7 +25,7 @@
 
   let inactiveImages = [
     nonaktifGaleri,
-    // nonaktifRealEstate,
+    nonaktifRealEstate,
     nonaktifFavorite,
     nonaktifMessenger,
     nonaktifMore,
