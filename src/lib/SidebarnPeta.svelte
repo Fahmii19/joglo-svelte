@@ -1,17 +1,56 @@
 <script>
   import { activeTab } from "../assets/js/index.js";
 
+  // Import gambar-gambar yang diperlukan
+  import aktifGaleri from "../assets/images/icon_menu_baru/aktif_galeri.png";
+  // import aktifRealEstate from "../images/icon_menu_baru/aktif_real-estate-agent.png";
+  import aktifFavorite from "../assets/images/icon_menu_baru/aktif_favorite.png";
+  import aktifMessenger from "../assets/images/icon_menu_baru/aktif_messenger.png";
+  import aktifMore from "../assets/images/icon_menu_baru/aktif_more.png";
+
+  import nonaktifGaleri from "../assets/images/icon_menu_baru/nonaktif_aktif_galeri.png";
+  // import nonaktifRealEstate from "../assets/images/icon_menu_baru/nonaktif_aktif_real-estate-agent.png";
+  import nonaktifFavorite from "../assets/images/icon_menu_baru/nonaktif_aktif_favorite.png";
+  import nonaktifMessenger from "../assets/images/icon_menu_baru/nonaktif_aktif_messenger.png";
+  import nonaktifMore from "../assets/images/icon_menu_baru/nonaktif_aktif_more.png";
+
+  // Array untuk menyimpan gambar-gambar aktif dan nonaktif
+  let activeImages = [
+    aktifGaleri,
+    // aktifRealEstate,
+    aktifFavorite,
+    aktifMessenger,
+    aktifMore,
+  ];
+
+  let inactiveImages = [
+    nonaktifGaleri,
+    // nonaktifRealEstate,
+    nonaktifFavorite,
+    nonaktifMessenger,
+    nonaktifMore,
+  ];
+
+  // Fungsi untuk mengubah tab
   function switchTab(tabIndex) {
     activeTab.set(tabIndex);
+
+    // Mengubah gambar-gambar aktif dan nonaktif
+    for (let i = 0; i < activeImages.length; i++) {
+      if (i === tabIndex) {
+        document.getElementById(`menu-icon-${i}`).src = activeImages[i];
+      } else {
+        document.getElementById(`menu-icon-${i}`).src = inactiveImages[i];
+      }
+    }
   }
 
+  // Fungsi untuk menangani tombol keyboard
   function handleKey(event, tabIndex) {
     if (event.key === "Enter" || event.key === " ") {
       switchTab(tabIndex);
     }
   }
-
-  // Subscribe ke store activeTab
 </script>
 
 <!-- Sidebar & Peta -->
@@ -40,13 +79,15 @@
         >
           <div class="w-7 h-7 flex justify-center items-center relative">
             <img
+              id="menu-icon-0"
               class="menu-icon"
-              src="https://www.joglopro.com/bucket/soaraja/image/joglopro/icon_menu_baru/aktif_galeri.png"
+              src={activeImages[0]}
               alt="Galeri"
             />
           </div>
         </div>
       </div>
+      <!-- Tooltip untuk Galeri -->
       <div
         id="menu-beranda"
         role="tooltip"
@@ -73,13 +114,15 @@
         >
           <div class="w-6 h-6 flex justify-center items-center relative">
             <img
+              id="menu-icon-1"
               class="menu-icon"
-              src="https://www.joglopro.com/bucket/soaraja/image/joglopro/more.png"
+              src={activeImages[1]}
               alt="Listing Baru"
             />
           </div>
         </div>
       </div>
+      <!-- Tooltip untuk Posting Listing -->
       <div
         id="menu-posting"
         role="tooltip"
@@ -106,13 +149,15 @@
         >
           <div class="w-6 h-6 flex justify-center items-center relative">
             <img
+              id="menu-icon-2"
               class="menu-icon"
-              src="https://www.joglopro.com/bucket/soaraja/image/joglopro/favorite.png"
+              src={activeImages[2]}
               alt="Favorit"
             />
           </div>
         </div>
       </div>
+      <!-- Tooltip untuk Favorit -->
       <div
         id="menu-favorit"
         role="tooltip"
@@ -139,13 +184,15 @@
         >
           <div class="w-6 h-6 flex justify-center items-center relative">
             <img
+              id="menu-icon-3"
               class="menu-icon"
-              src="https://www.joglopro.com/bucket/soaraja/image/joglopro/real-estate-agent.png"
+              src={activeImages[3]}
               alt="Agen"
             />
           </div>
         </div>
       </div>
+      <!-- Tooltip untuk Agen -->
       <div
         id="tooltip-right4"
         role="tooltip"
@@ -172,8 +219,9 @@
         >
           <div class="w-6 h-6 flex justify-center items-center relative">
             <img
+              id="menu-icon-4"
               class="menu-icon"
-              src="https://www.joglopro.com/bucket/soaraja/image/joglopro/messenger.png"
+              src={activeImages[4]}
               alt="Pesan"
             />
             <div
@@ -184,6 +232,7 @@
           </div>
         </div>
       </div>
+      <!-- Tooltip untuk Pesan -->
       <div
         id="menu-pesan"
         role="tooltip"
