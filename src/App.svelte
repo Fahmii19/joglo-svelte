@@ -33,7 +33,7 @@
 <main>
   <div class="h-screen bg-gray-100 flex flex-col overflow-y-hidden">
     <!-- Start Header rev.1 -->
-    <div class="header border border-red-500">
+    <div class="header">
       <div class="flex items-center">
         <img
           class="w-12 h-12 object-cover mt-1"
