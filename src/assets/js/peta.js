@@ -623,7 +623,7 @@ let activeObjectId = null;
 //
 
 const IzinGalian = () => {
-  fetch("data-dumy.geojson")
+  fetch("/src/assets/data-dumy.geojson")
     .then((response) => response.json())
     .then((data) => {
       map.addSource("layer-peta-soaraja", {
@@ -748,7 +748,7 @@ map.on("style.load", () => {
   IzinGalian();
 
   // Inisialisasi peta dengan kategori default
-  updateMapForCategory();
+  //   updateMapForCategory();
 });
 
 let activeCategories = ["Ibadah"]; // Mulai dengan "Ibadah" sebagai default
@@ -809,253 +809,253 @@ $(
 ).css("visibility", "hidden");
 
 // LAYER GALIAN IZIN
-map.on("click", "layer-peta-soaraja", (e) => {
-  // console.log(e);
-  map.getCanvas().style.cursor = "pointer";
-  const coordinates = e.features[0].geometry.coordinates.slice();
-  const data = e.features[0].properties;
+// map.on("click", "layer-peta-soaraja", (e) => {
+//   // console.log(e);
+//   map.getCanvas().style.cursor = "pointer";
+//   const coordinates = e.features[0].geometry.coordinates.slice();
+//   const data = e.features[0].properties;
 
-  const clickedObjectId = e.features[0].properties.OBJECTID;
-  if (activeObjectId !== clickedObjectId) {
-    activeObjectId = clickedObjectId;
-    map.setLayoutProperty("layer-peta-soaraja", "icon-image", [
-      "case",
-      ["==", ["get", "OBJECTID"], activeObjectId],
-      "pulsing-dot",
-      "nopulsing-dot",
-    ]);
-    pulsingDot.render();
-  }
+//   const clickedObjectId = e.features[0].properties.OBJECTID;
+//   if (activeObjectId !== clickedObjectId) {
+//     activeObjectId = clickedObjectId;
+//     map.setLayoutProperty("layer-peta-soaraja", "icon-image", [
+//       "case",
+//       ["==", ["get", "OBJECTID"], activeObjectId],
+//       "pulsing-dot",
+//       "nopulsing-dot",
+//     ]);
+//     pulsingDot.render();
+//   }
 
-  // Panggil ulang render dengan OBJECTID yang aktif
-  pulsingDot.render(activeObjectId);
+//   // Panggil ulang render dengan OBJECTID yang aktif
+//   pulsingDot.render(activeObjectId);
 
-  const content = `
-                              <div
-                              class="max-w-sm bg-white rounded-t-lg cursor-pointer border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
-                              data-object-id="${data.OBJECTID}"
-                              data-card-map="1534"
-                              data-active-tab="1"
-                              onclick="showCardInfoDetail(this)">
-                              <div
-                                class="p-1 h-[5vh] bg-white rounded-t-lg select-none"
-                              >
-                                <div
-                                  class="flex items-center justify-between w-full h-full"
-                                >
-                                  <!-- Bagian Kiri: Gambar -->
-                                  <div class="flex items-center">
-                                    <img
-                                      class="w-7 h-7 rounded-full"
-                                      src="${model}"
-                                    />
-                                  </div>
+//   const content = `
+//                               <div
+//                               class="max-w-sm bg-white rounded-t-lg cursor-pointer border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+//                               data-object-id="${data.OBJECTID}"
+//                               data-card-map="1534"
+//                               data-active-tab="1"
+//                               onclick="showCardInfoDetail(this)">
+//                               <div
+//                                 class="p-1 h-[5vh] bg-white rounded-t-lg select-none"
+//                               >
+//                                 <div
+//                                   class="flex items-center justify-between w-full h-full"
+//                                 >
+//                                   <!-- Bagian Kiri: Gambar -->
+//                                   <div class="flex items-center">
+//                                     <img
+//                                       class="w-7 h-7 rounded-full"
+//                                       src="${model}"
+//                                     />
+//                                   </div>
 
-                                  <!-- Bagian Tengah: Teks 'aa' -->
-                                  <div
-                                    class="flex-grow flex items-center justify-start ml-1"
-                                  >
-                                    <div class="flex flex-col">
-                                      <div class="inline-flex">
-                                        <div
-                                          class="text-xs font-semibold text-black cursor-pointer"
-                                          onclick="showCardAgent(this)"
-                                        >
-                                          Budiman Alisysiaa
-                                        </div>
-                                        <div
-                                          class="flex items-center justify-center ml-1"
-                                        >
-                                          <div
-                                            class="w-3 h-3 flex justify-center items-center relative"
-                                          >
-                                            <img
-                                              src="${verif}"
-                                              alt=""
-                                            />
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <!--  -->
-                                      <div class="">
-                                        <label
-                                          for="star-agent-utama"
-                                          class="flex flex-row text-xs font-medium cursor-pointer text-gray-900"
-                                        >
-                                          <div>
-                                            <label
-                                              for="star-agent-utama"
-                                              class="flex flex-row text-xs font-medium cursor-pointer text-gray-900"
-                                            >
-                                              <svg
-                                                class="w-2.5 h-2.5 text-yellow-300"
-                                                aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                fill="currentColor"
-                                                viewBox="0 0 22 20"
-                                              >
-                                                <path
-                                                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
-                                                ></path>
-                                              </svg>
-                                              <svg
-                                                class="w-2.5 h-2.5 text-yellow-300"
-                                                aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                fill="currentColor"
-                                                viewBox="0 0 22 20"
-                                              >
-                                                <path
-                                                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
-                                                ></path>
-                                              </svg>
-                                              <svg
-                                                class="w-2.5 h-2.5 text-yellow-300"
-                                                aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                fill="currentColor"
-                                                viewBox="0 0 22 20"
-                                              >
-                                                <path
-                                                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
-                                                ></path>
-                                              </svg>
-                                              <svg
-                                                class="w-2.5 h-2.5 text-gray-300"
-                                                aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                fill="currentColor"
-                                                viewBox="0 0 22 20"
-                                              >
-                                                <path
-                                                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
-                                                ></path>
-                                              </svg>
-                                              <svg
-                                                class="w-2.5 h-2.5 text-gray-300 hidden"
-                                                aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                fill="currentColor"
-                                                viewBox="0 0 22 20"
-                                              >
-                                                <path
-                                                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
-                                                ></path>
-                                              </svg>
-                                            </label>
-                                          </div>
-                                        </label>
-                                      </div>
-                                    </div>
-                                  </div>
+//                                   <!-- Bagian Tengah: Teks 'aa' -->
+//                                   <div
+//                                     class="flex-grow flex items-center justify-start ml-1"
+//                                   >
+//                                     <div class="flex flex-col">
+//                                       <div class="inline-flex">
+//                                         <div
+//                                           class="text-xs font-semibold text-black cursor-pointer"
+//                                           onclick="showCardAgent(this)"
+//                                         >
+//                                           Budiman Alisysiaa
+//                                         </div>
+//                                         <div
+//                                           class="flex items-center justify-center ml-1"
+//                                         >
+//                                           <div
+//                                             class="w-3 h-3 flex justify-center items-center relative"
+//                                           >
+//                                             <img
+//                                               src="${verif}"
+//                                               alt=""
+//                                             />
+//                                           </div>
+//                                         </div>
+//                                       </div>
+//                                       <!--  -->
+//                                       <div class="">
+//                                         <label
+//                                           for="star-agent-utama"
+//                                           class="flex flex-row text-xs font-medium cursor-pointer text-gray-900"
+//                                         >
+//                                           <div>
+//                                             <label
+//                                               for="star-agent-utama"
+//                                               class="flex flex-row text-xs font-medium cursor-pointer text-gray-900"
+//                                             >
+//                                               <svg
+//                                                 class="w-2.5 h-2.5 text-yellow-300"
+//                                                 aria-hidden="true"
+//                                                 xmlns="http://www.w3.org/2000/svg"
+//                                                 fill="currentColor"
+//                                                 viewBox="0 0 22 20"
+//                                               >
+//                                                 <path
+//                                                   d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+//                                                 ></path>
+//                                               </svg>
+//                                               <svg
+//                                                 class="w-2.5 h-2.5 text-yellow-300"
+//                                                 aria-hidden="true"
+//                                                 xmlns="http://www.w3.org/2000/svg"
+//                                                 fill="currentColor"
+//                                                 viewBox="0 0 22 20"
+//                                               >
+//                                                 <path
+//                                                   d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+//                                                 ></path>
+//                                               </svg>
+//                                               <svg
+//                                                 class="w-2.5 h-2.5 text-yellow-300"
+//                                                 aria-hidden="true"
+//                                                 xmlns="http://www.w3.org/2000/svg"
+//                                                 fill="currentColor"
+//                                                 viewBox="0 0 22 20"
+//                                               >
+//                                                 <path
+//                                                   d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+//                                                 ></path>
+//                                               </svg>
+//                                               <svg
+//                                                 class="w-2.5 h-2.5 text-gray-300"
+//                                                 aria-hidden="true"
+//                                                 xmlns="http://www.w3.org/2000/svg"
+//                                                 fill="currentColor"
+//                                                 viewBox="0 0 22 20"
+//                                               >
+//                                                 <path
+//                                                   d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+//                                                 ></path>
+//                                               </svg>
+//                                               <svg
+//                                                 class="w-2.5 h-2.5 text-gray-300 hidden"
+//                                                 aria-hidden="true"
+//                                                 xmlns="http://www.w3.org/2000/svg"
+//                                                 fill="currentColor"
+//                                                 viewBox="0 0 22 20"
+//                                               >
+//                                                 <path
+//                                                   d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+//                                                 ></path>
+//                                               </svg>
+//                                             </label>
+//                                           </div>
+//                                         </label>
+//                                       </div>
+//                                     </div>
+//                                   </div>
 
-                                  <!-- Bagian Kanan: Gambar lainnya -->
-                                  <div class="flex items-center">
-                                    <img
-                                      class="w-6 h-6 object-contain"
-                                      src="${era}"
-                                    />
-                                  </div>
-                                </div>
-                              </div>
+//                                   <!-- Bagian Kanan: Gambar lainnya -->
+//                                   <div class="flex items-center">
+//                                     <img
+//                                       class="w-6 h-6 object-contain"
+//                                       src="${era}"
+//                                     />
+//                                   </div>
+//                                 </div>
+//                               </div>
 
-                              <div class="w-full h-[19vh] relative">
-                                <div
-                                  class="slider-card-info-detail-peta w-full h-full"
-                                >
-                                  <div class="relative h-[19vh] bg-black z-index-10">
-                                    <video
-                                      class="w-full h-full object-contain"
-                                      loop
-                                      muted
-                                      preload="metadata"
-                                      src="${Video1}"
-                                    ></video>
-                                    <div class="arrow-right-custom-mini-peta">
-                                      <span class="font-semibold">NEW</span>
-                                    </div>
-                                  </div>
-                                  <div class="relative h-[19vh] bg-black z-index-10">
-                                    <img
-                                      class="w-full h-full object-contain"
-                                      src="${rumaha2}"
-                                      alt=""
-                                    />
-                                    <div class="arrow-right-custom-mini-peta">
-                                      <span class="font-semibold">NEW</span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="flex flex-col w-full px-1 ml-0.5 pb-1">
-                                <!--  -->
-                                <div class="flex flex-row justify-start">
-                                  <div>
-                                    <div class="inline-flex items-center">
-                                      <h5 class="font-bold tracking-tight text-black">
-                                        <span class="text-xl" style="font-size: 1rem;">Rp 11.300.000.000</span>
-                                      </h5>
-                                    </div>
-                                  </div>
+//                               <div class="w-full h-[19vh] relative">
+//                                 <div
+//                                   class="slider-card-info-detail-peta w-full h-full"
+//                                 >
+//                                   <div class="relative h-[19vh] bg-black z-index-10">
+//                                     <video
+//                                       class="w-full h-full object-contain"
+//                                       loop
+//                                       muted
+//                                       preload="metadata"
+//                                       src="${Video1}"
+//                                     ></video>
+//                                     <div class="arrow-right-custom-mini-peta">
+//                                       <span class="font-semibold">NEW</span>
+//                                     </div>
+//                                   </div>
+//                                   <div class="relative h-[19vh] bg-black z-index-10">
+//                                     <img
+//                                       class="w-full h-full object-contain"
+//                                       src="${rumaha2}"
+//                                       alt=""
+//                                     />
+//                                     <div class="arrow-right-custom-mini-peta">
+//                                       <span class="font-semibold">NEW</span>
+//                                     </div>
+//                                   </div>
+//                                 </div>
+//                               </div>
+//                               <div class="flex flex-col w-full px-1 ml-0.5 pb-1">
+//                                 <!--  -->
+//                                 <div class="flex flex-row justify-start">
+//                                   <div>
+//                                     <div class="inline-flex items-center">
+//                                       <h5 class="font-bold tracking-tight text-black">
+//                                         <span class="text-xl" style="font-size: 1rem;">Rp 11.300.000.000</span>
+//                                       </h5>
+//                                     </div>
+//                                   </div>
 
-                                  <div class="flex justify-between">
-                                    <div class="grid grid-cols-3 items-center gap-2 ml-2">
-                                      <div>
-                                        <img class="w-4 h-4 object-cover" src="${heartOn}" alt="">
-                                      </div>
+//                                   <div class="flex justify-between">
+//                                     <div class="grid grid-cols-3 items-center gap-2 ml-2">
+//                                       <div>
+//                                         <img class="w-4 h-4 object-cover" src="${heartOn}" alt="">
+//                                       </div>
 
-                                      <div>
-                                        <img class="w-3 h-3 object-cover" src="${share}" alt="">
-                                      </div>
+//                                       <div>
+//                                         <img class="w-3 h-3 object-cover" src="${share}" alt="">
+//                                       </div>
 
-                                      <div>
-                                        <img class="w-4 h-4 object-cover" src="${badge3d}" alt="">
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <!--  -->
-                                <div class="flex flex-col -mt-1 font-normal" style="margin-top: -0.3rem;">
-                                  <div class="flex items-center text-[11px] text-black">
-                                    <span class="mr-2">LT 80 m² |</span>
-                                    <span class="mr-2">LB 276 m² |</span>
-                                    <span class="mr-2">2 KT |</span>
-                                    <span class="mr-2">5 KM</span>
-                                  </div>
-                                  <div class="text-xs text-black" style="margin-top: -0.2rem;">
-                                    Sunter, Tanjung Priok, keduacard
-                                  </div>
-                                </div>
-                                <!--  -->
-                              </div>
-                            </div>`;
+//                                       <div>
+//                                         <img class="w-4 h-4 object-cover" src="${badge3d}" alt="">
+//                                       </div>
+//                                     </div>
+//                                   </div>
+//                                 </div>
+//                                 <!--  -->
+//                                 <div class="flex flex-col -mt-1 font-normal" style="margin-top: -0.3rem;">
+//                                   <div class="flex items-center text-[11px] text-black">
+//                                     <span class="mr-2">LT 80 m² |</span>
+//                                     <span class="mr-2">LB 276 m² |</span>
+//                                     <span class="mr-2">2 KT |</span>
+//                                     <span class="mr-2">5 KM</span>
+//                                   </div>
+//                                   <div class="text-xs text-black" style="margin-top: -0.2rem;">
+//                                     Sunter, Tanjung Priok, keduacard
+//                                   </div>
+//                                 </div>
+//                                 <!--  -->
+//                               </div>
+//                             </div>`;
 
-  popup.setLngLat(coordinates).setHTML(content).addTo(map);
-  initSlickCardPeta(".slider-card-info-detail-peta");
+//   popup.setLngLat(coordinates).setHTML(content).addTo(map);
+//   initSlickCardPeta(".slider-card-info-detail-peta");
 
-  map.once("render", function () {
-    $(".slider-card-info-detail-peta")
-      .on("mouseover", function () {
-        // Pilih video di dalam .slider-card-info-detail-peta
-        var video = $(this).find("video").get(0);
+//   map.once("render", function () {
+//     $(".slider-card-info-detail-peta")
+//       .on("mouseover", function () {
+//         // Pilih video di dalam .slider-card-info-detail-peta
+//         var video = $(this).find("video").get(0);
 
-        // Periksa jika video ditemukan dan memiliki metode play
-        if (video && typeof video.play === "function") {
-          video.play();
-        }
-      })
-      .on("mouseleave", function () {
-        // Pilih video di dalam .slider-card-info-detail-peta
-        var video = $(this).find("video").get(0);
+//         // Periksa jika video ditemukan dan memiliki metode play
+//         if (video && typeof video.play === "function") {
+//           video.play();
+//         }
+//       })
+//       .on("mouseleave", function () {
+//         // Pilih video di dalam .slider-card-info-detail-peta
+//         var video = $(this).find("video").get(0);
 
-        // Periksa jika video ditemukan dan memiliki metode pause
-        if (video && typeof video.pause === "function") {
-          video.pause();
-        }
-      });
-  });
+//         // Periksa jika video ditemukan dan memiliki metode pause
+//         if (video && typeof video.pause === "function") {
+//           video.pause();
+//         }
+//       });
+//   });
 
-  while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-  }
-});
+//   while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+//     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+//   }
+// });

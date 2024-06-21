@@ -1,4 +1,6 @@
 <script>
+  import ButtonGroup from "./ButtonGroup.svelte";
+  //
   function showCardAgent(event) {}
   function showMessage(event) {}
   function KeluarAkun(event) {}
@@ -838,54 +840,7 @@
     </div>
 
     <!--  -->
-    <button
-      class="btn_chip_header1 inline-flex justify-center items-center px-4 mx-1 h-8 text-xs font-medium rounded-full focus:outline-none focus:ring-0 bg-white"
-    >
-      <span class="inline-flex tracking-[0.04em]">
-        <div>&lt;&nbsp;</div>
-        Rp 1 M
-      </span>
-    </button>
-
-    <button
-      class="btn_chip_header1 inline-flex justify-center items-center px-4 mx-1 h-8 text-xs font-medium rounded-full focus:outline-none focus:ring-0 bg-white"
-    >
-      <span class="inline-flex tracking-[0.04em]"> Rp 1 - 3 M </span>
-    </button>
-
-    <button
-      class="btn_chip_header1 inline-flex justify-center items-center px-4 mx-1 h-8 text-xs font-medium rounded-full focus:outline-none focus:ring-0 bg-white"
-    >
-      <span class="inline-flex tracking-[0.04em]">
-        <div>&gt;&nbsp;</div>
-        Rp 3 M
-      </span>
-    </button>
-
-    <!--  -->
-    <button
-      class="btn_chip_header2 inline-flex justify-center items-center px-4 mx-1 h-8 text-xs font-medium rounded-full focus:outline-none focus:ring-0 bg-white"
-    >
-      <span class="inline-flex tracking-[0.04em]">
-        <div>LT &lt;&nbsp;</div>
-        100 m²
-      </span>
-    </button>
-
-    <button
-      class="btn_chip_header2 inline-flex justify-center items-center px-4 mx-1 h-8 text-xs font-medium rounded-full focus:outline-none focus:ring-0 bg-white"
-    >
-      <span class="inline-flex tracking-[0.04em]"> LT 100 - 300 m² </span>
-    </button>
-
-    <button
-      class="btn_chip_header2 inline-flex justify-center items-center px-4 mx-1 h-8 text-xs font-medium rounded-full focus:outline-none focus:ring-0 bg-white"
-    >
-      <span class="inline-flex tracking-[0.04em]">
-        <div>LT &gt;&nbsp;</div>
-        300 m²
-      </span>
-    </button>
+    <ButtonGroup />
 
     <button
       type="button"

@@ -184,24 +184,25 @@ const arrowIconPencarian = document.getElementById("arrow-icon-pencarian");
 const selectedItemPencarian = document.getElementById(
   "selected-item-pencarian"
 );
-let isDropdownPencarianOpen = false;
 
-dropdownButtonPencarian.addEventListener("click", () => {
-  isDropdownPencarianOpen = toggleDropdown(
-    dropdownMenuPencarian,
-    arrowIconPencarian,
-    isDropdownPencarianOpen
-  );
-});
-dropdownMenuPencarian.addEventListener(
-  "click",
-  selectDropdownItem(
-    selectedItemPencarian,
-    dropdownMenuPencarian,
-    arrowIconPencarian,
-    isDropdownPencarianOpen
-  )
-);
+// let isDropdownPencarianOpen = false;
+
+// dropdownButtonPencarian.addEventListener("click", () => {
+//   isDropdownPencarianOpen = toggleDropdown(
+//     dropdownMenuPencarian,
+//     arrowIconPencarian,
+//     isDropdownPencarianOpen
+//   );
+// });
+// dropdownMenuPencarian.addEventListener(
+//   "click",
+//   selectDropdownItem(
+//     selectedItemPencarian,
+//     dropdownMenuPencarian,
+//     arrowIconPencarian,
+//     isDropdownPencarianOpen
+//   )
+// );
 
 // Inisialisasi Dropdown Pencarian
 const dropdownButtonPencarianPertama = document.getElementById(
@@ -216,48 +217,48 @@ const arrowIconPencarianPertama = document.getElementById(
 const selectedItemPencarianPertama = document.getElementById(
   "selected-item-pencarian-pertama"
 );
-let isDropdownPencarianOpenPertama = false;
+// let isDropdownPencarianOpenPertama = false;
 
-dropdownButtonPencarianPertama.addEventListener("click", () => {
-  isDropdownPencarianOpenPertama = toggleDropdown(
-    dropdownMenuPencarianPertama,
-    arrowIconPencarianPertama,
-    isDropdownPencarianOpenPertama
-  );
-});
-dropdownMenuPencarianPertama.addEventListener(
-  "click",
-  selectDropdownItem(
-    selectedItemPencarianPertama,
-    dropdownMenuPencarianPertama,
-    arrowIconPencarianPertama,
-    isDropdownPencarianOpenPertama
-  )
-);
+// dropdownButtonPencarianPertama.addEventListener("click", () => {
+//   isDropdownPencarianOpenPertama = toggleDropdown(
+//     dropdownMenuPencarianPertama,
+//     arrowIconPencarianPertama,
+//     isDropdownPencarianOpenPertama
+//   );
+// });
+// dropdownMenuPencarianPertama.addEventListener(
+//   "click",
+//   selectDropdownItem(
+//     selectedItemPencarianPertama,
+//     dropdownMenuPencarianPertama,
+//     arrowIconPencarianPertama,
+//     isDropdownPencarianOpenPertama
+//   )
+// );
 
 // Inisialisasi Dropdown Agent
-const dropdownButtonAgent = document.getElementById("dropdown-button-agent");
-const dropdownMenuAgent = document.getElementById("dropdown-menu-agent");
-const arrowIconAgent = document.getElementById("arrow-icon-agent");
-const selectedItemAgent = document.getElementById("selected-item-agent");
-let isDropdownAgentOpen = false;
+// const dropdownButtonAgent = document.getElementById("dropdown-button-agent");
+// const dropdownMenuAgent = document.getElementById("dropdown-menu-agent");
+// const arrowIconAgent = document.getElementById("arrow-icon-agent");
+// const selectedItemAgent = document.getElementById("selected-item-agent");
+// let isDropdownAgentOpen = false;
 
-dropdownButtonAgent.addEventListener("click", () => {
-  isDropdownAgentOpen = toggleDropdown(
-    dropdownMenuAgent,
-    arrowIconAgent,
-    isDropdownAgentOpen
-  );
-});
-dropdownMenuAgent.addEventListener(
-  "click",
-  selectDropdownItem(
-    selectedItemAgent,
-    dropdownMenuAgent,
-    arrowIconAgent,
-    isDropdownAgentOpen
-  )
-);
+// dropdownButtonAgent.addEventListener("click", () => {
+//   isDropdownAgentOpen = toggleDropdown(
+//     dropdownMenuAgent,
+//     arrowIconAgent,
+//     isDropdownAgentOpen
+//   );
+// });
+// dropdownMenuAgent.addEventListener(
+//   "click",
+//   selectDropdownItem(
+//     selectedItemAgent,
+//     dropdownMenuAgent,
+//     arrowIconAgent,
+//     isDropdownAgentOpen
+//   )
+// );
 
 // Inisialisasi Dropdown Disukai
 const dropdownButtonDisukai = document.getElementById(
@@ -5381,6 +5382,8 @@ sliders.forEach((slider) => {
 document.addEventListener("DOMContentLoaded", function () {
   const buttons1 = document.querySelectorAll(".btn_chip_header1");
   const buttons2 = document.querySelectorAll(".btn_chip_header2");
+
+  console.log(buttons1);
 
   buttons1.forEach((button) => {
     button.addEventListener("click", function () {
