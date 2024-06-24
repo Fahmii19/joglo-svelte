@@ -18,6 +18,7 @@ const config = {
     },
     extend: {
       colors: {
+        "custom-blue": "#0394F7",
         // flowbite-svelte
         primary: {
           50: "#FFF5F2",
