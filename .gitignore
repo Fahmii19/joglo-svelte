@@ -7,16 +7,9 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Dependency directories
-node_modules/
-jspm_packages/
-
-# Build output
+node_modules
 dist
 dist-ssr
-build
-.cache
-.parcel-cache
 *.local
 
 # Editor directories and files
@@ -29,3 +22,5 @@ build
 *.njsproj
 *.sln
 *.sw?
+
+public/index.htmls

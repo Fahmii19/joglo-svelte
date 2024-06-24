@@ -1,0 +1,102 @@
+/* Write your global styles here, in PostCSS syntax */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*Reguler*/
+@font-face {
+  font-family: "Font Instagram reguler";
+  src: url("./assets/fonts/SF-Pro-Text-Regular.otf") format("opentype");
+  font-style: normal;
+}
+
+/*Bold3*/
+@font-face {
+  font-family: "Font Instagram bold";
+  src: url("./assets/fonts/SF-Pro-Display-Heavy.otf") format("opentype");
+  font-style: normal;
+}
+
+/*Medium3*/
+@font-face {
+  font-family: "Font Instagram medium";
+  src: url("./assets/fonts/SF-Pro-Display-Bold.otf") format("opentype");
+  font-style: normal;
+}
+
+/* SF PRO */
+/*Reguler*/
+@font-face {
+  font-family: "Font SF-Pro-Text-Regular";
+  src: url("./assets/fonts/sf_pro/SFPRODISPLAYMEDIUM.OTF") format("opentype");
+  font-style: normal;
+}
+/*Medium*/
+@font-face {
+  font-family: "Font SF-Pro-Text-Bold";
+  src: url("./assets/fonts/sf_pro/SFPRODISPLAYBOLD.OTF") format("opentype");
+  font-style: normal;
+}
+/*Bold*/
+@font-face {
+  font-family: "Font SF-Pro-Text-Bold-Italic";
+  src: url("./assets/fonts/sf_pro/SFPRODISPLAYBLACKITALIC.OTF")
+    format("opentype");
+  font-style: normal;
+}
+
+.active_btn_tag {
+  @apply bg-[#69B3E7] text-white border-white;
+}
+
+.active_btn_peta {
+  @apply bg-[#69B3E7] text-white;
+}
+
+.mapboxgl-ctrl-logo,
+.mapboxgl-ctrl-attrib {
+  display: none !important;
+}
+
+/* Navigator MapboxGL */
+.mapboxgl-ctrl-top-right {
+  right: 0vh !important;
+  top: 47.5vh !important;
+}
+
+.mapboxgl-ctrl-group:not(:empty) {
+  box-shadow: none !important;
+}
+
+.custom-img-slick {
+  width: 1.1vh !important;
+  height: 1.4vh !important;
+}
+
+.img-wrapper {
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 5px;
+  background-color: rgb(241 245 249);
+  opacity: 0.9;
+}
+
+.mapboxgl-ctrl-group {
+  display: none !important;
+  visibility: hidden;
+}
+
+.mapboxgl-ctrl-geolocate {
+  visibility: hidden !important;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
