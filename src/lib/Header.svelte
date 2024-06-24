@@ -1,5 +1,8 @@
 <script>
   import ButtonGroup from "./ButtonGroup.svelte";
+
+  //
+  import IconHome from "../assets/images/home.png";
   //
   function showCardAgent(event) {}
   function showMessage(event) {}
@@ -21,7 +24,7 @@
   <div class="flex items-center">
     <img
       class="w-12 h-12 object-cover mt-1"
-      src="https://www.joglopro.com/bucket/soaraja/image/joglopro/home.png"
+      src={IconHome}
       alt="Soaraja Icon"
     />
     <div class="ml-2 text-3xl font-bold font-sf_pro_bold_new text-[#1877F2]">
