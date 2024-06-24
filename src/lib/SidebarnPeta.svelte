@@ -89,8 +89,11 @@
             />
           </div>
         </div>
-        <Tooltip placement="right" color="light" triggeredBy="#MenuSatuTab"
-          >Galeri</Tooltip
+        <Tooltip
+          class="z-10"
+          placement="right"
+          color="light"
+          triggeredBy="#MenuSatuTab">Galeri</Tooltip
         >
       </div>
 
@@ -116,8 +119,11 @@
             />
           </div>
         </div>
-        <Tooltip placement="right" color="light" triggeredBy="#MenuTujuhTab"
-          >Listing Baru</Tooltip
+        <Tooltip
+          class="z-10"
+          placement="right"
+          color="light"
+          triggeredBy="#MenuTujuhTab">Listing Baru</Tooltip
         >
       </div>
 
@@ -143,8 +149,11 @@
             />
           </div>
         </div>
-        <Tooltip placement="right" color="light" triggeredBy="#MenuTigaTab"
-          >Favorit</Tooltip
+        <Tooltip
+          class="z-10"
+          placement="right"
+          color="light"
+          triggeredBy="#MenuTigaTab">Favorit</Tooltip
         >
       </div>
 
@@ -171,6 +180,7 @@
           </div>
         </div>
         <Tooltip
+          class="z-10"
           placement="right"
           color="light"
           triggeredBy="#MenuDelapanBelasTab">Agen</Tooltip
@@ -204,8 +214,11 @@
             </div>
           </div>
         </div>
-        <Tooltip placement="right" color="light" triggeredBy="#MenuEmpatTab"
-          >Pesan</Tooltip
+        <Tooltip
+          class="z-10"
+          placement="right"
+          color="light"
+          triggeredBy="#MenuEmpatTab">Pesan</Tooltip
         >
       </div>
     </div>
@@ -218,7 +231,7 @@
           onclick="ShowProfil()"
           class="flex col justify-center py-2"
           data-tooltip-target="menu-profil"
-          data-tooltip-placement="right"
+          data-tooltip-placement="top"
         >
           <div
             aria-selected="false"
@@ -249,7 +262,7 @@
           onclick="KeluarAkun()"
           class="flex col justify-center py-2"
           data-tooltip-target="menu-keluar"
-          data-tooltip-placement="right"
+          data-tooltip-placement="top"
         >
           <div
             aria-selected="false"
