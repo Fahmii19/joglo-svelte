@@ -18,7 +18,11 @@
   import { socketConnect } from "./utils/socket";
   import Agent from "./pages/Agent.svelte";
   import Posting from "./pages/Posting.svelte";
-  import ListingBaru from "./pages/ListingBaru.svelte";
+  //
+  import ListingBaruNew from "./pages/ListingBaruNew.svelte";
+  import FavoritNew from "./pages/FavoritNew.svelte";
+  import AgentNew from "./pages/AgentNew.svelte";
+  import ChatNew from "./pages/ChatNew.svelte";
 
   export let url = "";
 
@@ -70,13 +74,13 @@
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <Route path="/settings" component={Setting} />
-        <Route path="/favorite" component={Favorite} />
-        <Route path="/listing-baru" component={ListingBaru} />
+        <Route path="/favorite" component={FavoritNew} />
+        <Route path="/listing-baru" component={ListingBaruNew} />
         <Route path="/profile/:user_id" let:params>
           <Profile user_id={Number(params.user_id)} />
         </Route>
-        <Route path="/chat" component={Chat} />
-        <Route path="/agent" component={Agent} />
+        <Route path="/chat" component={ChatNew} />
+        <Route path="/agent" component={AgentNew} />
         <Route path="/posting" component={Posting} />
         <!-- Route Not Found -->
         <Route path="*">404 Not Found</Route>
