@@ -51,7 +51,7 @@
       image={PostIcon}
       title="Postingan"
       dimension={6}
-      href="/posting"
+      href="/test"
     />
     <Menu
       id={uuidv4()}

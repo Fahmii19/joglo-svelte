@@ -54,7 +54,7 @@
   >
 
   <button
-    class="btn_chip_header2 inline-flex justify-center items-center px-4 h-8 mx-1 ml-3 text-xs font-medium rounded-full focus:outline-none focus:ring-0 bg-white"
+    class="btn_chip_header2 inline-flex justify-center items-center px-4 h-8 mx-1 text-xs font-medium rounded-full focus:outline-none focus:ring-0 bg-white"
     >LT &lt; 100 m²
   </button>
 

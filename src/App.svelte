@@ -18,6 +18,7 @@
   import { socketConnect } from "./utils/socket";
   import Agent from "./pages/Agent.svelte";
   import Posting from "./pages/Posting.svelte";
+  import Test from "./pages/Test.svelte";
 
   export let url = "";
 
@@ -70,6 +71,7 @@
         <Route path="/register" component={Register} />
         <Route path="/settings" component={Setting} />
         <Route path="/favorite" component={Favorite} />
+        <Route path="/test" component={Test} />
         <Route path="/profile/:user_id" let:params>
           <Profile user_id={Number(params.user_id)} />
         </Route>
