@@ -24,13 +24,12 @@
 
 <a
   class="flex col justify-center py-{padding_y}"
-  {id}
   {href}
   on:mouseenter={onHover}
   on:click
 >
   <div
-    class="bg-aktif-menu BtntagSearchAgen BtnRemoveCard flex justify-center items-center flex-col menus w-11 h-11 cursor-pointer hover:bg-slate-200 hover:rounded-lg"
+    class={`BtntagSearchAgen BtnRemoveCard flex justify-center items-center flex-col menus w-11 h-11 cursor-pointer hover:bg-slate-200 hover:rounded-lg ${id === activeId ? "bg-gray-200 rounded-lg" : ""}`}
   >
     <div
       class="w-{dimension} h-{dimension} flex justify-center items-center relative"
