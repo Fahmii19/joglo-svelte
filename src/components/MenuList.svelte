@@ -1,12 +1,16 @@
 <script lang="ts">
   // Image Icon Menu
-  import GalleryIcon from "../assets/images/galeri.png";
-  import PostIcon from "../assets/images/more.png";
-  import FavoriteIcon from "../assets/images/favorite.png";
-  import AgentIcon from "../assets/images/real-estate-agent.png";
-  import SettingIcon from "../assets/images/settings.png";
-  import LogOutIcon from "../assets/images/logout.png";
-  import MessageIcon from "../assets/images/messenger.png";
+  import aktifGaleri from "../assets/images/button/aktif_galeri.png";
+  import aktifRealEstate from "../assets/images/button/aktif_agen.png";
+  import aktifFavorite from "../assets/images/button/aktif_favorite.png";
+  import aktifMessenger from "../assets/images/button/aktif_messenger.png";
+  import aktifMore from "../assets/images/button/aktif_more.png";
+
+  import nonaktifGaleri from "../assets/images/button/nonaktif_aktif_galeri.png";
+  import nonaktifRealEstate from "../assets/images/button/nonaktif_agen.png";
+  import nonaktifFavorite from "../assets/images/button/nonaktif_aktif_favorite.png";
+  import nonaktifMessenger from "../assets/images/button/nonaktif_aktif_messenger.png";
+  import nonaktifMore from "../assets/images/button/nonaktif_aktif_more.png";
 
   // Component
   import Menu from "./Menu.svelte";
@@ -21,6 +25,7 @@
   import { LogOut } from "../utils/auth";
   import { links } from "svelte-routing";
   import { unreadMessages } from "../store/chat";
+  import { activeMenu } from "../store/activeMenuStore"; // Impor store
 
   //  get value from store
   let tooltipValue = "";
@@ -29,19 +34,10 @@
     tooltipValue = value;
   });
 
-  //
-
-  import aktifGaleri from "../assets/images/button/aktif_galeri.png";
-  import aktifRealEstate from "../assets/images/button/aktif_agen.png";
-  import aktifFavorite from "../assets/images/button/aktif_favorite.png";
-  import aktifMessenger from "../assets/images/button/aktif_messenger.png";
-  import aktifMore from "../assets/images/button/aktif_more.png";
-
-  import nonaktifGaleri from "../assets/images/button/nonaktif_aktif_galeri.png";
-  import nonaktifRealEstate from "../assets/images/button/nonaktif_agen.png";
-  import nonaktifFavorite from "../assets/images/button/nonaktif_aktif_favorite.png";
-  import nonaktifMessenger from "../assets/images/button/nonaktif_aktif_messenger.png";
-  import nonaktifMore from "../assets/images/button/nonaktif_aktif_more.png";
+  // Definisikan fungsi untuk mengatur menu aktif
+  const setActiveMenu = (id: string) => {
+    activeMenu.set(id);
+  };
 </script>
 
 <!-- Menu -->
