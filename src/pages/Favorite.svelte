@@ -65,7 +65,9 @@
 <div class="h-full w-full">
   <div class="h-full flex flex-col">
     <div class="w-full flex justify-between border-b border-gray-300">
-      <div class="sf_pro_bold_judul text-2xl px-3 py-2 judulStory">Favorit</div>
+      <div class="font-sf_pro_bold_judul text-2xl px-3 py-2 judulStory">
+        Favorit
+      </div>
     </div>
     <div
       class="h-[76vh] overflow-y-auto overflow-x-hidden hide-scrollbar story-galeri-off"

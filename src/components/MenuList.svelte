@@ -49,9 +49,9 @@
     <Menu
       id={uuidv4()}
       image={PostIcon}
-      title="Postingan"
+      title="Listing Baru"
       dimension={6}
-      href="/test"
+      href="/listing-baru"
     />
     <Menu
       id={uuidv4()}
