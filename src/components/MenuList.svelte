@@ -28,6 +28,20 @@
   tooltip.subscribe((value) => {
     tooltipValue = value;
   });
+
+  //
+
+  import aktifGaleri from "../assets/images/button/aktif_galeri.png";
+  import aktifRealEstate from "../assets/images/button/aktif_agen.png";
+  import aktifFavorite from "../assets/images/button/aktif_favorite.png";
+  import aktifMessenger from "../assets/images/button/aktif_messenger.png";
+  import aktifMore from "../assets/images/button/aktif_more.png";
+
+  import nonaktifGaleri from "../assets/images/button/nonaktif_aktif_galeri.png";
+  import nonaktifRealEstate from "../assets/images/button/nonaktif_agen.png";
+  import nonaktifFavorite from "../assets/images/button/nonaktif_aktif_favorite.png";
+  import nonaktifMessenger from "../assets/images/button/nonaktif_aktif_messenger.png";
+  import nonaktifMore from "../assets/images/button/nonaktif_aktif_more.png";
 </script>
 
 <!-- Menu -->
@@ -37,60 +51,75 @@
   data-tabs-toggle="#kontenMenuContent"
   role="tablist"
 >
-  <!-- Menu Button -->
   <div use:links>
     <Menu
       href="/"
-      id={uuidv4()}
-      image={GalleryIcon}
+      id="menu_galeri"
+      imageNonAktif={nonaktifGaleri}
+      imageAktif={aktifGaleri}
       title="Galeri"
       padding_y={1}
+      on:click={() => setActiveMenu("menu_galeri")}
     />
     <Menu
-      id={uuidv4()}
-      image={PostIcon}
+      id="menu_listing_baru"
+      imageNonAktif={nonaktifMore}
+      imageAktif={aktifMore}
       title="Listing Baru"
       dimension={6}
       href="/listing-baru"
+      on:click={() => setActiveMenu("menu_listing_baru")}
     />
     <Menu
-      id={uuidv4()}
-      image={FavoriteIcon}
+      id="menu_favorite"
+      imageNonAktif={nonaktifFavorite}
+      imageAktif={aktifFavorite}
       title="Favorit"
       dimension={6}
       href="/favorite"
+      on:click={() => setActiveMenu("menu_favorite")}
     />
     <Menu
-      id={uuidv4()}
-      image={AgentIcon}
+      id="menu_agent"
+      imageNonAktif={nonaktifRealEstate}
+      imageAktif={aktifRealEstate}
       title="Agen"
       dimension={6}
       href="/agent"
+      on:click={() => setActiveMenu("menu_agent")}
     />
     <Menu
-      id={uuidv4()}
-      image={MessageIcon}
+      id="menu_chat"
+      imageNonAktif={nonaktifMessenger}
+      imageAktif={aktifMessenger}
       title="Pesan"
       dimension={6}
       indicator={$unreadMessages}
       href="/chat"
+      on:click={() => setActiveMenu("menu_chat")}
     />
   </div>
   {#if $isLogged}
     <div use:links>
       <Menu
-        id={uuidv4()}
-        image={SettingIcon}
+        id="menu_settings"
+        imageNonAktif={nonaktifMore}
+        imageAktif={aktifMore}
         title="Pengaturan"
         dimension={6}
         href="/settings"
+        on:click={() => setActiveMenu("menu_settings")}
       />
       <Menu
-        id={uuidv4()}
-        image={LogOutIcon}
+        id="menu_logout"
+        imageNonAktif={nonaktifMore}
+        imageAktif={aktifMore}
         title="Keluar"
         dimension={6}
-        on:click={() => LogOut()}
+        on:click={() => {
+          LogOut();
+          setActiveMenu("menu_logout");
+        }}
       />
     </div>
   {/if}

@@ -1,6 +1,9 @@
 <script lang="ts">
   import { tooltip } from "../store/tootlip";
-  export let image = "";
+  import { activeMenu } from "../store/activeMenuStore"; // Impor store
+
+  export let imageNonAktif = "";
+  export let imageAktif = "";
   export let id = "";
   export let title = "";
   export let dimension = 7;
@@ -11,13 +14,17 @@
   const onHover = (): void => {
     tooltip.set(title);
   };
+
+  // Subscribe ke store untuk mendapatkan ID tombol aktif
+  let activeId: string;
+  activeMenu.subscribe((value) => {
+    activeId = value;
+  });
 </script>
 
-<!-- svelte-ignore a11y-no-static-element-interactions -->
-<!-- svelte-ignore a11y-click-events-have-key-events -->
 <a
   class="flex col justify-center py-{padding_y}"
-  id="menu_{id}"
+  {id}
   {href}
   on:mouseenter={onHover}
   on:click
@@ -28,7 +35,11 @@
     <div
       class="w-{dimension} h-{dimension} flex justify-center items-center relative"
     >
-      <img class="menu-icon" src={image} alt="" />
+      <img
+        class="menu-icon"
+        src={id === activeId ? imageAktif : imageNonAktif}
+        alt=""
+      />
 
       {#if indicator > 0}
         <div
