@@ -1,0 +1,356 @@
+<div class="menu-content-detaill w-full h-[73.5vh]">
+  <div class="h-[67vh] overflow-y-auto hide-scrollbar text-black">
+    <form class="formEditListingg RemoveClassformEditListingg mt-[2rem]">
+      <div class="w-full flex flex-row mb-0.5">
+        <div class="basis-6/12">
+          <div class="text-md font-sf_pro_reguler_new font-bold">Asumsi</div>
+        </div>
+        <div class="basis-6/12">
+          <div class="text-md ml-2 font-sf_pro_reguler_new font-bold">
+            Detil Pembayaran
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-y-1 gap-x-5">
+        <!-- a -->
+        <div>
+          <!-- Harga Properti -->
+          <div class="relative w-full flex flex-row mb-2">
+            <div class="basis-7/12 flex items-end relative">
+              <label
+                class="block text-sm absolute bottom-[0.225rem] left-0"
+                for="new_perkiraan_njob_m2"
+              >
+                Harga Properti (Rp)
+              </label>
+            </div>
+            <div class="basis-5/12">
+              <input
+                value="300.000.000"
+                type="text"
+                disabled
+                readonly
+                id="new_perkiraan_njob_m2"
+                class="border-0 px-2 py-1.5 text-black bg-gray-200 rounded-lg text-sm focus:outline-none focus:ring-0 w-full text-right"
+              />
+            </div>
+          </div>
+
+          <!-- Uang Muka -->
+          <div class="relative w-full flex flex-row mb-0">
+            <div class="basis-7/12 flex items-end relative">
+              <label
+                class="block text-sm absolute bottom-[0.225rem] left-0"
+                for="new3_perkiraan_njob_m2"
+              >
+                Uang Muka (Rp)
+              </label>
+            </div>
+            <div class="basis-5/12">
+              <input
+                value="150.000.000"
+                type="text"
+                id="new3_perkiraan_njob_m2"
+                class="border-0 px-2 py-1.5 text-black bg-white rounded-lg text-sm focus:outline-none focus:ring-0 w-full text-right remove_style_arrow_inputan"
+              />
+            </div>
+          </div>
+
+          <!-- Range -->
+          <div class="relative w-full flex flex-row mb-6">
+            <div class="basis-7/12 w-full"></div>
+            <div class="basis-5/12 w-full">
+              <!--  -->
+              <div class="w-full my-1">
+                <input
+                  type="range"
+                  class="slider"
+                  id="ControlRangeSimulasi1"
+                  min="1"
+                  max="5"
+                  step="1"
+                  value="3"
+                />
+              </div>
+              <!--  -->
+              <div class="flex justify-between text-xs w-full mt-1">
+                <div class="">50%</div>
+                <div class="">100%</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Suku Bunga (%) -->
+          <div class="relative w-full flex flex-row mb-0">
+            <div class="basis-7/12 flex items-end relative">
+              <label
+                class="block text-sm absolute bottom-[0.225rem] left-0"
+                for="new11_perkiraan_njob_m2"
+              >
+                Suku Bunga (%)
+              </label>
+            </div>
+            <div class="basis-5/12">
+              <input
+                value="15"
+                type="text"
+                id="new11_perkiraan_njob_m2"
+                class="border-0 px-2 py-1.5 text-black bg-white rounded-lg text-sm focus:outline-none focus:ring-0 w-full text-right remove_style_arrow_inputan"
+              />
+            </div>
+          </div>
+
+          <!-- Range -->
+          <div class="relative w-full flex flex-row mb-[1.9rem]">
+            <div class="basis-7/12 w-full"></div>
+            <div class="basis-5/12 w-full">
+              <!--  -->
+              <div class="w-full my-1">
+                <input
+                  type="range"
+                  class="slider"
+                  id="ControlRangeSimulasi2"
+                  min="1"
+                  max="5"
+                  step="1"
+                  value="3"
+                />
+              </div>
+              <!--  -->
+              <div class="flex justify-between text-xs w-full mt-1">
+                <div class="">15%</div>
+                <div class="">100%</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tenor (tahun) -->
+          <div class="relative w-full flex flex-row mb-0">
+            <div class="basis-7/12 flex items-end relative">
+              <label
+                class="block text-sm absolute bottom-[0.225rem] left-0"
+                for="new12_perkiraan_njob_m2"
+              >
+                Tenor (tahun)
+              </label>
+            </div>
+            <div class="basis-5/12">
+              <input
+                value="10"
+                type="text"
+                id="new12_perkiraan_njob_m2"
+                class="border-0 px-2 py-1.5 text-black bg-white rounded-lg text-sm focus:outline-none focus:ring-0 w-full text-right remove_style_arrow_inputan"
+              />
+            </div>
+          </div>
+
+          <!-- Range -->
+          <div class="relative w-full flex flex-row mb-2">
+            <div class="basis-7/12 w-full"></div>
+            <div class="basis-5/12 w-full">
+              <!--  -->
+              <div class="w-full my-1">
+                <input
+                  type="range"
+                  class="slider"
+                  id="ControlRangeSimulasi3"
+                  min="1"
+                  max="5"
+                  step="1"
+                  value="3"
+                />
+              </div>
+              <!--  -->
+              <div class="flex justify-between text-xs w-full mt-1">
+                <div class="">10</div>
+                <div class="">20</div>
+              </div>
+            </div>
+          </div>
+
+          <!--  -->
+        </div>
+
+        <!-- b -->
+        <div>
+          <!-- Penawaran -->
+
+          <!-- Bunga Pinjaman (Rp) -->
+
+          <div class="relative w-full flex flex-col mb-4">
+            <div class="flex flex-row">
+              <div class="basis-7/12 flex items-end relative">
+                <label
+                  class="block text-sm absolute bottom-[0.225rem] left-0"
+                  for="new4_perkiraan_njob_m2"
+                >
+                  Angsuran (Rp)
+                </label>
+              </div>
+              <div class="basis-5/12">
+                <input
+                  value="2.000.000"
+                  type="text"
+                  disabled
+                  readonly
+                  id="new4_perkiraan_njob_m2"
+                  class="border-0 px-2 py-1.5 text-black bg-gray-200 rounded-lg text-sm focus:outline-none focus:ring-0 w-full text-right"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Uang Muka -->
+
+          <div class="relative w-full flex flex-col mb-2">
+            <div class="w-full font-semibold text-sm mb-1">
+              Estimasi Pembayaran Pertama
+            </div>
+            <div class="flex flex-row">
+              <div class="basis-7/12 flex items-end relative">
+                <label
+                  class="block text-sm absolute bottom-[0.225rem] left-0"
+                  for="new5_perkiraan_njob_m2"
+                >
+                  Uang Muka (Rp)
+                </label>
+              </div>
+              <div class="basis-5/12">
+                <input
+                  value="30.000.000"
+                  type="text"
+                  disabled
+                  readonly
+                  id="new5_perkiraan_njob_m2"
+                  class="border-0 px-2 py-1.5 text-black bg-gray-200 rounded-lg text-sm focus:outline-none focus:ring-0 w-full text-right"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Angsuran Pertama -->
+
+          <div class="relative w-full flex flex-row mb-2">
+            <div class="basis-7/12 flex items-end relative">
+              <label
+                class="block text-sm absolute bottom-[0.225rem] left-0"
+                for="new6_perkiraan_njob_m2"
+              >
+                Angsuran (Rp)
+              </label>
+            </div>
+            <div class="basis-5/12">
+              <input
+                value="80.000.000"
+                type="text"
+                disabled
+                readonly
+                id="new6_perkiraan_njob_m2"
+                class="border-0 px-2 py-1.5 text-black bg-gray-200 rounded-lg text-sm focus:outline-none focus:ring-0 w-full text-right"
+              />
+            </div>
+          </div>
+
+          <!-- Estimasi Biaya Lainnya -->
+
+          <div class="relative w-full flex flex-row mb-2">
+            <div class="basis-7/12 flex items-end relative">
+              <label
+                class="block text-sm absolute bottom-[0.225rem] left-0"
+                for="new7_perkiraan_njob_m2"
+              >
+                Estimasi Biaya Lainnya (Rp)
+              </label>
+            </div>
+            <div class="basis-5/12">
+              <input
+                value="10.000.000"
+                type="text"
+                id="new7_perkiraan_njob_m2"
+                class="border-0 px-2 py-1.5 text-black bg-white rounded-lg text-sm focus:outline-none focus:ring-0 w-full text-right remove_style_arrow_inputan"
+              />
+            </div>
+          </div>
+
+          <!-- Total -->
+
+          <div class="relative w-full flex flex-row mb-4">
+            <div class="basis-7/12 flex items-end relative">
+              <!--                                   <label
+                                    class="block text-sm absolute bottom-[0.225rem] left-0"
+                                    for="new8_perkiraan_njob_m2"
+                                    >
+                                    Total (Rp)
+                                  </label> -->
+            </div>
+            <div class="basis-5/12">
+              <input
+                value="220.000.000"
+                type="text"
+                disabled
+                readonly
+                id="new8_perkiraan_njob_m2"
+                class="border-0 px-2 py-1.5 text-black bg-gray-200 rounded-lg text-sm focus:outline-none focus:ring-0 w-full text-right font-bold"
+              />
+            </div>
+          </div>
+
+          <!-- Pinjaman Pokok -->
+
+          <div class="relative w-full flex flex-col mb-2">
+            <div class="w-full font-semibold text-sm mb-1">Detil Pinjaman</div>
+
+            <div class="w-full flex flex-row">
+              <div class="basis-7/12 flex items-end relative">
+                <label
+                  class="block text-sm absolute bottom-[0.225rem] left-0"
+                  for="new9_perkiraan_njob_m2"
+                >
+                  Pinjaman Pokok (Rp)
+                </label>
+              </div>
+              <div class="basis-5/12">
+                <input
+                  value="245.000.000"
+                  type="text"
+                  disabled
+                  readonly
+                  id="new9_perkiraan_njob_m2"
+                  class="border-0 px-2 py-1.5 text-black bg-gray-200 rounded-lg text-sm focus:outline-none focus:ring-0 w-full text-right"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Estimasi Bunga Pinjaman -->
+
+          <div class="relative w-full flex flex-row mb-2">
+            <div class="basis-7/12 flex items-end relative">
+              <label
+                class="block text-sm absolute bottom-[0.225rem] left-0"
+                for="new10_perkiraan_njob_m2"
+              >
+                Estimasi Bunga Pinjaman
+              </label>
+            </div>
+            <div class="basis-5/12">
+              <input
+                value="500.000.000"
+                type="text"
+                disabled
+                readonly
+                id="new10_perkiraan_njob_m2"
+                class="border-0 px-2 py-1.5 text-black bg-gray-200 rounded-lg text-sm focus:outline-none focus:ring-0 w-full text-right"
+              />
+            </div>
+          </div>
+
+          <!--  -->
+        </div>
+      </div>
+
+      <!--  -->
+    </form>
+  </div>
+</div>

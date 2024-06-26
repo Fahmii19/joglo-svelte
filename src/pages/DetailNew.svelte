@@ -2,8 +2,12 @@
   import DetailFoto from "../components/DetailFoto.svelte";
   import DetailFotoNew from "../components/DetailFotoNew.svelte";
   import DetailLokasi from "../components/DetailLokasi.svelte";
+  import DetailLokasiNew from "../components/DetailLokasiNew.svelte";
   import DetailMetriks from "../components/DetailMetriks.svelte";
+  import DetailMetriksNew from "../components/DetailMetriksNew.svelte";
   import DetailHarga from "../components/DetailHarga.svelte";
+  import DetailHargaNew from "../components/DetailHargaNew.svelte";
+  import SimulasiKprNew from "../components/SimulasiKprNew.svelte";
   import { navigate } from "svelte-routing";
   import { property_like_list, property_list } from "../store/property";
   import { ExtractToken } from "../utils/auth";
@@ -70,7 +74,7 @@
 </script>
 
 <div class="flex flex-col w-full h-full card-detail-beranda">
-  <div class="flex flex-col h-[83vh]">
+  <div class="flex flex-col h-[83vh] px-3">
     <!-- HeaderDetail -->
     <div class="flex flex-col">
       <div
@@ -84,7 +88,7 @@
           />
         </div>
         <div class="grid grid-cols-2">
-          <div class="w-full grid grid-cols-[125px,1fr]">
+          <div class="w-full grid grid-cols-[150px,1fr]">
             <div class="w-full flex items-center justify-start">
               <div class="flex flex-col">
                 <div class="inline-flex">
@@ -93,19 +97,19 @@
                     role="button"
                     tabindex="0"
                   >
-                    Budiman Alisya
+                    Budiman Cahyadi
                   </div>
                   <div class="flex items-center justify-center ml-1"></div>
                 </div>
               </div>
             </div>
             <div class="w-full grid items-center">
-              <div class="inline-flex items-center justify-start">
+              <div class="inline-flex items-start justify-start">
                 <button
                   data-pesan="Mochtar Riady"
                   onclick="showMessage(this)"
                   type="button"
-                  class="ml-5 h-6 w-24 bg-[#0394F7] hover:bg-[#1877F2] text-white font-medium rounded-[5px] text-xs px-3 tracking-[0.070em]"
+                  class="h-6 w-24 bg-[#0394F7] hover:bg-[#1877F2] text-white font-medium rounded-[5px] text-xs px-3 tracking-[0.070em]"
                 >
                   Kirim Pesan
                 </button>
@@ -134,8 +138,8 @@
       </div>
     </div>
     <!-- TabMenuDetail -->
-    <div class="w-full mt-[3vh] mb-[1.5vh] px-0">
-      <div id="" class="w-[49vw] flex flex-row px-2 menu_pengaturaan_detail">
+    <div class="w-full mt-[3vh] mb-[1.5vh]">
+      <div id="" class="w-[49vw] flex flex-row menu_pengaturaan_detail">
         <button
           type="button"
           class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer hover:bg-slate-200 hover:rounded-lg mr-1 font-bold"
@@ -182,22 +186,13 @@
     {#if activeTab === 0}
       <DetailFotoNew />
     {:else if activeTab === 1}
-      <DetailLokasi {properties} {coordinates} />
+      <DetailLokasiNew />
     {:else if activeTab === 2}
-      <DetailMetriks {properties} />
+      <DetailMetriksNew />
     {:else if activeTab === 3}
-      <DetailHarga
-        harga={properties?.harga ?? 0}
-        luas_bangunan={properties?.luas_bangunan ?? 0}
-        luas_tanah={properties?.luas_bangunan ?? 0}
-        njop={properties?.njop ?? 0}
-      />
+      <DetailHargaNew />
     {:else if activeTab === 4}
-      <p class="text-sm text-gray-500 dark:text-gray-400">
-        <b>Disabled:</b>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua.
-      </p>
+      <SimulasiKprNew />
     {/if}
     <!-- KontenTabMenuDetail -->
   </div>
