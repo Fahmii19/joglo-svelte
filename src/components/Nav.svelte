@@ -17,7 +17,7 @@
         alt="Joglo Icon"
       />
       <div class="text-3xl font-bold font-sf_pro_bold text-[#2074d8]">
-        JogloPro
+        JogloProo
       </div>
     </div>
   </a>
