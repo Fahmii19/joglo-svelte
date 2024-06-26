@@ -1,33 +1,29 @@
 <script lang="ts">
-  import ModelIcon from "../assets/images/model.jpg";
-  import VerifIcon from "../assets/images/verif.png";
-  import NextPropertyIcon from "../assets/images/right-arrow.png";
-  import BackIcon from "../assets/images/back.png";
-  import { link, navigate } from "svelte-routing";
-  import { property_like_list, property_list } from "../store/property";
-  import type { Feature } from "../service/list_property/type";
-  import { Tabs, TabItem } from "flowbite-svelte";
-  import { triggerClick } from "../utils/layers";
   import DetailFoto from "../components/DetailFoto.svelte";
+  import DetailFotoNew from "../components/DetailFotoNew.svelte";
   import DetailLokasi from "../components/DetailLokasi.svelte";
   import DetailMetriks from "../components/DetailMetriks.svelte";
   import DetailHarga from "../components/DetailHarga.svelte";
-  import { page } from "../store/page";
+  import { navigate } from "svelte-routing";
+  import { property_like_list, property_list } from "../store/property";
   import { ExtractToken } from "../utils/auth";
   import { io } from "../utils/socket";
   import { detailChat } from "../store/chat";
   import { markerStore } from "../store/map";
 
-  //   Props
+  // Props
   export let id: string;
 
   //  Set Property Clicked
+  const triggerClick = (id: number) => {
+    // Logic to handle property click
+  };
   triggerClick(Number(id));
 
   //   Filter Property by list_id
-  $: property = {} as Feature | undefined;
+  $: property = {} as any; // Assume the type here for simplicity
 
-  if ($page.includes("favorite")) {
+  if (window.location.href.includes("favorite")) {
     property_like_list.subscribe((value) => {
       property = value.find((item) => item.properties.list_id === Number(id));
     });
@@ -36,12 +32,10 @@
       property = value.find((item) => item.properties.list_id === Number(id));
     });
   }
+
   //   Destruct property
   const { properties } = property || {};
   const { coordinates } = property?.geometry || {};
-
-  // Trigger Click
-  triggerClick(Number(id));
 
   // Get Available Room Chat
   const { user_id } = ExtractToken();
@@ -71,11 +65,11 @@
 
   // Remove Marker
   $markerStore?.remove();
+
+  let activeTab = 0;
 </script>
 
 <div class="flex flex-col w-full h-full card-detail-beranda">
-  <!-- neww1 -->
-
   <div class="flex flex-col h-[83vh]">
     <!-- HeaderDetail -->
     <div class="flex flex-col">
@@ -96,7 +90,8 @@
                 <div class="inline-flex">
                   <div
                     class="text-sm font-semibold text-black cursor-pointer tracking-[0.070em]"
-                    onclick="showCardAgent(this)"
+                    role="button"
+                    tabindex="0"
                   >
                     Budiman Alisya
                   </div>
@@ -121,7 +116,8 @@
             class="w-full h-full grid justify-items-end items-center relative"
           >
             <div class="inline-flex">
-              <div
+              <button
+                type="button"
                 onclick="closeTab()"
                 class="menus w-9 h-9 cursor-pointer hover:bg-slate-200 hover:rounded-full text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 border-blue-600 dark:border-blue-500 flex justify-center items-center"
               >
@@ -131,51 +127,86 @@
                     alt=""
                   />
                 </div>
-              </div>
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
     <!-- TabMenuDetail -->
-    <div class="w-full flex flex-row px-3.5 py-[1rem] border">
-      <div id="" class="w-[32vw] flex flex-row menu_pengaturaan_detail_dua">
-        <div
-          id=""
-          class="btn_default_tab_menu_pengaturan_dua_dua px-4 pb-1 pt-1 text-sm text-black cursor-pointer bg_aktif_detail hover:bg-slate-200 hover:rounded-lg mr-1 hover:mr-1 font-bold"
-          data-target="#menu_detail_duasatu"
+    <div class="w-full mt-[3vh] mb-[1.5vh] px-0">
+      <div id="" class="w-[49vw] flex flex-row px-2 menu_pengaturaan_detail">
+        <button
+          type="button"
+          class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer hover:bg-slate-200 hover:rounded-lg mr-1 font-bold"
+          class:bg_aktif_detail={activeTab === 0}
+          on:click={() => (activeTab = 0)}
         >
           Foto
-        </div>
-        <div
-          class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer"
-          data-target="#menu_detail_duadua"
+        </button>
+        <button
+          type="button"
+          class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer hover:bg-slate-200 hover:rounded-lg mr-1 font-bold"
+          class:bg_aktif_detail={activeTab === 1}
+          on:click={() => (activeTab = 1)}
         >
           Detil
-        </div>
-        <div
-          class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer"
-          data-target="#menu_detail_duatiga"
+        </button>
+        <button
+          type="button"
+          class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer hover:bg-slate-200 hover:rounded-lg mr-1 font-bold"
+          class:bg_aktif_detail={activeTab === 2}
+          on:click={() => (activeTab = 2)}
         >
           Metriks
-        </div>
-        <div
-          class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer"
-          data-target="#menu_detail_duaempat"
+        </button>
+        <button
+          type="button"
+          class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer hover:bg-slate-200 hover:rounded-lg mr-1 font-bold"
+          class:bg_aktif_detail={activeTab === 3}
+          on:click={() => (activeTab = 3)}
         >
           Valuasi
-        </div>
-        <div
-          class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer"
-          data-target="#menu_detail_duaempat"
+        </button>
+        <button
+          type="button"
+          class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer hover:bg-slate-200 hover:rounded-lg mr-1 font-bold"
+          class:bg_aktif_detail={activeTab === 4}
+          on:click={() => (activeTab = 4)}
         >
           Simulasi KPR
-        </div>
+        </button>
       </div>
-      <!--  -->
     </div>
+
+    {#if activeTab === 0}
+      <DetailFotoNew />
+    {:else if activeTab === 1}
+      <DetailLokasi {properties} {coordinates} />
+    {:else if activeTab === 2}
+      <DetailMetriks {properties} />
+    {:else if activeTab === 3}
+      <DetailHarga
+        harga={properties?.harga ?? 0}
+        luas_bangunan={properties?.luas_bangunan ?? 0}
+        luas_tanah={properties?.luas_bangunan ?? 0}
+        njop={properties?.njop ?? 0}
+      />
+    {:else if activeTab === 4}
+      <p class="text-sm text-gray-500 dark:text-gray-400">
+        <b>Disabled:</b>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua.
+      </p>
+    {/if}
     <!-- KontenTabMenuDetail -->
   </div>
 
   <!--  -->
 </div>
+
+<style>
+  .bg_aktif_detail {
+    background-color: #e2e8f0; /* Adjust to your desired active background color */
+  }
+</style>
