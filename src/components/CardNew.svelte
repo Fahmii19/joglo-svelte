@@ -1,7 +1,8 @@
 <script lang="ts">
   import ModelImage from "../assets/images/model.jpg";
-
   import RumahContoh1 from "../assets/images/rumaha1.jpg";
+  import { navigate } from "svelte-routing";
+  import Menu from "./Menu.svelte";
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -9,7 +10,7 @@
 <div
   class="w-full flex flex-col cursor-pointer bg-white rounded-lg"
   id="card-property-1"
-  on:click
+  on:click={() => navigate("/detail-new")}
 >
   <!--  -->
   <div class="py-1 px-2 h-[7vh]">
@@ -38,7 +39,7 @@
   </div>
 
   <!--  -->
-  <div class="px-2 pt-[0.3rem] h-[11.3vh]" style="user-select: none">
+  <div class="px-2 pt-[0.3rem] h-[11.3vh]">
     <div class="w-full text-gray-500 text-xs flex justify-end">
       <div>ID 78AC66</div>
     </div>

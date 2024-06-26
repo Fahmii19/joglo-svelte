@@ -6,6 +6,7 @@
   import MenuContent from "./components/MenuContent.svelte";
   import Gallery from "./pages/Gallery.svelte";
   import Detail from "./pages/Detail.svelte";
+  import DetailNew from "./pages/DetailNew.svelte";
   import { onMount, beforeUpdate } from "svelte";
   import Login from "./pages/Login.svelte";
   import { authUser, isLogged } from "./store/auth";
@@ -82,6 +83,9 @@
         <Route path="/chat" component={ChatNew} />
         <Route path="/agent" component={AgentNew} />
         <Route path="/posting" component={Posting} />
+        <!--  -->
+        <Route path="/detail-new" component={DetailNew} />
+
         <!-- Route Not Found -->
         <Route path="*">404 Not Found</Route>
       </Router>
