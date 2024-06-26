@@ -211,12 +211,12 @@
                       <img
                         id="draggableImage"
                         class="w-[1.9vw] h-[3.4vh]"
-                        src="./src/images/pin.png"
+                        src="https://www.joglopro.com/bucket/soaraja/image/joglopro/pin.png"
                         alt=""
                       />
                       <img
                         class="w-[2vw] h-[3.4vh] absolute"
-                        src="./src/images/pin.png"
+                        src="https://www.joglopro.com/bucket/soaraja/image/joglopro/pin.png"
                         alt=""
                       />
                     </div>
