@@ -7,6 +7,7 @@
   import Gallery from "./pages/Gallery.svelte";
   import Detail from "./pages/Detail.svelte";
   import DetailNew from "./pages/DetailNew.svelte";
+  import DetailAgentNew from "./pages/DetailAgentNew.svelte";
   import { onMount, beforeUpdate } from "svelte";
   import Login from "./pages/Login.svelte";
   import { authUser, isLogged } from "./store/auth";
@@ -82,6 +83,7 @@
         </Route>
         <Route path="/chat" component={ChatNew} />
         <Route path="/agent" component={AgentNew} />
+        <Route path="/detail-agent" component={DetailAgentNew} />
         <Route path="/posting" component={Posting} />
         <!--  -->
         <Route path="/detail-new" component={DetailNew} />
