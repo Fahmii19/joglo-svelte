@@ -1,12 +1,12 @@
-<div id="menu_detail_sepuluh" class="menu-content-detaill w-full h-[73.5vh]">
+<div class="h-[65vh] overflow-y-hidden hide-scrollbar">
   <div
     class="h-[67vh] overflow-x-hidden overflow-y-hidden hide-scrollbar text-black"
   >
-    <form class="formEditListingg RemoveClassformEditListingg mt-[1rem]">
+    <form class="formEditListingg RemoveClassformEditListingg">
       <div class="grid grid-cols-2 gap-y-1 gap-x-3">
         <!-- a -->
         <div class="">
-          <div class="w-full grid grid-cols-2 gap-x-3 mt-[1rem]">
+          <div class="w-full grid grid-cols-2 gap-x-3">
             <div class="col-span-2 flex justify-center mb-[2.2rem]">
               <!-- Card Livability -->
               <div class="flex flex-col">

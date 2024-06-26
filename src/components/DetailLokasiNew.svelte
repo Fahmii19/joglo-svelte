@@ -1,7 +1,7 @@
-<div class="h-[67vh] overflow-y-auto hide-scrollbar text-black">
-  <form class="formEditListingg RemoveClassformEditListingg mt-[2.2rem]">
+<div class="h-[65vh] overflow-y-auto hide-scrollbar">
+  <form class="formEditListingg RemoveClassformEditListingg">
     <div class="grid grid-cols-2 gap-y-1 gap-x-3">
-      <!-- b -->
+      <!-- KontenPertama -->
       <div>
         <!-- Judul -->
 
@@ -20,7 +20,7 @@
                 />
                 <label
                   for="default-penjualan-15"
-                  class="ms-2 text-sm text-black">Dijual</label
+                  class="ms-2 text-sm text-black">Dijuall</label
                 >
               </div>
               <div class="flex items-center">
@@ -407,7 +407,7 @@
         </div>
       </div>
 
-      <!-- a -->
+      <!-- KontenKedua -->
       <div class="flex flex-col">
         <!--  -->
 
@@ -682,12 +682,6 @@
 
         <!--  -->
       </div>
-
-      <!--  -->
-
-      <div class="col-span-2"></div>
     </div>
-
-    <!--  -->
   </form>
 </div>

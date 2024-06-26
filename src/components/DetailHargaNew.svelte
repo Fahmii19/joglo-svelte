@@ -1,10 +1,10 @@
-<div class="menu-content-detaill w-full h-[73.5vh]">
+<div class="h-[65vh] overflow-y-hidden hide-scrollbar">
   <div class="h-[67vh] hide-scrollbar text-black">
-    <form class="formEditListingg RemoveClassformEditListingg mt-[2rem]">
+    <form class="formEditListingg RemoveClassformEditListingg">
       <div class="w-full flex flex-row mb-0.5">
         <div class="basis-6/12">
           <div class="text-md font-sf_pro_reguler_new font-bold">
-            Berdasarkan aset fisik
+            Berdasarkan aset fisikk
           </div>
         </div>
         <div class="basis-6/12">

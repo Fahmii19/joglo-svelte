@@ -74,7 +74,7 @@
 </script>
 
 <div class="flex flex-col w-full h-full card-detail-beranda">
-  <div class="flex flex-col h-[83vh] px-3">
+  <div class="flex flex-col h-[83vh]">
     <!-- HeaderDetail -->
     <div class="flex flex-col">
       <div
@@ -138,63 +138,65 @@
       </div>
     </div>
     <!-- TabMenuDetail -->
-    <div class="w-full mt-[3vh] mb-[1.5vh]">
-      <div id="" class="w-[49vw] flex flex-row menu_pengaturaan_detail">
-        <button
-          type="button"
-          class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer hover:bg-slate-200 hover:rounded-lg mr-1 font-bold"
-          class:bg_aktif_detail={activeTab === 0}
-          on:click={() => (activeTab = 0)}
-        >
-          Foto
-        </button>
-        <button
-          type="button"
-          class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer hover:bg-slate-200 hover:rounded-lg mr-1 font-bold"
-          class:bg_aktif_detail={activeTab === 1}
-          on:click={() => (activeTab = 1)}
-        >
-          Detil
-        </button>
-        <button
-          type="button"
-          class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer hover:bg-slate-200 hover:rounded-lg mr-1 font-bold"
-          class:bg_aktif_detail={activeTab === 2}
-          on:click={() => (activeTab = 2)}
-        >
-          Metriks
-        </button>
-        <button
-          type="button"
-          class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer hover:bg-slate-200 hover:rounded-lg mr-1 font-bold"
-          class:bg_aktif_detail={activeTab === 3}
-          on:click={() => (activeTab = 3)}
-        >
-          Valuasi
-        </button>
-        <button
-          type="button"
-          class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer hover:bg-slate-200 hover:rounded-lg mr-1 font-bold"
-          class:bg_aktif_detail={activeTab === 4}
-          on:click={() => (activeTab = 4)}
-        >
-          Simulasi KPR
-        </button>
+    <div class="px-3">
+      <div class="w-full h-[9vh] flex items-center">
+        <div id="" class="w-[49vw] flex flex-row menu_pengaturaan_detail">
+          <button
+            type="button"
+            class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer hover:bg-slate-200 hover:rounded-lg mr-1 font-bold"
+            class:bg_aktif_detail={activeTab === 0}
+            on:click={() => (activeTab = 0)}
+          >
+            Foto
+          </button>
+          <button
+            type="button"
+            class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer hover:bg-slate-200 hover:rounded-lg mr-1 font-bold"
+            class:bg_aktif_detail={activeTab === 1}
+            on:click={() => (activeTab = 1)}
+          >
+            Detil
+          </button>
+          <button
+            type="button"
+            class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer hover:bg-slate-200 hover:rounded-lg mr-1 font-bold"
+            class:bg_aktif_detail={activeTab === 2}
+            on:click={() => (activeTab = 2)}
+          >
+            Metriks
+          </button>
+          <button
+            type="button"
+            class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer hover:bg-slate-200 hover:rounded-lg mr-1 font-bold"
+            class:bg_aktif_detail={activeTab === 3}
+            on:click={() => (activeTab = 3)}
+          >
+            Valuasi
+          </button>
+          <button
+            type="button"
+            class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer hover:bg-slate-200 hover:rounded-lg mr-1 font-bold"
+            class:bg_aktif_detail={activeTab === 4}
+            on:click={() => (activeTab = 4)}
+          >
+            Simulasi KPR
+          </button>
+        </div>
       </div>
-    </div>
 
-    {#if activeTab === 0}
-      <DetailFotoNew />
-    {:else if activeTab === 1}
-      <DetailLokasiNew />
-    {:else if activeTab === 2}
-      <DetailMetriksNew />
-    {:else if activeTab === 3}
-      <DetailHargaNew />
-    {:else if activeTab === 4}
-      <SimulasiKprNew />
-    {/if}
-    <!-- KontenTabMenuDetail -->
+      {#if activeTab === 0}
+        <DetailFotoNew />
+      {:else if activeTab === 1}
+        <DetailLokasiNew />
+      {:else if activeTab === 2}
+        <DetailMetriksNew />
+      {:else if activeTab === 3}
+        <DetailHargaNew />
+      {:else if activeTab === 4}
+        <SimulasiKprNew />
+      {/if}
+      <!-- KontenTabMenuDetail -->
+    </div>
   </div>
 
   <!--  -->
