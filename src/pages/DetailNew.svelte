@@ -78,7 +78,7 @@
     <!-- HeaderDetail -->
     <div class="flex flex-col">
       <div
-        class="w-full h-[3.3rem] grid grid-cols-[46px,1fr] px-3 border-b border-gray-300"
+        class="w-full h-[3.7rem] grid grid-cols-[46px,1fr] px-3 border-b border-gray-300"
       >
         <div class="w-full h-full flex items-center justify-start">
           <img
@@ -139,7 +139,7 @@
     </div>
     <!-- TabMenuDetail -->
     <div class="px-3">
-      <div class="w-full h-[9vh] flex items-center">
+      <div class="w-full h-[11vh] flex items-center">
         <div id="" class="w-[49vw] flex flex-row menu_pengaturaan_detail">
           <button
             type="button"
