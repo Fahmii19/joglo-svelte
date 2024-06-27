@@ -45,10 +45,10 @@
       >
         <!-- Menu Pesan -->
         <ul
-          class="overflow-y-auto scrollbar h-[35rem] overflow-y-auto overflow-x-hidden hide-scrollbar"
+          class="overflow-y-auto scrollbar h-[35rem] overflow-y-auto overflow-x-hidden hide-scrollbar border-r border-gray-300"
         >
           <li>
-            <button
+            <div
               class="menu-pesan-area flex items-center px-3 py-2.5 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               data-attribut="co-broking"
               onclick="showMessage(this)"
@@ -74,9 +74,9 @@
                   </div>
                 </div>
               </div>
-            </button>
+            </div>
 
-            <button
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -107,8 +107,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -139,8 +139,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -171,8 +171,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -203,8 +203,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -235,8 +235,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -267,8 +267,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -299,8 +299,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -331,8 +331,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -363,8 +363,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -395,8 +395,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -427,8 +427,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -459,8 +459,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -491,8 +491,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -523,8 +523,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -555,8 +555,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -587,8 +587,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -619,8 +619,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -651,8 +651,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -683,8 +683,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -715,8 +715,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -747,8 +747,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -779,8 +779,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -811,8 +811,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -843,8 +843,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -875,8 +875,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -907,8 +907,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -939,8 +939,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -971,8 +971,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -1003,8 +1003,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -1035,8 +1035,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -1067,8 +1067,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -1099,8 +1099,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -1131,8 +1131,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -1163,8 +1163,8 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
-            <button
+            </div>
+            <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
               onclick="showMessage(this)"
@@ -1195,7 +1195,7 @@
                 <span class="block ml-3 text-xs text-black text-start">bye</span
                 >
               </div>
-            </button>
+            </div>
           </li>
         </ul>
         <!--  -->
