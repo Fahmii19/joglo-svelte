@@ -81,7 +81,7 @@
       imageAktif={aktifRealEstate}
       title="Agen"
       dimension={6}
-      href="/agent"
+      href="/agen"
       on:click={() => setActiveMenu("menu_agent")}
     />
     <Menu

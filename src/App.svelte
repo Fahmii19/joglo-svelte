@@ -182,7 +182,7 @@
               <ChatNewComponent />
             {/await}
           </Route>
-          <Route path="/agent" let:params>
+          <Route path="/agen" let:params>
             {#await loadPage("AgentNew") then AgentNewComponent}
               <AgentNewComponent />
             {/await}
