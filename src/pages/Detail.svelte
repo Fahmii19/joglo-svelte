@@ -27,7 +27,7 @@
   //   Filter Property by list_id
   $: property = {} as Feature | undefined;
 
-  if ($page.includes("favorite")) {
+  if ($page.includes("favorit")) {
     property_like_list.subscribe((value) => {
       property = value.find((item) => item.properties.list_id === Number(id));
     });

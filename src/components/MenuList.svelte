@@ -72,7 +72,7 @@
       imageAktif={aktifFavorite}
       title="Favorit"
       dimension={6}
-      href="/favorite"
+      href="/favorit"
       on:click={() => setActiveMenu("menu_favorite")}
     />
     <Menu

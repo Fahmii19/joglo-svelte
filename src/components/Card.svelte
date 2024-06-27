@@ -58,7 +58,7 @@
     const like = document.getElementById(id) as HTMLImageElement;
 
     // Check if the property is liked
-    if (like.src.includes("favorite")) {
+    if (like.src.includes("favorit")) {
       like.src = HeartOn;
       $property_liked = [...$property_liked, item?.properties?.list_id ?? 0];
     } else {

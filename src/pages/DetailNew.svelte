@@ -27,7 +27,7 @@
   //   Filter Property by list_id
   $: property = {} as any; // Assume the type here for simplicity
 
-  if (window.location.href.includes("favorite")) {
+  if (window.location.href.includes("favorit")) {
     property_like_list.subscribe((value) => {
       property = value.find((item) => item.properties.list_id === Number(id));
     });

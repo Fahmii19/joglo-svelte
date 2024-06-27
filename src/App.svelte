@@ -162,7 +162,7 @@
               <SettingComponent />
             {/await}
           </Route>
-          <Route path="/favorite" let:params>
+          <Route path="/favorit" let:params>
             {#await loadPage("FavoritNew") then FavoritNewComponent}
               <FavoritNewComponent />
             {/await}
