@@ -1,8 +1,24 @@
 <script lang="ts">
   import { onMount, beforeUpdate } from "svelte";
-  // import LoadingIndicator from "./components/LoadingIndicator.svelte";
+  import LoadingIndicator from "./components/LoadingIndicator.svelte";
 
   let isLoaded = false;
+  let Nav,
+    NavFilter,
+    MenuContent,
+    Gallery,
+    Detail,
+    DetailNew,
+    DetailAgentNew,
+    Login,
+    Register,
+    Setting,
+    FavoritNew,
+    ListingBaruNew,
+    Profile,
+    ChatNew,
+    AgentNew,
+    Posting;
 
   onMount(() => {
     const loadFonts = async () => {
@@ -13,39 +29,25 @@
           document.fonts.load("1em 'Font SF-Pro-Text-Bold-Italic'"),
         ]);
         isLoaded = true;
+        // Load critical components after fonts
+        Nav = (await import("./components/Nav.svelte")).default;
+        NavFilter = (await import("./components/NavFilter.svelte")).default;
+        MenuContent = (await import("./components/MenuContent.svelte")).default;
+        Gallery = (await import("./pages/Gallery.svelte")).default;
       } catch (error) {
-        console.error("Failed to load fonts:", error);
+        console.error("Gagal memuat font:", error);
       }
     };
 
     loadFonts();
   });
 
-  // Import routing and other necessary components after fonts are loaded
+  // Import routing and other necessary components dynamically
   import { Router, Route, navigate } from "svelte-routing";
   import favIcon from "/favicon.ico";
-  import Nav from "./components/Nav.svelte";
-  import NavFilter from "./components/NavFilter.svelte";
-  import MenuContent from "./components/MenuContent.svelte";
-  import Gallery from "./pages/Gallery.svelte";
-  import Detail from "./pages/Detail.svelte";
-  import DetailNew from "./pages/DetailNew.svelte";
-  import DetailAgentNew from "./pages/DetailAgentNew.svelte";
-  import Login from "./pages/Login.svelte";
   import { authUser, isLogged } from "./store/auth";
-  import { ExtractToken, isExpired } from "./utils/auth";
-  import Register from "./pages/Register.svelte";
-  import Setting from "./pages/Setting.svelte";
-  import Favorite from "./pages/Favorite.svelte";
-  import Profile from "./pages/Profile.svelte";
-  import Chat from "./pages/Chat.svelte";
+  import { ExtractToken } from "./utils/auth";
   import { socketConnect } from "./utils/socket";
-  import Agent from "./pages/Agent.svelte";
-  import Posting from "./pages/Posting.svelte";
-  import ListingBaruNew from "./pages/ListingBaruNew.svelte";
-  import FavoritNew from "./pages/FavoritNew.svelte";
-  import AgentNew from "./pages/AgentNew.svelte";
-  import ChatNew from "./pages/ChatNew.svelte";
 
   export let url = "";
 
@@ -71,6 +73,59 @@
   onMount(() => {
     socketConnect(import.meta.env.VITE_SOCKET_URL);
   });
+
+  async function loadPage(componentName) {
+    switch (componentName) {
+      case "Detail":
+        if (!Detail) Detail = (await import("./pages/Detail.svelte")).default;
+        return Detail;
+      case "DetailNew":
+        if (!DetailNew)
+          DetailNew = (await import("./pages/DetailNew.svelte")).default;
+        return DetailNew;
+      case "DetailAgentNew":
+        if (!DetailAgentNew)
+          DetailAgentNew = (await import("./pages/DetailAgentNew.svelte"))
+            .default;
+        return DetailAgentNew;
+      case "Login":
+        if (!Login) Login = (await import("./pages/Login.svelte")).default;
+        return Login;
+      case "Register":
+        if (!Register)
+          Register = (await import("./pages/Register.svelte")).default;
+        return Register;
+      case "Setting":
+        if (!Setting)
+          Setting = (await import("./pages/Setting.svelte")).default;
+        return Setting;
+      case "FavoritNew":
+        if (!FavoritNew)
+          FavoritNew = (await import("./pages/FavoritNew.svelte")).default;
+        return FavoritNew;
+      case "ListingBaruNew":
+        if (!ListingBaruNew)
+          ListingBaruNew = (await import("./pages/ListingBaruNew.svelte"))
+            .default;
+        return ListingBaruNew;
+      case "Profile":
+        if (!Profile)
+          Profile = (await import("./pages/Profile.svelte")).default;
+        return Profile;
+      case "ChatNew":
+        if (!ChatNew)
+          ChatNew = (await import("./pages/ChatNew.svelte")).default;
+        return ChatNew;
+      case "AgentNew":
+        if (!AgentNew)
+          AgentNew = (await import("./pages/AgentNew.svelte")).default;
+        return AgentNew;
+      case "Posting":
+        if (!Posting)
+          Posting = (await import("./pages/Posting.svelte")).default;
+        return Posting;
+    }
+  }
 </script>
 
 <svelte:head>
@@ -82,34 +137,78 @@
 {:else}
   <main class="font-sf_pro_reguler">
     <div class="min-h-screen bg-gray-100 flex flex-col overflow-y-hidden">
-      <Nav />
-      <NavFilter />
-      <MenuContent>
+      <svelte:component this={Nav} />
+      <svelte:component this={NavFilter} />
+      <svelte:component this={MenuContent}>
         <Router {url}>
           <Route path="/" component={Gallery} />
           <Route path="/detail/:id" let:params>
-            <Detail id={params.id} />
+            {#await loadPage("Detail") then DetailComponent}
+              <DetailComponent id={params.id} />
+            {/await}
           </Route>
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
-          <Route path="/settings" component={Setting} />
-          <Route path="/favorite" component={FavoritNew} />
-          <Route path="/listing-baru" component={ListingBaruNew} />
+          <Route path="/login" let:params>
+            {#await loadPage("Login") then LoginComponent}
+              <LoginComponent />
+            {/await}
+          </Route>
+          <Route path="/register" let:params>
+            {#await loadPage("Register") then RegisterComponent}
+              <RegisterComponent />
+            {/await}
+          </Route>
+          <Route path="/settings" let:params>
+            {#await loadPage("Setting") then SettingComponent}
+              <SettingComponent />
+            {/await}
+          </Route>
+          <Route path="/favorite" let:params>
+            {#await loadPage("FavoritNew") then FavoritNewComponent}
+              <FavoritNewComponent />
+            {/await}
+          </Route>
+          <Route path="/listing-baru" let:params>
+            {#await loadPage("ListingBaruNew") then ListingBaruNewComponent}
+              <ListingBaruNewComponent />
+            {/await}
+          </Route>
           <Route path="/profile/:user_id" let:params>
-            <Profile user_id={Number(params.user_id)} />
+            {#await loadPage("Profile") then ProfileComponent}
+              <ProfileComponent user_id={Number(params.user_id)} />
+            {/await}
           </Route>
-          <Route path="/chat" component={ChatNew} />
-          <Route path="/agent" component={AgentNew} />
-          <Route path="/detail-agent" component={DetailAgentNew} />
-          <Route path="/posting" component={Posting} />
-          <Route path="/detail-new" component={DetailNew} />
+          <Route path="/chat" let:params>
+            {#await loadPage("ChatNew") then ChatNewComponent}
+              <ChatNewComponent />
+            {/await}
+          </Route>
+          <Route path="/agent" let:params>
+            {#await loadPage("AgentNew") then AgentNewComponent}
+              <AgentNewComponent />
+            {/await}
+          </Route>
+          <Route path="/detail-agent" let:params>
+            {#await loadPage("DetailAgentNew") then DetailAgentNewComponent}
+              <DetailAgentNewComponent />
+            {/await}
+          </Route>
+          <Route path="/posting" let:params>
+            {#await loadPage("Posting") then PostingComponent}
+              <PostingComponent />
+            {/await}
+          </Route>
+          <Route path="/detail-new" let:params>
+            {#await loadPage("DetailNew") then DetailNewComponent}
+              <DetailNewComponent />
+            {/await}
+          </Route>
           <Route path="*">404 Not Found</Route>
         </Router>
-      </MenuContent>
+      </svelte:component>
     </div>
   </main>
 {/if}
 
 <style>
-  /* Define your styles for the application */
+  /* Definisikan gaya untuk aplikasi Anda */
 </style>
