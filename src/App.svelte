@@ -15,6 +15,7 @@
     Setting,
     FavoritNew,
     ListingBaruNew,
+    PostinganStoriesBaru,
     Profile,
     ChatNew,
     AgentNew,
@@ -124,6 +125,12 @@
         if (!Posting)
           Posting = (await import("./pages/Posting.svelte")).default;
         return Posting;
+      case "PostinganStoriesBaru":
+        if (!PostinganStoriesBaru)
+          PostinganStoriesBaru = (
+            await import("./pages/PostinganStoriesBaru.svelte")
+          ).default;
+        return PostinganStoriesBaru;
     }
   }
 </script>
@@ -202,6 +209,11 @@
               <DetailNewComponent />
             {/await}
           </Route>
+          <Route path="/postingan-stories" let:params>
+            {#await loadPage("PostinganStoriesBaru") then PostinganStoriesBaruComponent}
+              <PostinganStoriesBaruComponent />
+            {/await}
+          </Route>
           <Route path="*">404 Not Found</Route>
         </Router>
       </svelte:component>
@@ -210,5 +222,4 @@
 {/if}
 
 <style>
-  /* Definisikan gaya untuk aplikasi Anda */
 </style>
