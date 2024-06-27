@@ -3,7 +3,7 @@
   //
   import BiodataAgent from "../components/BiodataAgent.svelte";
   import StatisikAgent from "../components/StatisikAgent.svelte";
-  import MetriksAgent from "../components/MetriksAgent.svelte";
+  import ListingAgent from "../components/ListingAgent.svelte";
   //
   import DetailFotoNew from "../components/DetailFotoNew.svelte";
   import DetailLokasi from "../components/DetailLokasi.svelte";
@@ -94,7 +94,7 @@
         <div id="" class="w-[49vw] flex flex-row menu_pengaturaan_detail">
           <button
             type="button"
-            class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer hover:bg-slate-200 hover:rounded-lg mr-2.5 font-bold"
+            class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer hover:bg-slate-200 hover:rounded-lg mr-2.5"
             class:bg_aktif_detail={activeTab === 0}
             on:click={() => (activeTab = 0)}
           >
@@ -102,7 +102,7 @@
           </button>
           <button
             type="button"
-            class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer hover:bg-slate-200 hover:rounded-lg mr-2.5 font-bold"
+            class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer hover:bg-slate-200 hover:rounded-lg mr-2.5"
             class:bg_aktif_detail={activeTab === 1}
             on:click={() => (activeTab = 1)}
           >
@@ -110,11 +110,11 @@
           </button>
           <button
             type="button"
-            class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer hover:bg-slate-200 hover:rounded-lg mr-2.5 font-bold"
+            class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer hover:bg-slate-200 hover:rounded-lg mr-2.5"
             class:bg_aktif_detail={activeTab === 2}
             on:click={() => (activeTab = 2)}
           >
-            Metrikss
+            Listing
           </button>
         </div>
       </div>
@@ -124,7 +124,7 @@
       {:else if activeTab === 1}
         <StatisikAgent />
       {:else if activeTab === 2}
-        <MetriksAgent />
+        <ListingAgent />
       {/if}
       <!-- KontenTabMenuDetail -->
     </div>
