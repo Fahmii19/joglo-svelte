@@ -19,6 +19,7 @@
   import { io } from "../utils/socket";
   import { detailChat } from "../store/chat";
   import { markerStore } from "../store/map";
+  import { removeEditListingClass } from "../store/agent";
 
   // Props
   export let id: string;
@@ -48,6 +49,18 @@
 
   // Get Available Room Chat
   const { user_id } = ExtractToken();
+  //
+
+  let activeTab = 0;
+
+  import { Link } from "svelte-routing";
+
+  const handleListingClick = () => {
+    activeTab = 2;
+    removeEditListingClass.set(true);
+  };
+
+  //
 
   //   Send Message
   const SendMessage = () => {
@@ -74,10 +87,6 @@
 
   // Remove Marker
   $markerStore?.remove();
-
-  let activeTab = 0;
-
-  import { Link } from "svelte-routing";
 </script>
 
 <div class="flex flex-col w-full h-full card-detail-beranda">
@@ -127,9 +136,8 @@
             type="button"
             class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer hover:bg-slate-200 hover:rounded-lg mr-2.5"
             class:bg_aktif_detail={activeTab === 2}
-            on:click={() => (activeTab = 2)}
-          >
-            Listing
+            on:click={handleListingClick}
+            >sting
           </button>
         </div>
       </div>
@@ -139,7 +147,7 @@
       {:else if activeTab === 1}
         <StatisikAgent />
       {:else if activeTab === 2}
-        <ListingAgent />
+        <ListingAgent {removeEditListingClass} />
       {/if}
       <!-- KontenTabMenuDetail -->
     </div>

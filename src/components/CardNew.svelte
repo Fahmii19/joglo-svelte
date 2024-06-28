@@ -3,6 +3,12 @@
   import RumahContoh1 from "../assets/images/rumaha1.jpg";
   import { navigate } from "svelte-routing";
   import Menu from "./Menu.svelte";
+  import { removeEditListingClass } from "../store/agent";
+
+  let isVisible = false;
+  removeEditListingClass.subscribe((value) => {
+    isVisible = value;
+  });
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -14,23 +20,34 @@
 >
   <!--  -->
   <div class="py-1 px-2 h-[7vh]">
-    <div class="flex items-center justify-beetwen w-full h-full">
-      <div class="flex flex-row w-full">
-        <div class="">
-          <!-- svelte-ignore a11y-missing-attribute -->
-          <img class="w-8 h-8 rounded-full" src={ModelImage} />
+    <div class="w-full h-full grid grid-cols-[1fr,40px]">
+      <div class="w-full grid grid-cols-[33px,1fr] items-center">
+        <div class="w-full">
+          <img
+            class="w-8 h-8 rounded-full"
+            src="https://www.joglopro.com/bucket/soaraja/image/joglopro/model/model11.jpg"
+            alt=""
+          />
         </div>
-        <div class="flex flex-col ml-2 justify-center">
-          <div class="inline-flex">
-            <div
-              class="text-sm font-semibold text-black cursor-pointer tracking-[0.060em]"
-            >
-              Gunawan Budi Ardivaaa
+        <div class="w-full flex flex-col ml-2">
+          <div class="h-full flex items-center inline-flex mt-0.5">
+            <div class="text-sm font-semibold text-black cursor-pointer">
+              <div class="tracking-[0.060em]">Gunawan Budi Ardivaa2</div>
             </div>
+            <div class="flex items-center justify-center ml-1"></div>
           </div>
           <!--  -->
         </div>
       </div>
+      {#if isVisible}
+        <div class="w-full flex justify-end items-center relative">
+          <img
+            class="w-5 h-5 mb-0.5 -mr-1 cursor-pointer rotate-[90deg] mr-2"
+            src="https://www.joglopro.com/bucket/soaraja/image/joglopro/threedots.png"
+            alt=""
+          />
+        </div>
+      {/if}
     </div>
   </div>
   <!--  -->

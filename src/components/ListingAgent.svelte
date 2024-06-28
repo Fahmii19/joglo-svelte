@@ -11,6 +11,9 @@
   import { markerStore } from "../store/map";
   import CardListingInput from "./CardListingInput.svelte";
 
+  //
+  import { navigate } from "svelte-routing";
+
   let property_lists: Feature[] = [];
 
   property_list.subscribe((value) => {
@@ -82,7 +85,11 @@
           class="grid grid-cols-2 gap-2 card_default"
           class:hidden={!isCardMode}
         >
-          <CardListingInput />
+          <!--  -->
+          <button on:click={() => navigate("/listing-baru")}>
+            <CardListingInput />
+          </button>
+          <!--  -->
           <CardNew />
           <CardNew />
           <CardNew />
