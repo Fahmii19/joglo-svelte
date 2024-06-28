@@ -32,7 +32,7 @@
       {#if self_story}
         <button
           on:click={() => navigate("/postingan-stories")}
-          class="absolute bottom-0 right-1 border-white border-2 rounded-full w-5 h-5 flex items-center justify-center"
+          class="absolute bottom-0.5 right-2 border-white border-2 rounded-full w-5 h-5 flex items-center justify-center"
           aria-label="Navigate to detail"
         >
           <svg
