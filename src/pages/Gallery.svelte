@@ -51,6 +51,10 @@
         Galeri
       </div>
     </div>
+
+    <!--  -->
+
+    <!--  -->
     <div
       class="h-[76vh] overflow-y-auto overflow-x-hidden hide-scrollbar story-galeri-off"
     >

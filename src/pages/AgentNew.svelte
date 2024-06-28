@@ -39,6 +39,7 @@
         Agen
       </div>
     </div>
+
     <div class="h-[76.2vh] story-galeri-off">
       <div class="h-full px-3 flex flex-col">
         <!-- Menu Button -->

@@ -76,18 +76,33 @@
   $markerStore?.remove();
 
   let activeTab = 0;
+
+  import { Link } from "svelte-routing";
 </script>
 
 <div class="flex flex-col w-full h-full card-detail-beranda">
   <div class="flex flex-col h-[83vh]">
     <!-- HeaderDetail -->
-    <div class="flex flex-col">
-      <div class="w-full flex justify-between border-b border-gray-300">
-        <div class="font-sf_pro_bold_judul text-2xl px-3 py-2 judulStory">
-          Agen
+    <!-- HeaderInti -->
+    <div
+      class="w-full flex justify-between items-center border-b px-3 py-1.5 border-gray-300"
+    >
+      <div class="font-sf_pro_bold_judul text-2xl judulStory">Agenn</div>
+      <!--  -->
+      <Link
+        to="/agen"
+        class="menus w-9 h-9 cursor-pointer hover:bg-slate-200 hover:rounded-full text-blue-600 hover:text-blue-600 border-blue-600 flex justify-center items-center btnBackEditListingg"
+      >
+        <div class="w-5 h-5 flex justify-center items-center">
+          <img
+            src="https://www.joglopro.com/bucket/soaraja/image/joglopro/back.png"
+            alt="Back"
+          />
         </div>
-      </div>
+      </Link>
+      <!--  -->
     </div>
+
     <!-- TabMenuDetail -->
     <div class="px-3">
       <div class="w-full h-[11vh] flex items-center">

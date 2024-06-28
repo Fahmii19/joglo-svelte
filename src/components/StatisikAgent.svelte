@@ -8,33 +8,39 @@
   >
     <div class="w-full grid grid-cols-3">
       <div class="w-full flex flex-col">
-        <div class="w-full flex ml-1 font-sf_pro_bold text-lg">7 Unit</div>
+        <div class="w-full flex ml-1 font-sf_pro_bold_judul text-lg">
+          7 Unit
+        </div>
         <div class="w-full flex text-sm ml-1">Listing Aktif</div>
       </div>
       <div class="w-full flex flex-col">
-        <div class="w-full flex ml-1 font-sf_pro_bold text-lg">30 Unit</div>
+        <div class="w-full flex ml-1 font-sf_pro_bold_judul text-lg">
+          30 Unit
+        </div>
         <div class="w-full flex text-sm ml-1">Terjual Bulan ini</div>
       </div>
       <div class="w-full flex flex-col">
-        <div class="w-full flex ml-1 font-sf_pro_bold text-lg">33 Unit</div>
+        <div class="w-full flex ml-1 font-sf_pro_bold_judul text-lg">
+          33 Unit
+        </div>
         <div class="w-full flex text-sm ml-1">Total Terjual</div>
       </div>
     </div>
     <div class="w-full grid grid-cols-3">
       <div class="w-full flex flex-col">
-        <div class="w-full flex ml-1 font-sf_pro_bold text-lg">
+        <div class="w-full flex ml-1 font-sf_pro_bold_judul text-lg">
           Rp 758.000.000
         </div>
         <div class="w-full flex text-sm ml-1">Potensi Penjualan</div>
       </div>
       <div class="w-full flex flex-col">
-        <div class="w-full flex ml-1 font-sf_pro_bold text-lg">
+        <div class="w-full flex ml-1 font-sf_pro_bold_judul text-lg">
           Rp 66.000.000.000
         </div>
         <div class="w-full flex text-sm ml-1">Penjualan Bulan ini</div>
       </div>
       <div class="w-full flex flex-col">
-        <div class="w-full flex ml-1 font-sf_pro_bold text-lg">
+        <div class="w-full flex ml-1 font-sf_pro_bold_judul text-lg">
           Rp 30.000.000.000
         </div>
         <div class="w-full flex text-sm ml-1">Total Penjualan</div>
