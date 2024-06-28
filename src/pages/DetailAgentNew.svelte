@@ -84,7 +84,7 @@
     <div class="flex flex-col">
       <div class="w-full flex justify-between border-b border-gray-300">
         <div class="font-sf_pro_bold_judul text-2xl px-3 py-2 judulStory">
-          Profil
+          Agen
         </div>
       </div>
     </div>
