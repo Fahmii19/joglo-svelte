@@ -1,6 +1,9 @@
 <script lang="ts">
   import Carousel from "svelte-carousel";
   import Story from "./Story.svelte";
+  import StoryDilihat from "./StoryDilihat.svelte";
+  import StoryBelumDilihat from "./StoryBelumDilihat.svelte";
+  import StoryTidakAda from "./StoryTidakAda.svelte";
   let carousel: any;
 
   import NextIcon from "../assets/images/next.png";
@@ -45,19 +48,26 @@
             <!--  -->
             <Story self_story={true} />
             <!--  -->
-            <Story />
+            <StoryDilihat />
             <!--  -->
-            <Story />
-            <Story />
-            <Story />
-            <Story />
-            <Story />
-            <Story />
-            <Story />
-            <Story />
-            <Story />
-            <Story />
-
+            <StoryTidakAda />
+            <!--  -->
+            <StoryBelumDilihat />
+            <StoryBelumDilihat />
+            <StoryBelumDilihat />
+            <StoryBelumDilihat />
+            <StoryBelumDilihat />
+            <StoryBelumDilihat />
+            <StoryBelumDilihat />
+            <StoryBelumDilihat />
+            <StoryBelumDilihat />
+            <StoryBelumDilihat />
+            <StoryBelumDilihat />
+            <StoryBelumDilihat />
+            <StoryBelumDilihat />
+            <StoryBelumDilihat />
+            <StoryBelumDilihat />
+            <StoryBelumDilihat />
             <!-- svelte-ignore missing-declaration -->
             <!-- svelte-ignore a11y-no-static-element-interactions -->
             <button slot="next" on:click={goToNextPage}>
