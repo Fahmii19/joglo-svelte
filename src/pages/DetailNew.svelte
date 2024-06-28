@@ -71,6 +71,14 @@
   $markerStore?.remove();
 
   let activeTab = 0;
+
+  import { Link } from "svelte-routing";
+
+  function showMessage(button) {
+    const pesan = button.dataset.pesan;
+    console.log(`Pesan: ${pesan}`);
+    // Navigasi akan ditangani oleh elemen <Link>
+  }
 </script>
 
 <div class="flex flex-col w-full h-full card-detail-beranda">
@@ -105,14 +113,16 @@
             </div>
             <div class="w-full grid items-center">
               <div class="inline-flex items-start justify-start">
-                <button
-                  data-pesan="Mochtar Riady"
-                  onclick="showMessage(this)"
-                  type="button"
-                  class="h-6 w-24 bg-[#0394F7] hover:bg-[#1877F2] text-white font-medium rounded-[5px] text-xs px-3 tracking-[0.070em]"
-                >
-                  Kirim Pesan
-                </button>
+                <Link to="/chat">
+                  <button
+                    data-pesan="Mochtar Riady"
+                    onclick={() => showMessage(this)}
+                    type="button"
+                    class="h-6 w-24 bg-[#0394F7] hover:bg-[#1877F2] text-white font-medium rounded-[5px] text-xs px-3 tracking-[0.070em]"
+                  >
+                    Kirim Pesan
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -120,9 +130,8 @@
             class="w-full h-full grid justify-items-end items-center relative"
           >
             <div class="inline-flex">
-              <button
-                type="button"
-                onclick="closeTab()"
+              <Link
+                to="/"
                 class="menus w-9 h-9 cursor-pointer hover:bg-slate-200 hover:rounded-full text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 border-blue-600 dark:border-blue-500 flex justify-center items-center"
               >
                 <div class="w-5 h-5 flex justify-center items-center">
@@ -131,7 +140,7 @@
                     alt=""
                   />
                 </div>
-              </button>
+              </Link>
             </div>
           </div>
         </div>
