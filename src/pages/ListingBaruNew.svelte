@@ -122,7 +122,6 @@
               Tanah
             </div>
           </div>
-          <!-- PROGREESS -->
           {#if isVisible}
             <div class="w-full inline-flex items-end justify-end">
               <div class="">

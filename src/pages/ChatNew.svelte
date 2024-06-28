@@ -2,11 +2,16 @@
   import AgentCard from "../components/AgentCard.svelte";
   import AgentCardNew from "../components/AgentCardNew.svelte";
   import AgentFilter from "../components/AgentFilter.svelte";
+  import ChatDefault from "../components/ChatDefault.svelte";
+  import ChatMessage from "../components/ChatMessage.svelte";
+  import ChatCoBroking from "../components/ChatCoBroking.svelte";
   import type { AuthUser } from "../service/auth/type";
   import UserService from "../service/users/users";
   import { agentList } from "../store/agent";
   import { markerStore } from "../store/map";
   import { page } from "../store/page";
+
+  let activePesan = 0;
 
   let users = [] as AuthUser[];
   let count_users = 0;
@@ -48,10 +53,10 @@
           class="overflow-y-auto scrollbar h-[35rem] overflow-y-auto overflow-x-hidden hide-scrollbar border-r border-gray-300"
         >
           <li>
+            <!--  -->
             <div
               class="menu-pesan-area flex items-center px-3 py-2.5 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
-              data-attribut="co-broking"
-              onclick="showMessage(this)"
+              on:click={() => (activePesan = 1)}
             >
               <div class="w-10 h-10 flex justify-center items-center relative">
                 <img
@@ -75,11 +80,10 @@
                 </div>
               </div>
             </div>
-
+            <!--  -->
             <div
-              data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
-              onclick="showMessage(this)"
+              on:click={() => (activePesan = 2)}
             >
               <div class="relative">
                 <img
@@ -108,10 +112,9 @@
                 >
               </div>
             </div>
+            <!--  -->
             <div
-              data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
-              onclick="showMessage(this)"
             >
               <div class="relative">
                 <img
@@ -140,6 +143,7 @@
                 >
               </div>
             </div>
+            <!--  -->
             <div
               data-attribut="pesan-orang-1"
               class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
@@ -1200,20 +1204,17 @@
         </ul>
         <!--  -->
         <!-- Isi Pesan -->
-        <div
-          class="w-full h-[76.5vh] flex flex-col items-center justify-center konten-default-pesan"
-        >
-          <div class="flex flex-col items-center !-mt-14">
-            <img
-              class="w-16 h-16 object-cover"
-              src="https://www.joglopro.com/bucket/soaraja/image/joglopro/home-menu-pesan.png"
-              alt="Soaraja Icon"
-            />
-            <div class="text-gray-500 text-sm mt-3">
-              Kirim foto dan bertukar pesan disini
-            </div>
-          </div>
-        </div>
+        <!-- Progres -->
+        <!-- <ChatDefault /> -->
+
+        {#if activePesan === 0}
+          <!-- <ChatCoBroking /> -->
+        {:else if activePesan === 1}
+          <ChatCoBroking />
+        {:else if activePesan === 2}
+          <ChatMessage />
+        {/if}
+
         <!--  -->
       </div>
     </div>

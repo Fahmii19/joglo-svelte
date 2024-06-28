@@ -1,5 +1,5 @@
 <div
-  class="w-full h-[79.5vh] overflow-y-auto scrollbar flex flex-col konten-co-broking p-2 hidden"
+  class="w-full h-[79.5vh] overflow-y-auto scrollbar hide-scrollbar flex flex-col konten-co-broking p-2"
 >
   <!--  -->
 
