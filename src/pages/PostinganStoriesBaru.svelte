@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { Link } from "svelte-routing";
+
   document.addEventListener("DOMContentLoaded", function () {
     // First set of menu functions
     function activateMenuDua1(target) {
@@ -76,11 +78,28 @@
 
 <div class="h-full w-full">
   <div class="h-full flex flex-col">
-    <div class="w-full flex justify-between border-b border-gray-300">
-      <div class="font-sf_pro_bold_judul text-2xl px-3 py-2 judulStory">
-        Postingan Stories
+    <!-- HeaderInti -->
+    <div
+      class="w-full flex justify-between items-center border-b px-3 py-1.5 border-gray-300"
+    >
+      <div class="font-sf_pro_bold_judul text-2xl judulStory">
+        Postingan Storiess
       </div>
+      <!--  -->
+      <Link
+        to="/"
+        class="menus w-9 h-9 cursor-pointer hover:bg-slate-200 hover:rounded-full text-blue-600 hover:text-blue-600 border-blue-600 flex justify-center items-center btnBackEditListingg"
+      >
+        <div class="w-5 h-5 flex justify-center items-center">
+          <img
+            src="https://www.joglopro.com/bucket/soaraja/image/joglopro/back.png"
+            alt="Back"
+          />
+        </div>
+      </Link>
+      <!--  -->
     </div>
+    <!--  -->
     <div class="h-[76.2vh] story-galeri-off">
       <div class="h-full px-3 flex flex-col">
         <!-- -->
