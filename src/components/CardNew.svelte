@@ -10,7 +10,7 @@
     isVisible = value;
   });
 
-  const handleEditListingClik = () => {
+  const handleEditListingClick = () => {
     buttonEditListing.set(true);
   };
 </script>
@@ -44,7 +44,13 @@
         </div>
       </div>
       {#if isVisible}
-        <button on:click={handleEditListingClik}>
+        <button
+          on:click={(event) => {
+            event.stopPropagation(); // Menghentikan propagasi event
+            handleEditListingClick();
+            navigate("/listing-baru");
+          }}
+        >
           <div class="w-full flex justify-end items-center relative">
             <img
               class="w-5 h-5 mb-0.5 -mr-1 cursor-pointer rotate-[90deg] mr-2"

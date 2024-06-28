@@ -93,7 +93,7 @@
       <div class="h-full px-3 flex flex-col">
         <!-- Menu Button -->
 
-        <div class="w-full flex flex-row pt-6 pb-2 border border-red-500">
+        <div class="w-full flex flex-row pt-6 pb-2">
           <!--  -->
           <div id="" class="w-[32vw] flex flex-row menu_pengaturaan_detail_dua">
             <div
