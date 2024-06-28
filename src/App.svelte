@@ -86,8 +86,7 @@
         return DetailNew;
       case "DetailAgentNew":
         if (!DetailAgentNew)
-          DetailAgentNew = (await import("./pages/DetailAgentNew.svelte"))
-            .default;
+          DetailAgentNew = await import("./pages/DetailAgentNew.svelte");
         return DetailAgentNew;
       case "Login":
         if (!Login) Login = (await import("./pages/Login.svelte")).default;
@@ -127,9 +126,9 @@
         return Posting;
       case "PostinganStoriesBaru":
         if (!PostinganStoriesBaru)
-          PostinganStoriesBaru = (
-            await import("./pages/PostinganStoriesBaru.svelte")
-          ).default;
+          PostinganStoriesBaru = await import(
+            "./pages/PostinganStoriesBaru.svelte"
+          );
         return PostinganStoriesBaru;
     }
   }
