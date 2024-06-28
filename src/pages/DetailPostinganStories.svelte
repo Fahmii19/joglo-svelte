@@ -28,256 +28,187 @@
     </div>
 
     <!--  -->
-    <Stories />
+    <div class="">
+      <Stories />
+    </div>
     <!--  -->
-    <div class="h-[76.2vh] story-galeri-off">
-      <div class="h-full px-3 flex flex-col">
-        <!-- -->
 
-        <div class="w-full h-[64vh] grid grid-cols-4 relative stories_pertama">
-          <div
-            class="absolute self-center flex item-populer justify-between w-full"
+    <div
+      class="w-full h-[63.5vh] px-3 grid grid-cols-4 relative stories_pertama"
+    >
+      <div
+        class="absolute self-center flex item-populer justify-between w-full"
+      >
+        <div class="ml-2 z-10">
+          <svg
+            onclick="storiesPrevious()"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="3"
+            stroke="currentColor"
+            class="w-[2.5vw] h-[4vh] text-gray-300 hover:text-gray-100 cursor-pointer relative z-20"
           >
-            <div class="ml-2 z-10">
-              <svg
-                onclick="storiesPrevious()"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="3"
-                stroke="currentColor"
-                class="w-[2.5vw] h-[4vh] text-gray-300 hover:text-gray-100 cursor-pointer relative z-20"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M15.75 19.5 8.25 12l7.5-7.5"
-                />
-              </svg>
-            </div>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 19.5 8.25 12l7.5-7.5"
+            />
+          </svg>
+        </div>
 
-            <div class="mr-2 z-10">
-              <svg
-                onclick="storiesNext()"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="3"
-                stroke="currentColor"
-                class="w-[2.5vw] h-[4vh] text-gray-300 hover:text-gray-400 cursor-pointer relative z-20"
+        <div class="mr-2 z-10">
+          <svg
+            onclick="storiesNext()"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="3"
+            stroke="currentColor"
+            class="w-[2.5vw] h-[4vh] text-gray-300 hover:text-gray-400 cursor-pointer relative z-20"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m8.25 4.5 7.5 7.5-7.5 7.5"
+            />
+          </svg>
+        </div>
+      </div>
+      <!--  -->
+      <div class="col-span-2 w-full h-full bg-[#807a78]">
+        <div class="w-[25vw] h-[63vh] absolute">
+          <div class="absolute top-2 left-2 z-10">
+            <svg
+              onclick="CloseAllStories()"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="3"
+              stroke="currentColor"
+              class="w-6 h-6 cursor-pointer close-stories-galeri text-gray-300 hover:text-gray-100"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18 18 6M6 6l12 12"
+              />
+            </svg>
+          </div>
+
+          <div class="slider-card-stories-persegi w-full h-full z-index-10">
+            <div class="w-[24.2vw] h-[63.5vh] border border-red-500">
+              <video
+                autoplay
+                muted
+                class="w-full !h-full"
+                id="video-detail-beranda"
+                src="https://www.joglopro.com/bucket/soaraja/video/videopersegi1.mp4"
+              ></video>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-span-2 w-full h-full flex flex-col px-3 pt-3">
+        <!--  -->
+        <!--  -->
+        <div class="w-full flex justify-between">
+          <div class="flex flex-row w-full">
+            <div class="w-8 h-8">
+              <img
+                class="w-8 h-8 rounded-full"
+                src="https://www.joglopro.com/bucket/soaraja/image/joglopro/model/model10.jpg"
+                alt=""
+              />
+            </div>
+            <div class="h-full flex flex-col items-center ml-2">
+              <div
+                class="h-full flex items-center text-sm font-semibold text-black cursor-pointer"
+                onclick="showCardAgent(this)"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="m8.25 4.5 7.5 7.5-7.5 7.5"
-                />
-              </svg>
+                Steven R K s
+              </div>
+
+              <div class="inline-flex">
+                <div
+                  class="flex items-center justify-center ml-1 -mt-1.5"
+                ></div>
+              </div>
+              <!--  -->
+
+              <!--  -->
             </div>
           </div>
           <!--  -->
-          <div class="col-span-2 w-full h-full bg-[#807a78]">
-            <div class="w-[25vw] h-[63vh] absolute">
-              <div class="absolute top-2 left-2 z-10">
-                <svg
-                  onclick="CloseAllStories()"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="3"
-                  stroke="currentColor"
-                  class="w-6 h-6 cursor-pointer close-stories-galeri text-gray-300 hover:text-gray-100"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M6 18 18 6M6 6l12 12"
-                  />
-                </svg>
-              </div>
-
-              <div class="slider-card-stories-persegi w-full h-full z-index-10">
-                <div class="w-[15vw] h-[62.5vh]">
-                  <video
-                    autoplay
-                    muted
-                    class="w-full !h-full"
-                    id="video-detail-beranda"
-                    src="https://www.joglopro.com/bucket/soaraja/video/videopersegi1.mp4"
-                  ></video>
-                </div>
-              </div>
+          <div class="w-full h-full flex items-center justify-end">
+            <div class="rotate-[90deg] mt-2 mr-2">
+              <img
+                onclick="EditStoriesPosting(this)"
+                class="w-5 h-5 object-cover cursor-pointer"
+                src="https://www.joglopro.com/bucket/soaraja/image/joglopro/threedots.png"
+                alt="Love"
+              />
             </div>
-          </div>
 
-          <div class="col-span-2 w-full h-full flex flex-col px-3 pt-3">
-            <!--  -->
-            <!--  -->
-            <div class="w-full flex justify-between">
-              <div class="flex flex-row w-full">
-                <div class="w-8 h-8">
-                  <img
-                    class="w-8 h-8 rounded-full"
-                    src="https://www.joglopro.com/bucket/soaraja/image/joglopro/model/model10.jpg"
-                  />
-                </div>
-                <div class="h-full flex flex-col items-center ml-2 border">
-                  <div
-                    class="h-full flex items-center text-sm font-semibold text-black cursor-pointer"
-                    onclick="showCardAgent(this)"
-                  >
-                    Steven R K s
-                  </div>
-
-                  <div class="inline-flex">
-                    <!--   <div
-                                  class="text-sm -mt-1 font-semibold text-black cursor-pointer"
-                                  onclick="showCardAgent(this)"
-                                  >
-                                  Steven R K
-                                </div> -->
-                    <div class="flex items-center justify-center ml-1 -mt-1.5">
-                      <!-- <div
-                                    class="w-4 h-4 flex justify-center items-center relative"
-                                    >
-                                    <img
-                                      src="https://www.joglopro.com/bucket/soaraja/image/joglopro/verif.png"
-                                      alt=""
-                                    />
-                                  </div> -->
-                    </div>
-                  </div>
-                  <!--  -->
-                  <!-- <div class="mb-1 mt-0.5">
-                                <label
-                                  for="star-agent-utama"
-                                  class="flex flex-row text-xs font-medium cursor-pointer text-gray-900"
-                                >
-                                  <div>
-                                    <label
-                                      for="star-agent-utama"
-                                      class="flex flex-row text-xs font-medium cursor-pointer text-gray-900"
-                                    >
-                                      <svg
-                                        class="w-3 h-3 text-yellow-300"
-                                        aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="currentColor"
-                                        viewBox="0 0 22 20"
-                                      >
-                                        <path
-                                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
-                                        ></path>
-                                      </svg>
-                                      <svg
-                                        class="w-3 h-3 text-yellow-300"
-                                        aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="currentColor"
-                                        viewBox="0 0 22 20"
-                                      >
-                                        <path
-                                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
-                                        ></path>
-                                      </svg>
-                                      <svg
-                                        class="w-3 h-3 text-yellow-300"
-                                        aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="currentColor"
-                                        viewBox="0 0 22 20"
-                                      >
-                                        <path
-                                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
-                                        ></path>
-                                      </svg>
-                                      <svg
-                                        class="w-3 h-3 text-gray-300"
-                                        aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="currentColor"
-                                        viewBox="0 0 22 20"
-                                      >
-                                        <path
-                                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
-                                        ></path>
-                                      </svg>
-                                    </label>
-                                  </div>
-                                </label>
-                              </div> -->
-
-                  <!--  -->
-                </div>
-              </div>
-              <!--  -->
-              <div class="w-full h-full flex items-center justify-end">
-                <div class="rotate-[90deg] mt-2 mr-2">
-                  <img
-                    onclick="EditStoriesPosting(this)"
-                    class="w-5 h-5 object-cover cursor-pointer"
-                    src="https://www.joglopro.com/bucket/soaraja/image/joglopro/threedots.png"
-                    alt="Love"
-                  />
-                </div>
-
-                <!--  <img
+            <!--  <img
                               class="w-8 h-8 object-contain"
                               src="https://www.joglopro.com/bucket/soaraja/image/joglopro/agent/era2.png"
                             /> -->
-              </div>
-              <!--  -->
-            </div>
-            <!--  -->
+          </div>
+          <!--  -->
+        </div>
+        <!--  -->
 
-            <!-- <div
+        <!-- <div
                           class="text-gray-500 text-sm pt-2 pb-2.5 w-full grid grid-cols-2"
                         >
                           <div class="">1 jam yang lalu</div>
                         </div> -->
 
-            <!--  -->
+        <!--  -->
 
-            <div class="inline-flex justify-start w-full py-2.5">
-              <div>
-                <h5 class="text-lg font-bold tracking-tight text-black">
-                  Rp 5.300.000.000
-                </h5>
-              </div>
+        <div class="inline-flex justify-start w-full py-2.5">
+          <div>
+            <h5 class="text-lg font-bold tracking-tight text-black">
+              Rp 5.300.000.000
+            </h5>
+          </div>
+        </div>
+
+        <!--  -->
+
+        <!--  -->
+        <div class="grid grid-cols-1">
+          <div class="flex flex-col mb-0 font-normal text-sm text-black">
+            <div class="flex items-center">
+              <span class="mr-1">LT 80 m² |</span>
+              <span class="mr-1">LB 276 m² |</span>
+              <span class="mr-1">2 KT |</span>
+              <span class="mr-1">5 KM</span>
             </div>
-
+            <div class="pb-1">Sunter, Tanjung Priok, Jakarta Utara</div>
             <!--  -->
-
+            <div class="mx-1.5">
+              <ul class="list-disc">
+                <ol class="ps-3 list-decimal list-outside">
+                  <li class="">Lingkungan bagus, asri dan nyaman</li>
+                  <li>Akses jalan raya utama</li>
+                  <li>Perumahan TOWNHOUSE mewah</li>
+                  <li>Row jalan 6.5 meter (2mobil)</li>
+                  <li>One gate security</li>
+                </ol>
+              </ul>
+            </div>
             <!--  -->
-            <div class="grid grid-cols-1">
-              <div class="flex flex-col mb-0 font-normal text-sm text-black">
-                <div class="flex items-center">
-                  <span class="mr-1">LT 80 m² |</span>
-                  <span class="mr-1">LB 276 m² |</span>
-                  <span class="mr-1">2 KT |</span>
-                  <span class="mr-1">5 KM</span>
-                </div>
-                <div class="pb-1">Sunter, Tanjung Priok, Jakarta Utara</div>
-                <!--  -->
-                <div class="mx-1.5">
-                  <ul class="list-disc">
-                    <ol class="ps-3 list-decimal list-outside">
-                      <li class="">Lingkungan bagus, asri dan nyaman</li>
-                      <li>Akses jalan raya utama</li>
-                      <li>Perumahan TOWNHOUSE mewah</li>
-                      <li>Row jalan 6.5 meter (2mobil)</li>
-                      <li>One gate security</li>
-                    </ol>
-                  </ul>
-                </div>
-                <!--  -->
-              </div>
-              <!--  -->
-              <!--  -->
-              <div class="flex items-end pt-3 pb-4">
-                <div class="w-full flex justify-between">
-                  <div class="text-xs text-gray-400">1 jam yang lalu</div>
-                </div>
-                <!-- <div
+          </div>
+          <!--  -->
+          <!--  -->
+          <div class="flex items-end pt-3 pb-4">
+            <div class="w-full flex justify-between">
+              <div class="text-xs text-gray-400">1 jam yang lalu</div>
+            </div>
+            <!-- <div
                               class="grid grid-cols-5 items-center justify-start -ml-1.5 mt-1 gap-2"
                               >
                               <div class="flex flex-col items-center">
@@ -319,15 +250,11 @@
                                 />
                               </div>
                             </div> -->
-              </div>
-            </div>
-            <!--  -->
           </div>
-          <!--  -->
         </div>
-
         <!--  -->
       </div>
+      <!--  -->
     </div>
   </div>
 </div>
