@@ -2,6 +2,8 @@
   import AgentIcon from "../assets/images/agen-property.png";
   import VerifIcon from "../assets/images/verif.png";
   import UserIcon from "../assets/images/user_model.jpg";
+  import UserModel1 from "../assets/images/model2.jpg";
+  import UserModel2 from "../assets/images/model3.jpg";
   import { link } from "svelte-routing";
   import { navigate } from "svelte-routing";
   import Menu from "./Menu.svelte";
@@ -26,7 +28,7 @@
       class="p-[0.15rem] bg-gradient-to-r from-yellow-200 to-pink-600 rounded-full w-16 h-16"
     >
       <div class="block bg-white p-0.5 rounded-full transform transition">
-        <img class="w-full h-full rounded-full" src={UserIcon} alt="model" />
+        <img class="w-full h-full rounded-full" src={UserModel1} alt="model" />
       </div>
     </div>
   </div>
