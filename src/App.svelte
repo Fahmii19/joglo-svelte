@@ -19,7 +19,8 @@
     Profile,
     ChatNew,
     AgentNew,
-    Posting;
+    Posting,
+    DetailPostinganStories; // Perbaikan posisi deklarasi
 
   onMount(() => {
     const loadFonts = async () => {
@@ -131,6 +132,12 @@
             await import("./pages/PostinganStoriesBaru.svelte")
           ).default;
         return PostinganStoriesBaru;
+      case "DetailPostinganStories":
+        if (!DetailPostinganStories)
+          DetailPostinganStories = (
+            await import("./pages/DetailPostinganStories.svelte")
+          ).default;
+        return DetailPostinganStories;
     }
   }
 </script>
@@ -212,6 +219,11 @@
           <Route path="/postingan-stories" let:params>
             {#await loadPage("PostinganStoriesBaru") then PostinganStoriesBaruComponent}
               <PostinganStoriesBaruComponent />
+            {/await}
+          </Route>
+          <Route path="/detail-postingan-stories" let:params>
+            {#await loadPage("DetailPostinganStories") then DetailPostinganStoriesComponent}
+              <DetailPostinganStoriesComponent />
             {/await}
           </Route>
           <Route path="*">404 Not Found</Route>

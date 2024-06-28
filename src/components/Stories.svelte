@@ -42,7 +42,11 @@
                 />
               </div>
             </button>
+            <!--  -->
             <Story self_story={true} />
+            <!--  -->
+            <Story />
+            <!--  -->
             <Story />
             <Story />
             <Story />
@@ -53,8 +57,7 @@
             <Story />
             <Story />
             <Story />
-            <Story />
-            <Story />
+
             <!-- svelte-ignore missing-declaration -->
             <!-- svelte-ignore a11y-no-static-element-interactions -->
             <button slot="next" on:click={goToNextPage}>
