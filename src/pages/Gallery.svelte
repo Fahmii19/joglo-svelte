@@ -5,6 +5,7 @@
   import { v4 as uuidv4 } from "uuid";
   import Card from "../components/Card.svelte";
   import CardNew from "../components/CardNew.svelte";
+  import CardMiniNew from "../components/CardMiniNew.svelte";
   import { property_count, property_list } from "../store/property";
   import type { Feature } from "../service/list_property/type";
   import { markerStore } from "../store/map";
@@ -34,6 +35,13 @@
 
   // Remove Marker
   $markerStore?.remove();
+
+  // State untuk mode tampilan
+  let isCardMode = true;
+
+  function toggleMode() {
+    isCardMode = !isCardMode;
+  }
 </script>
 
 <div class="h-full w-full">
@@ -56,29 +64,45 @@
             Menampilkan {property_counts} data
           </div>
 
-          <div class="">
+          <div>
             <div class="relative flex flex-row">
               <!-- Mode Card -->
               <div class="flex items-center mr-2">
-                <div
-                  class="w-9 h-9 flex items-center justify-center cursor-pointer hover:bg-slate-200 hover:rounded-lg"
+                <button
+                  class="w-9 h-9 flex items-center justify-center cursor-pointer hover:bg-slate-200 hover:rounded-lg mode-card"
+                  on:click={toggleMode}
+                  aria-label="Toggle view mode"
                 >
                   <img
                     class="w-7 h-7 object-contain cursor-pointer"
                     src={ListIcon}
                     alt=""
                   />
-                </div>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="px-3 pt-3 grid grid-cols-2 gap-2">
+      <!-- Default Card -->
+      <div
+        class="px-3 pt-3 grid grid-cols-2 gap-2 card_default"
+        class:hidden={!isCardMode}
+      >
         {#each property_lists ?? [] as item}
           <Card previous_page="/" {item} />
         {/each}
         <CardNew />
+      </div>
+
+      <!-- MiniCard -->
+      <div
+        class="px-3 pt-3 grid grid-cols-3 gap-2 card_mini"
+        class:hidden={isCardMode}
+      >
+        <CardMiniNew />
+        <CardMiniNew />
+        <CardMiniNew />
       </div>
     </div>
   </div>
