@@ -137,7 +137,7 @@
             class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer hover:bg-slate-200 hover:rounded-lg mr-2.5"
             class:bg_aktif_detail={activeTab === 2}
             on:click={handleListingClick}
-            >sting
+            >Listing
           </button>
         </div>
       </div>

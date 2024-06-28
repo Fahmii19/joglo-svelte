@@ -72,6 +72,14 @@
       defaultActiveMenu2.classList.add("font-bold");
     }
   });
+
+  // Untuk Button Edit Listing
+  import { buttonEditListing } from "../store/agent";
+
+  let isVisible = false;
+  buttonEditListing.subscribe((value) => {
+    isVisible = value;
+  });
 </script>
 
 <div class="h-full w-full">
@@ -85,7 +93,8 @@
       <div class="h-full px-3 flex flex-col">
         <!-- Menu Button -->
 
-        <div class="w-full flex flex-row pt-6 pb-2">
+        <div class="w-full flex flex-row pt-6 pb-2 border border-red-500">
+          <!--  -->
           <div id="" class="w-[32vw] flex flex-row menu_pengaturaan_detail_dua">
             <div
               id=""
@@ -113,6 +122,40 @@
               Tanah
             </div>
           </div>
+          <!-- PROGREESS -->
+          {#if isVisible}
+            <div class="w-full inline-flex items-end justify-end">
+              <div class="">
+                <button
+                  type="button"
+                  class="h-7 bg-[#0394F7] hover:bg-[#1877F2] text-white font-medium rounded-[5px] text-xs px-3"
+                >
+                  Terjual
+                </button>
+              </div>
+
+              <div class="ml-3">
+                <button
+                  type="button"
+                  class="h-7 bg-[#0394F7] hover:bg-[#1877F2] text-white font-medium rounded-[5px] text-xs px-3"
+                >
+                  Non Aktifx
+                </button>
+
+                <!--  -->
+              </div>
+
+              <div class="ml-3">
+                <button
+                  type="button"
+                  class="h-7 bg-[#0394F7] hover:bg-[#1877F2] text-white font-medium rounded-[5px] text-xs px-3"
+                >
+                  Hapus
+                </button>
+              </div>
+            </div>
+            <!--  -->
+          {/if}
         </div>
 
         <div class="w-full flex justify-end items-center pb-6">

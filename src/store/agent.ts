@@ -5,4 +5,6 @@ const agentList = writable<AuthUser[]>([] as AuthUser[]);
 
 export const removeEditListingClass = writable(false);
 
+export const buttonEditListing = writable(false);
+
 export { agentList };

@@ -3,12 +3,16 @@
   import RumahContoh1 from "../assets/images/rumaha1.jpg";
   import { navigate } from "svelte-routing";
   import Menu from "./Menu.svelte";
-  import { removeEditListingClass } from "../store/agent";
+  import { removeEditListingClass, buttonEditListing } from "../store/agent";
 
   let isVisible = false;
   removeEditListingClass.subscribe((value) => {
     isVisible = value;
   });
+
+  const handleEditListingClik = () => {
+    buttonEditListing.set(true);
+  };
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -40,13 +44,15 @@
         </div>
       </div>
       {#if isVisible}
-        <div class="w-full flex justify-end items-center relative">
-          <img
-            class="w-5 h-5 mb-0.5 -mr-1 cursor-pointer rotate-[90deg] mr-2"
-            src="https://www.joglopro.com/bucket/soaraja/image/joglopro/threedots.png"
-            alt=""
-          />
-        </div>
+        <button on:click={handleEditListingClik}>
+          <div class="w-full flex justify-end items-center relative">
+            <img
+              class="w-5 h-5 mb-0.5 -mr-1 cursor-pointer rotate-[90deg] mr-2"
+              src="https://www.joglopro.com/bucket/soaraja/image/joglopro/threedots.png"
+              alt=""
+            />
+          </div>
+        </button>
       {/if}
     </div>
   </div>
