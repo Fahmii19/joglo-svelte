@@ -105,11 +105,11 @@
   class="w-full h-[7vh] flex items-center flex-row border border-gray-300"
 >
   <!-- Input Searching Default -->
-  <!-- <SearchBar />
+  <SearchBar />
 
-  <ButtonChip /> -->
+  <ButtonChip />
 
-  <RunningTeks />
+  <!-- <RunningTeks /> -->
 
   <!-- Button Cari -->
   <div class="px-1">
