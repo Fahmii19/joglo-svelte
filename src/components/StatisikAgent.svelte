@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<div class="h-[62.5vh] overflow-y-auto hide-scrollbar">
+<div class="h-[62.5vh] overflow-y-auto overflow-x-hidden hide-scrollbar">
   <!--  -->
   <div
     class="grid grid-row-3 pb-5 px-5 pt-4 gap-4 mode-card-kedua bg-white cursor-pointer rounded-lg shadow w-full mb-3"
