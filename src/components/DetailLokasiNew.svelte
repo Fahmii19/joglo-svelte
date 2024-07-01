@@ -1,4 +1,4 @@
-<div class="h-[65vh] overflow-y-auto hide-scrollbar">
+<div class="h-[63vh] overflow-y-auto hide-scrollbar">
   <form class="formEditListingg RemoveClassformEditListingg">
     <div class="grid grid-cols-2 gap-y-1 gap-x-3">
       <!-- KontenPertama -->
