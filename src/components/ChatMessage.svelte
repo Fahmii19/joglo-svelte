@@ -113,9 +113,6 @@
           <!--  Cards 1 -->
           <div
             class="w-[18rem] bg-white cursor-pointer border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
-            data-active-tab="1"
-            data-object-id="1604"
-            onclick="showCardInfoDetail(this)"
           >
             <div class="w-full h-[20vh] relative">
               <div
@@ -124,7 +121,6 @@
                 <button
                   type="button"
                   class="slick-prev slick-arrow slick-disabled"
-                  onclick="event.stopPropagation();"
                   aria-disabled="true"
                   style=""
                 >
@@ -186,7 +182,6 @@
                 <button
                   type="button"
                   class="slick-next slick-arrow"
-                  onclick="event.stopPropagation();"
                   style=""
                   aria-disabled="false"
                 >

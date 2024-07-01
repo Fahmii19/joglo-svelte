@@ -185,7 +185,6 @@
 
     <div
       class="w-[34.9vw] bg-white px-2.5 pt-2.5 pb-2.5 cursor-pointer mb-3 rounded-lg hover:shadow-xl"
-      onclick="ShowCoBrokingDetail()"
     >
       <div class="w-full inline-flex items-center">
         <img
