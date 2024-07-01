@@ -37,11 +37,6 @@
             </span>
           </div>
         </div>
-        <!-- <img
-                                    src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144"
-                                    alt="My profile"
-                                    class="w-8 h-8 rounded-full order-2"
-                                  /> -->
       </div>
     </div>
     <div class="chat-message">
@@ -79,11 +74,6 @@
             </span>
           </div>
         </div>
-        <!-- <img
-                                    src="https://images.unsplash.com/photo-1590031905470-a1a1feacbb0b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=3&amp;w=144&amp;h=144"
-                                    alt="My profile"
-                                    class="w-8 h-8 rounded-full order-2"
-                                  /> -->
       </div>
     </div>
     <div class="chat-message">
