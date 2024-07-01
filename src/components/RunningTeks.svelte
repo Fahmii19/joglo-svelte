@@ -23,10 +23,8 @@
   });
 </script>
 
-<div class="h-8 flex items-center w-full bg-white">
-  <div
-    class="teks-berjalan-pencarian w-full text-sm text-black whitespace-nowrap"
-  >
+<div class="h-8 flex items-center w-full bg-white overflow-hidden">
+  <div class="teks-berjalan-pencarian text-sm text-black whitespace-nowrap">
     <div class="inline-flex items-center">
       Rumah murah dijual masa promo di wilayah Kebayoran Lama. Hanya sampai
       dengan 1 November 2023.
@@ -79,5 +77,6 @@
     display: inline-block;
     white-space: nowrap;
     will-change: transform;
+    animation: marquee 17500ms linear infinite;
   }
 </style>

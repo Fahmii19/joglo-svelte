@@ -2,6 +2,7 @@
   import SearchBar from "./SearchBar.svelte";
   import ButtonChip from "./ButtonChip.svelte";
   import ButtonFilter from "./ButtonFilter.svelte";
+  import RunningTeks from "./RunningTeks.svelte";
   import { v4 as uuidv4 } from "uuid";
   import SaveButton from "../assets/images/save-instagram-on.png";
 
@@ -101,15 +102,17 @@
 
 <div
   id="tagSearchAll"
-  class="w-full h-[7vh] flex items-center flex-row px-1.5 border border-gray-300"
+  class="w-full h-[7vh] flex items-center flex-row border border-gray-300"
 >
   <!-- Input Searching Default -->
-  <SearchBar />
+  <!-- <SearchBar />
 
-  <ButtonChip />
+  <ButtonChip /> -->
+
+  <RunningTeks />
 
   <!-- Button Cari -->
-  <div class="px-1">
+  <!-- <div class="px-1">
     <button
       type="button"
       class="h-6 bg-[#0394F7] hover:bg-[#1877F2] text-white font-medium rounded-[5px] text-xs tracking-[0.04em] w-[5vw] mx-3 flex flex-row justify-center items-center"
@@ -137,6 +140,6 @@
         </svg>
       </span>
     </button>
-  </div>
+  </div> -->
   <!--  -->
 </div>
