@@ -76,8 +76,6 @@
 
   function showMessage(button) {
     const pesan = button.dataset.pesan;
-    console.log(`Pesan: ${pesan}`);
-    // Navigasi akan ditangani oleh elemen <Link>
   }
 </script>
 
