@@ -5,4 +5,12 @@ import { writable } from "svelte/store";
 export const activePesan = writable(0);
 
 // Untuk Ruang yang aktif
-export const RunningTeksAktif = writable("default");
+// Untuk teks yang berjalan
+export const RunningTeksAktif = writable("");
+
+// Untuk komponen yang aktif
+export const activeComponents = writable({
+  searchBar: true,
+  buttonChip: true,
+  runningTeks: false,
+});

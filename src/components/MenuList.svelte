@@ -26,6 +26,7 @@
   import { links } from "svelte-routing";
   import { unreadMessages } from "../store/chat";
   import { activeMenu } from "../store/activeMenuStore"; // Impor store
+  import { RunningTeksAktif, activeComponents } from "../store/store";
 
   //  get value from store
   let tooltipValue = "";
@@ -37,7 +38,44 @@
   // Definisikan fungsi untuk mengatur menu aktif
   const setActiveMenu = (id: string) => {
     activeMenu.set(id);
+
+    switch (id) {
+      case "menu_favorite":
+        RunningTeksAktif.set("Teks dinamis untuk Favorit");
+        activeComponents.set({
+          searchBar: false,
+          buttonChip: false,
+          runningTeks: true,
+        });
+        break;
+      case "menu_agent":
+        RunningTeksAktif.set("Teks dinamis untuk Agen");
+        activeComponents.set({
+          searchBar: false,
+          buttonChip: false,
+          runningTeks: true,
+        });
+        break;
+      case "menu_chat":
+        RunningTeksAktif.set("Teks dinamis untuk Pesan");
+        activeComponents.set({
+          searchBar: false,
+          buttonChip: false,
+          runningTeks: true,
+        });
+        break;
+      default:
+        RunningTeksAktif.set("");
+        activeComponents.set({
+          searchBar: true,
+          buttonChip: true,
+          runningTeks: false,
+        });
+        break;
+    }
   };
+
+  //
 </script>
 
 <!-- Menu -->

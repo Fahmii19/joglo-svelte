@@ -6,6 +6,18 @@
   import { v4 as uuidv4 } from "uuid";
   import SaveButton from "../assets/images/save-instagram-on.png";
 
+  //
+  import { RunningTeksAktif, activeComponents } from "../store/store";
+
+  let componentsVisible = {
+    searchBar: true,
+    buttonChip: true,
+  };
+
+  activeComponents.subscribe((value) => {
+    componentsVisible = value;
+  });
+
   // Filter Harga
   interface ListFilterHarga {
     label: string;
@@ -105,11 +117,21 @@
   class="w-full h-[7vh] flex items-center flex-row border border-gray-300"
 >
   <!-- Input Searching Default -->
-  <SearchBar />
+
+  {#if $activeComponents.searchBar}
+    <SearchBar />
+  {/if}
+  {#if $activeComponents.buttonChip}
+    <ButtonChip />
+  {/if}
+  {#if $activeComponents.runningTeks}
+    <RunningTeks teks={$RunningTeksAktif} />
+  {/if}
+  <!-- <SearchBar />
 
   <ButtonChip />
 
-  <!-- <RunningTeks /> -->
+  <RunningTeks /> -->
 
   <!-- Button Cari -->
   <div class="px-1">
