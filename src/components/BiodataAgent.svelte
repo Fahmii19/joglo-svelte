@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { navigate } from "svelte-routing";
 </script>
 
 <div class="h-[62.5vh] grid grid-cols-[271px,1fr] gap-2">
@@ -120,12 +121,13 @@
             </button>
 
             <button
-              data-pesan="Mochtar Riady"
-              onclick="showMessage(this)"
+              on:click={(event) => {
+                navigate("/chat");
+              }}
               type="button"
               class="h-4 p-3 text-xs font-medium text-center inline-flex items-center text-white bg-[#0394F7] hover:bg-[#1877F2] rounded-md mx-2"
             >
-              Kirim Pesann
+              Kirim Pesannn
             </button>
           </div>
         </div>
