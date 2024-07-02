@@ -40,11 +40,21 @@
     activeMenu.set(id);
 
     switch (id) {
+      case "menu_listing_baru":
+        RunningTeksAktif.set("Teks dinamis untuk Listing Baru");
+        activeComponents.set({
+          searchBar: false,
+          buttonChip: false,
+          ButtonCari: false,
+          runningTeks: true,
+        });
+        break;
       case "menu_favorite":
         RunningTeksAktif.set("Teks dinamis untuk Favorit");
         activeComponents.set({
           searchBar: false,
           buttonChip: false,
+          ButtonCari: false,
           runningTeks: true,
         });
         break;
@@ -53,6 +63,7 @@
         activeComponents.set({
           searchBar: false,
           buttonChip: false,
+          ButtonCari: false,
           runningTeks: true,
         });
         break;
@@ -61,6 +72,7 @@
         activeComponents.set({
           searchBar: false,
           buttonChip: false,
+          ButtonCari: false,
           runningTeks: true,
         });
         break;
@@ -69,6 +81,7 @@
         activeComponents.set({
           searchBar: true,
           buttonChip: true,
+          ButtonCari: true,
           runningTeks: false,
         });
         break;

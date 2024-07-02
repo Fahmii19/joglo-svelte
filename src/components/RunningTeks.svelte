@@ -2,7 +2,7 @@
   import MarqueeTextWidget from "svelte-marquee-text-widget";
 </script>
 
-<div class="h-8 flex items-center w-full bg-white">
+<div class="h-8 w-[100vw] overflow-hidden flex items-center w-full bg-white">
   <MarqueeTextWidget duration={23}>
     <div
       class="teks-berjalan-pencarian w-full text-sm text-black whitespace-nowrap"

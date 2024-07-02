@@ -12,5 +12,6 @@ export const RunningTeksAktif = writable("");
 export const activeComponents = writable({
   searchBar: true,
   buttonChip: true,
+  ButtonCari: true,
   runningTeks: false,
 });
