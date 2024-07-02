@@ -1,6 +1,6 @@
 <script lang="ts"></script>
 
-<div class="pr-1">
+<div class="pr-1 pl-2">
   <div class="relative">
     <input
       id="InputanSearch"
