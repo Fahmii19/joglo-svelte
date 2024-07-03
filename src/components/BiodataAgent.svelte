@@ -100,7 +100,7 @@
               <div class="ml-1 text-xs text-black flex items-center">25</div>
             </div>
 
-            <div onclick="DetailProfilListing()" class="ml-2">
+            <div class="ml-2">
               <img
                 class="w-7 h-7 object-contain"
                 src="https://www.joglopro.com/bucket/soaraja/image/joglopro/megaphone.png"
