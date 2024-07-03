@@ -121,16 +121,8 @@
       padding_y={1}
       on:click={() => setActiveMenu("menu_galeri")}
     />
+
     <Menu
-      id="menu_pengaturan"
-      imageNonAktif={nonaktifMore}
-      imageAktif={aktifMore}
-      title="Pengaturan"
-      dimension={6}
-      href="/pengaturan"
-      on:click={() => setActiveMenu("menu_pengaturan")}
-    />
-    <!-- <Menu
       id="menu_listing_baru"
       imageNonAktif={nonaktifMore}
       imageAktif={aktifMore}
@@ -138,7 +130,7 @@
       dimension={6}
       href="/listing-baru"
       on:click={() => setActiveMenu("menu_listing_baru")}
-    /> -->
+    />
     <Menu
       id="menu_favorite"
       imageNonAktif={nonaktifFavorite}
@@ -167,6 +159,15 @@
       href="/chat"
       on:click={() => setActiveMenu("menu_chat")}
     />
+    <Menu
+      id="menu_pengaturan"
+      imageNonAktif={nonaktifMore}
+      imageAktif={aktifMore}
+      title="Pengaturan"
+      dimension={6}
+      href="/pengaturan"
+      on:click={() => setActiveMenu("menu_pengaturan")}
+    />
   </div>
   <!--  -->
 
@@ -180,7 +181,8 @@
     <div class="hide_show_button_pengaturan">
       <!-- <Menu
         id="menu_pengaturan"
-        imageNonAktif={GambarPengaturan}
+        imageNonAktif={nonaktifMore}
+        imageAktif={aktifMore}
         title="Pengaturan"
         dimension={6}
         href="/pengaturan"

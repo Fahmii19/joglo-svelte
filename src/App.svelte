@@ -14,14 +14,14 @@
     Register,
     Setting,
     FavoritNew,
+    PengaturanNew,
     ListingBaruNew,
     PostinganStoriesBaru,
     Profile,
     ChatNew,
     AgentNew,
     Posting,
-    DetailPostinganStories; // Perbaikan posisi deklarasi
-
+    DetailPostinganStories;
   onMount(() => {
     const loadFonts = async () => {
       try {
@@ -105,6 +105,11 @@
         if (!FavoritNew)
           FavoritNew = (await import("./pages/FavoritNew.svelte")).default;
         return FavoritNew;
+      case "PengaturanNew":
+        if (!PengaturanNew)
+          PengaturanNew = (await import("./pages/PengaturanNew.svelte"))
+            .default;
+        return PengaturanNew;
       case "ListingBaruNew":
         if (!ListingBaruNew)
           ListingBaruNew = (await import("./pages/ListingBaruNew.svelte"))
@@ -179,6 +184,11 @@
           <Route path="/favorit" let:params>
             {#await loadPage("FavoritNew") then FavoritNewComponent}
               <FavoritNewComponent />
+            {/await}
+          </Route>
+          <Route path="/pengaturan" let:params>
+            {#await loadPage("PengaturanNew") then PengaturanNewComponent}
+              <PengaturanNewComponent />
             {/await}
           </Route>
           <Route path="/listing-baru" let:params>
