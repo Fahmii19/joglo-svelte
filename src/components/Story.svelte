@@ -22,7 +22,7 @@
         if (event.key === "Enter") navigate("/postingan-stories");
       }}
       aria-label="Navigate to postingan stories"
-      class="absolute bottom-[0.2rem] right-1 border bg-white border-white border-2 rounded-full pointer-events-auto"
+      class="absolute bottom-[0.2rem] right-1 bg-white border-2 rounded-full pointer-events-auto"
     >
       <svg
         width="17"
