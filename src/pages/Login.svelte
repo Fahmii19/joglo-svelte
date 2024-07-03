@@ -130,6 +130,15 @@
     }
   };
 
+  // login
+  let UserIconNew =
+    "https://www.joglopro.com/bucket/soaraja/image/joglopro/model/model6.png";
+
+  import { loggedIn } from "../store/store";
+  function handleLogin() {
+    loggedIn.set(true);
+  }
+
   // Remove Marker
   $markerStore?.remove();
 </script>
@@ -251,13 +260,38 @@
               </a>
             </p>
 
-            <button
+            <!-- <button
               class="w-full py-2 mt-6 mb-5 font-medium text-white text-sm bg-[#0394F7] hover:bg-[#1877F2] rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center"
               on:click={Login}
             >
               <span class="login-text">Loginnn</span>
               <Spinner color="white" class="hidden spinner" size="6" />
-            </button>
+            </button> -->
+
+            <!--  -->
+            {#if $loggedIn}
+              <a href="/profile/{$authUser?.user_id}" use:link>
+                <div class="flex cursor-pointer items-center">
+                  <span class="text-sm font-medium text-gray-700 mr-2">
+                    {$authUser?.first_name || "Adi"}
+                    {$authUser?.last_name || "Cahyadi"}
+                  </span>
+                  <img
+                    class="w-8 h-8 object-cover"
+                    src={UserIconNew}
+                    alt="User Profile"
+                  />
+                </div>
+              </a>
+            {:else}
+              <button
+                class="w-full py-2 mt-6 mb-5 font-medium text-white text-sm bg-[#0394F7] hover:bg-[#1877F2] rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center"
+                on:click={handleLogin}
+              >
+                <span class="login-text">Loginnnn</span>
+                <Spinner color="white" class="hidden spinner" size="6" />
+              </button>
+            {/if}
 
             <p class="text-center text-xs">
               Tidak punya akun?

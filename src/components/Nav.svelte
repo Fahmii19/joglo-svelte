@@ -4,14 +4,7 @@
   import { isLogged, authUser } from "../store/auth";
   import { loggedIn } from "../store/store";
   import UserIcon from "../assets/images/user_model.jpg";
-
-  let UserIconNew =
-    "https://www.joglopro.com/bucket/soaraja/image/joglopro/model/model6.png";
-
-  // Login
-  function handleLogin() {
-    loggedIn.set(true);
-  }
+  import { navigate } from "svelte-routing";
 </script>
 
 <div
@@ -31,23 +24,20 @@
   </a>
 
   <!--  -->
-  {#if $loggedIn}
-    <a href="/profile/{$authUser?.user_id}" use:link>
-      <div class="flex cursor-pointer items-center">
-        <span class="text-sm font-medium text-gray-700 mr-2">
-          {$authUser?.first_name || "Adi"}
-          {$authUser?.last_name || "Cahyadi"}
-        </span>
-        <img
-          class="w-8 h-8 object-cover"
-          src={UserIconNew}
-          alt="User Profile"
-        />
-      </div>
-    </a>
+
+  <button
+    on:click={() => navigate("/login")}
+    class="text-sm text-gray-700 cursor-pointer">Login</button
+  >
+  <!-- {#if $isLogged || loggedIn}
+
+
+
   {:else}
-    <button on:click={handleLogin} class="text-sm text-gray-700 cursor-pointer"
+    <button
+      on:click={handleLogin}
+      class="button_login_pengaturan text-sm text-gray-700 cursor-pointer"
       >Login</button
     >
-  {/if}
+  {/if} -->
 </div>
