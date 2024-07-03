@@ -111,7 +111,7 @@
   data-tabs-toggle="#kontenMenuContent"
   role="tablist"
 >
-  <div class="border border-red-500" use:links>
+  <div class="" use:links>
     <Menu
       href="/"
       id="menu_galeri"
@@ -122,6 +122,15 @@
       on:click={() => setActiveMenu("menu_galeri")}
     />
     <Menu
+      id="menu_pengaturan"
+      imageNonAktif={nonaktifMore}
+      imageAktif={aktifMore}
+      title="Pengaturan"
+      dimension={6}
+      href="/pengaturan"
+      on:click={() => setActiveMenu("menu_pengaturan")}
+    />
+    <!-- <Menu
       id="menu_listing_baru"
       imageNonAktif={nonaktifMore}
       imageAktif={aktifMore}
@@ -129,7 +138,7 @@
       dimension={6}
       href="/listing-baru"
       on:click={() => setActiveMenu("menu_listing_baru")}
-    />
+    /> -->
     <Menu
       id="menu_favorite"
       imageNonAktif={nonaktifFavorite}
@@ -168,15 +177,16 @@
   {/if} -->
 
   {#if $loggedIn}
-    <div class="hide_show_button_pengaturan border border-blue-500">
-      <Menu
-        id="menu_settings"
+    <div class="hide_show_button_pengaturan">
+      <!-- <Menu
+        id="menu_pengaturan"
         imageNonAktif={GambarPengaturan}
         title="Pengaturan"
         dimension={6}
         href="/pengaturan"
-        on:click={() => setActiveMenu("menu_settings")}
-      />
+        on:click={() => setActiveMenu("menu_pengaturan")}
+      /> -->
+
       <Menu
         id="menu_logout"
         imageNonAktif={GambarKeluar}
