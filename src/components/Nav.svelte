@@ -5,6 +5,14 @@
   import { loggedIn } from "../store/store";
   import UserIcon from "../assets/images/user_model.jpg";
   import { navigate } from "svelte-routing";
+
+  let UserIconNew =
+    "https://www.joglopro.com/bucket/soaraja/image/joglopro/model/model6.png";
+
+  // Login
+  function handleLogin() {
+    loggedIn.set(true);
+  }
 </script>
 
 <div
@@ -25,10 +33,27 @@
 
   <!--  -->
 
-  <button
-    on:click={() => navigate("/login")}
-    class="text-sm text-gray-700 cursor-pointer">Login</button
-  >
+  {#if $loggedIn}
+    <a href="/profile/{$authUser?.user_id}" use:link>
+      <div class="flex cursor-pointer items-center">
+        <span class="text-sm font-medium text-gray-700 mr-2">
+          {$authUser?.first_name || "Adi"}
+          {$authUser?.last_name || "Cahyadi"}
+        </span>
+        <img
+          class="w-8 h-8 object-cover"
+          src={UserIconNew}
+          alt="User Profile"
+        />
+      </div>
+    </a>
+  {:else}
+    <button
+      on:click={() => navigate("/login")}
+      class="text-sm text-gray-700 cursor-pointer">Login</button
+    >
+  {/if}
+
   <!-- {#if $isLogged || loggedIn}
 
 

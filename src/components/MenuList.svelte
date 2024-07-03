@@ -183,11 +183,7 @@
             imageNonAktif={GambarKeluar}
             title="Keluar"
             dimension={6}
-            href="/keluar"
-            on:click={() => {
-              LogOut();
-              setActiveMenu("menu_logout");
-            }}
+            href="/login"
           />
         </div>
       {/if}
