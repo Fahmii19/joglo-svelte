@@ -111,63 +111,90 @@
   data-tabs-toggle="#kontenMenuContent"
   role="tablist"
 >
-  <div class="" use:links>
-    <Menu
-      href="/"
-      id="menu_galeri"
-      imageNonAktif={nonaktifGaleri}
-      imageAktif={aktifGaleri}
-      title="Galeri"
-      padding_y={1}
-      on:click={() => setActiveMenu("menu_galeri")}
-    />
+  <div
+    class="h-full border border-red-500 flex flex-col justify-between"
+    use:links
+  >
+    <div>
+      <Menu
+        href="/"
+        id="menu_galeri"
+        imageNonAktif={nonaktifGaleri}
+        imageAktif={aktifGaleri}
+        title="Galeri"
+        padding_y={1}
+        on:click={() => setActiveMenu("menu_galeri")}
+      />
 
-    <Menu
-      id="menu_listing_baru"
-      imageNonAktif={nonaktifMore}
-      imageAktif={aktifMore}
-      title="Listing Baru"
-      dimension={6}
-      href="/listing-baru"
-      on:click={() => setActiveMenu("menu_listing_baru")}
-    />
-    <Menu
-      id="menu_favorite"
-      imageNonAktif={nonaktifFavorite}
-      imageAktif={aktifFavorite}
-      title="Favorit"
-      dimension={6}
-      href="/favorit"
-      on:click={() => setActiveMenu("menu_favorite")}
-    />
-    <Menu
-      id="menu_agent"
-      imageNonAktif={nonaktifRealEstate}
-      imageAktif={aktifRealEstate}
-      title="Agen"
-      dimension={6}
-      href="/agen"
-      on:click={() => setActiveMenu("menu_agent")}
-    />
-    <Menu
-      id="menu_chat"
-      imageNonAktif={nonaktifMessenger}
-      imageAktif={aktifMessenger}
-      title="Pesan"
-      dimension={6}
-      indicator={$unreadMessages}
-      href="/chat"
-      on:click={() => setActiveMenu("menu_chat")}
-    />
-    <Menu
-      id="menu_pengaturan"
-      imageNonAktif={nonaktifMore}
-      imageAktif={aktifMore}
-      title="Pengaturan"
-      dimension={6}
-      href="/pengaturan"
-      on:click={() => setActiveMenu("menu_pengaturan")}
-    />
+      <Menu
+        id="menu_listing_baru"
+        imageNonAktif={nonaktifMore}
+        imageAktif={aktifMore}
+        title="Listing Baru"
+        dimension={6}
+        href="/listing-baru"
+        on:click={() => setActiveMenu("menu_listing_baru")}
+      />
+      <Menu
+        id="menu_favorite"
+        imageNonAktif={nonaktifFavorite}
+        imageAktif={aktifFavorite}
+        title="Favorit"
+        dimension={6}
+        href="/favorit"
+        on:click={() => setActiveMenu("menu_favorite")}
+      />
+      <Menu
+        id="menu_agent"
+        imageNonAktif={nonaktifRealEstate}
+        imageAktif={aktifRealEstate}
+        title="Agen"
+        dimension={6}
+        href="/agen"
+        on:click={() => setActiveMenu("menu_agent")}
+      />
+      <Menu
+        id="menu_chat"
+        imageNonAktif={nonaktifMessenger}
+        imageAktif={aktifMessenger}
+        title="Pesan"
+        dimension={6}
+        indicator={$unreadMessages}
+        href="/chat"
+        on:click={() => setActiveMenu("menu_chat")}
+      />
+    </div>
+
+    <!--  -->
+    <div>
+      {#if $loggedIn}
+        <div class="hide_show_button_pengaturan">
+          <Menu
+            id="menu_pengaturan"
+            imageNonAktif={GambarPengaturan}
+            imageAktif={GambarPengaturan}
+            title="Pengaturan"
+            dimension={6}
+            href="/pengaturan"
+            on:click={() => setActiveMenu("menu_pengaturan")}
+          />
+
+          <Menu
+            id="menu_logout"
+            imageNonAktif={GambarKeluar}
+            title="Keluar"
+            dimension={6}
+            href="/keluar"
+            on:click={() => {
+              LogOut();
+              setActiveMenu("menu_logout");
+            }}
+          />
+        </div>
+      {/if}
+    </div>
+
+    <!--  -->
   </div>
   <!--  -->
 
@@ -177,31 +204,6 @@
     <div use:links></div>
   {/if} -->
 
-  {#if $loggedIn}
-    <div class="hide_show_button_pengaturan">
-      <!-- <Menu
-        id="menu_pengaturan"
-        imageNonAktif={nonaktifMore}
-        imageAktif={aktifMore}
-        title="Pengaturan"
-        dimension={6}
-        href="/pengaturan"
-        on:click={() => setActiveMenu("menu_pengaturan")}
-      /> -->
-
-      <Menu
-        id="menu_logout"
-        imageNonAktif={GambarKeluar}
-        title="Keluar"
-        dimension={6}
-        href="/keluar"
-        on:click={() => {
-          LogOut();
-          setActiveMenu("menu_logout");
-        }}
-      />
-    </div>
-  {/if}
   <!--  -->
 
   <!-- <Tooltip
