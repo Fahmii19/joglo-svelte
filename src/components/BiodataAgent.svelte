@@ -12,23 +12,38 @@
         <div class="grid grid-cols-[90px,1fr] h-full w-full mx-auto mt-4 mb-1">
           <div class="w-full h-full flex flex-col justify-center items-center">
             <div class="relative flex flex-col items-center cursor-pointer">
-              <div class="">
+              <div
+                class=""
+                role="button"
+                tabindex="0"
+                on:click={() => navigate("/detail-postingan-stories")}
+                on:keypress={(event) => {
+                  if (event.key === "Enter" || event.key === " ")
+                    navigate("/detail-postingan-stories");
+                }}
+              >
                 <div
                   class="w-12 h-12 p-[0.15rem] bg-gradient-to-r from-yellow-200 to-pink-600 rounded-full"
                 >
                   <img
                     class="w-full h-full p-[0.15rem] bg-white rounded-full relative"
                     src="https://www.joglopro.com/bucket/soaraja/image/joglopro/model/model11.jpg"
-                    alt=""
+                    alt="Profile Picture"
                   />
 
                   <svg
+                    role="button"
+                    tabindex="0"
+                    on:click={() => navigate("/postingan-stories")}
+                    on:keypress={(event) => {
+                      if (event.key === "Enter" || event.key === " ")
+                        navigate("/postingan-stories");
+                    }}
                     width="18"
                     height="18"
                     viewBox="0 0 16 16"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    onclick="showPostingStories(this)"
                     class="absolute bottom-0 -right-0.5 border bg-white border-white border-2 rounded-full"
                   >
                     <path
@@ -113,7 +128,9 @@
 
           <div class="w-full flex justify-center mt-3">
             <button
-              onclick="showPengaturan(this, event)"
+              on:click={(event) => {
+                navigate("/pengaturan");
+              }}
               type="button"
               class="h-4 p-3 text-xs font-medium text-center inline-flex items-center text-white bg-[#0394F7] hover:bg-[#1877F2] rounded-md"
             >

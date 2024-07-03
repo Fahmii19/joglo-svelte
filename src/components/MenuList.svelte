@@ -5,17 +5,16 @@
   import aktifFavorite from "../assets/images/button/aktif_favorite.png";
   import aktifMessenger from "../assets/images/button/aktif_messenger.png";
   import aktifMore from "../assets/images/button/aktif_more.png";
+  import aktifPengaturan from "../assets/images/button/aktif_pengaturan.png";
 
   import nonaktifGaleri from "../assets/images/button/nonaktif_aktif_galeri.png";
   import nonaktifRealEstate from "../assets/images/button/nonaktif_agen.png";
   import nonaktifFavorite from "../assets/images/button/nonaktif_aktif_favorite.png";
   import nonaktifMessenger from "../assets/images/button/nonaktif_aktif_messenger.png";
   import nonaktifMore from "../assets/images/button/nonaktif_aktif_more.png";
+  import nonaktifPengaturan from "../assets/images/button/nonaktif_pengaturan.png";
 
   // Login Pengaturan
-  let GambarPengaturan =
-    "https://www.joglopro.com/bucket/soaraja/image/joglopro/settings.png";
-
   let GambarKeluar =
     "https://www.joglopro.com/bucket/soaraja/image/joglopro/logout3.png";
 
@@ -171,8 +170,8 @@
         <div class="hide_show_button_pengaturan">
           <Menu
             id="menu_pengaturan"
-            imageNonAktif={GambarPengaturan}
-            imageAktif={GambarPengaturan}
+            imageNonAktif={nonaktifPengaturan}
+            imageAktif={aktifPengaturan}
             title="Pengaturan"
             dimension={6}
             href="/pengaturan"
