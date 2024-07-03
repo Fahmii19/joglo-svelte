@@ -15,3 +15,6 @@ export const activeComponents = writable({
   ButtonCari: true,
   runningTeks: false,
 });
+
+// untuk login
+export const loggedIn = writable(false);

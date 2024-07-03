@@ -1,9 +1,17 @@
 <script lang="ts">
   import HomeIcon from "../assets/images/home.png";
   import { link } from "svelte-routing";
-  import { isLogged } from "../store/auth";
+  import { isLogged, authUser } from "../store/auth";
+  import { loggedIn } from "../store/store";
   import UserIcon from "../assets/images/user_model.jpg";
-  import { authUser } from "../store/auth";
+
+  let UserIconNew =
+    "https://www.joglopro.com/bucket/soaraja/image/joglopro/model/model6.png";
+
+  // Login
+  function handleLogin() {
+    loggedIn.set(true);
+  }
 </script>
 
 <div
@@ -22,21 +30,24 @@
     </div>
   </a>
 
-  {#if $isLogged}
+  <!--  -->
+  {#if $loggedIn}
     <a href="/profile/{$authUser?.user_id}" use:link>
       <div class="flex cursor-pointer items-center">
-        <span class="text-sm font-medium text-gray-700 mr-2"
-          >{$authUser?.first_name} {$authUser?.last_name}</span
-        >
-
-        <img class="w-8 h-8 object-cover mr-2" src={UserIcon} alt="" />
+        <span class="text-sm font-medium text-gray-700 mr-2">
+          {$authUser?.first_name || "Adi"}
+          {$authUser?.last_name || "Cahyadi"}
+        </span>
+        <img
+          class="w-8 h-8 object-cover"
+          src={UserIconNew}
+          alt="User Profile"
+        />
       </div>
     </a>
   {:else}
-    <a
-      class="flex justify-end text-sm text-gray-700 cursor-pointer"
-      href="/login"
-      use:link>Login</a
+    <button on:click={handleLogin} class="text-sm text-gray-700 cursor-pointer"
+      >Login</button
     >
   {/if}
 </div>

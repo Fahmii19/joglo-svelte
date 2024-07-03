@@ -255,7 +255,7 @@
               class="w-full py-2 mt-6 mb-5 font-medium text-white text-sm bg-[#0394F7] hover:bg-[#1877F2] rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center"
               on:click={Login}
             >
-              <span class="login-text">Login</span>
+              <span class="login-text">Loginnn</span>
               <Spinner color="white" class="hidden spinner" size="6" />
             </button>
 

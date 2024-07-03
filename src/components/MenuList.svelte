@@ -12,9 +12,20 @@
   import nonaktifMessenger from "../assets/images/button/nonaktif_aktif_messenger.png";
   import nonaktifMore from "../assets/images/button/nonaktif_aktif_more.png";
 
+  // Login Pengaturan
+  let GambarPengaturan =
+    "https://www.joglopro.com/bucket/soaraja/image/joglopro/settings.png";
+
+  let GambarKeluar =
+    "https://www.joglopro.com/bucket/soaraja/image/joglopro/logout3.png";
+
+  //
   // Component
   import Menu from "./Menu.svelte";
   import { Tooltip } from "flowbite-svelte";
+
+  // Login
+  import { loggedIn } from "../store/store";
 
   // UUID
   import { v4 as uuidv4 } from "uuid";
@@ -27,6 +38,8 @@
   import { unreadMessages } from "../store/chat";
   import { activeMenu } from "../store/activeMenuStore"; // Impor store
   import { RunningTeksAktif, activeComponents } from "../store/store";
+
+  // Login Pengaturan
 
   //  get value from store
   let tooltipValue = "";
@@ -98,7 +111,7 @@
   data-tabs-toggle="#kontenMenuContent"
   role="tablist"
 >
-  <div use:links>
+  <div class="border border-red-500" use:links>
     <Menu
       href="/"
       id="menu_galeri"
@@ -146,23 +159,30 @@
       on:click={() => setActiveMenu("menu_chat")}
     />
   </div>
-  {#if $isLogged}
-    <div use:links>
+  <!--  -->
+
+  <!-- menu setting dan logout -->
+
+  <!-- {#if $isLogged}
+    <div use:links></div>
+  {/if} -->
+
+  {#if $loggedIn}
+    <div class="hide_show_button_pengaturan border border-blue-500">
       <Menu
         id="menu_settings"
-        imageNonAktif={nonaktifMore}
-        imageAktif={aktifMore}
+        imageNonAktif={GambarPengaturan}
         title="Pengaturan"
         dimension={6}
-        href="/settings"
+        href="/pengaturan"
         on:click={() => setActiveMenu("menu_settings")}
       />
       <Menu
         id="menu_logout"
-        imageNonAktif={nonaktifMore}
-        imageAktif={aktifMore}
+        imageNonAktif={GambarKeluar}
         title="Keluar"
         dimension={6}
+        href="/keluar"
         on:click={() => {
           LogOut();
           setActiveMenu("menu_logout");
@@ -170,11 +190,13 @@
       />
     </div>
   {/if}
-  <Tooltip
+  <!--  -->
+
+  <!-- <Tooltip
     triggeredBy="[id^='menu_']"
     placement="right"
     class="bg-white text-black z-[9999]"
   >
     {tooltipValue}
-  </Tooltip>
+  </Tooltip> -->
 </div>
