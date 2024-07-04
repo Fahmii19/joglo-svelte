@@ -22,9 +22,15 @@
   // Component
   import Menu from "./Menu.svelte";
   import { Tooltip } from "flowbite-svelte";
+  import { navigate } from "svelte-routing";
 
   // Login
   import { loggedIn } from "../store/store";
+
+  function handleLogout() {
+    loggedIn.set(false);
+    navigate("/login");
+  }
 
   // UUID
   import { v4 as uuidv4 } from "uuid";
@@ -180,7 +186,8 @@
             imageNonAktif={GambarKeluar}
             title="Keluar"
             dimension={6}
-            href="/login"
+            href="#"
+            on:click={handleLogout}
           />
         </div>
       {/if}
