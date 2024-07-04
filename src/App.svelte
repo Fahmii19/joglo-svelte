@@ -12,6 +12,7 @@
     DetailAgentNew,
     Login,
     Register,
+    LupaKataSandi,
     Setting,
     FavoritNew,
     PengaturanNew,
@@ -93,6 +94,11 @@
       case "Login":
         if (!Login) Login = (await import("./pages/Login.svelte")).default;
         return Login;
+      case "LupaKataSandi":
+        if (!LupaKataSandi)
+          LupaKataSandi = (await import("./pages/LupaKataSandi.svelte"))
+            .default;
+        return LupaKataSandi;
       case "Register":
         if (!Register)
           Register = (await import("./pages/Register.svelte")).default;
@@ -169,6 +175,11 @@
           <Route path="/login" let:params>
             {#await loadPage("Login") then LoginComponent}
               <LoginComponent />
+            {/await}
+          </Route>
+          <Route path="/lupa-kata-sandi" let:params>
+            {#await loadPage("LupaKataSandi") then LupaKataSandiComponent}
+              <LupaKataSandiComponent />
             {/await}
           </Route>
           <Route path="/register" let:params>

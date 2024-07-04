@@ -140,6 +140,10 @@
     navigate("/");
   }
 
+  function lupaKataSandi() {
+    navigate("/lupa-kata-sandi");
+  }
+
   // Remove Marker
   $markerStore?.remove();
 </script>
@@ -254,6 +258,7 @@
             <p class="text-right text-xs">
               <!-- svelte-ignore a11y-missing-attribute -->
               <a
+                on:click={lupaKataSandi}
                 class="text-[#2074D8] font-medium inline-flex space-x-1 items-center cursor-pointer"
                 target="_blank"
               >
