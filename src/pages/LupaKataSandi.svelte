@@ -3,6 +3,10 @@
   import BackIcon from "../assets/images/back.png";
 
   import FormLupaKataSandi from "../components/FormLupaKataSandi.svelte";
+
+  function KembaliLogin() {
+    navigate("/login");
+  }
 </script>
 
 <div class="flex flex-col show-form-registrasi">
@@ -21,7 +25,7 @@
         <div
           class="w-5 h-5 mt-0.5 mr-0.5 flex justify-center items-center relative"
         >
-          <a href="/" use:link>
+          <a on:click={KembaliLogin}>
             <img src={BackIcon} alt="" />
           </a>
         </div>
