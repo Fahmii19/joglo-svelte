@@ -1,3 +1,9 @@
+<script>
+  import Range from "./Range.svelte";
+  import RangePertahun from "./RangePertahun.svelte";
+  let value = 0;
+</script>
+
 <div class="h-[65vh] overflow-y-hidden hide-scrollbar">
   <div class="h-[67vh] overflow-y-auto hide-scrollbar text-black">
     <form class="formEditListingg RemoveClassformEditListingg">
@@ -14,6 +20,7 @@
 
       <div class="grid grid-cols-2 gap-y-1 gap-x-5">
         <!-- aa -->
+
         <div>
           <!-- Harga Properti -->
           <div class="relative w-full flex flex-row mb-2">
@@ -63,21 +70,15 @@
             <div class="basis-5/12 w-full">
               <!--  -->
               <div class="w-full my-1">
-                <input
-                  type="range"
-                  class="slider"
-                  id="ControlRangeSimulasi1"
-                  min="1"
-                  max="5"
-                  step="1"
-                  value="3"
+                <Range
+                  value={75}
+                  min={50}
+                  max={100}
+                  initialValue={value}
+                  on:change={(e) => (value = e.detail.value)}
                 />
               </div>
               <!--  -->
-              <div class="flex justify-between text-xs w-full mt-1">
-                <div class="">50%</div>
-                <div class="">100%</div>
-              </div>
             </div>
           </div>
 
@@ -93,7 +94,7 @@
             </div>
             <div class="basis-5/12">
               <input
-                value="15"
+                value="10"
                 type="text"
                 id="new11_perkiraan_njob_m2"
                 class="border-0 px-2 py-1.5 text-black bg-white rounded-lg text-sm focus:outline-none focus:ring-0 w-full text-right remove_style_arrow_inputan"
@@ -107,21 +108,15 @@
             <div class="basis-5/12 w-full">
               <!--  -->
               <div class="w-full my-1">
-                <input
-                  type="range"
-                  class="slider"
-                  id="ControlRangeSimulasi2"
-                  min="1"
-                  max="5"
-                  step="1"
-                  value="3"
+                <Range
+                  value={20}
+                  min={10}
+                  max={100}
+                  initialValue={value}
+                  on:change={(e) => (value = e.detail.value)}
                 />
               </div>
               <!--  -->
-              <div class="flex justify-between text-xs w-full mt-1">
-                <div class="">15%</div>
-                <div class="">100%</div>
-              </div>
             </div>
           </div>
 
@@ -137,7 +132,7 @@
             </div>
             <div class="basis-5/12">
               <input
-                value="10"
+                value="15"
                 type="text"
                 id="new12_perkiraan_njob_m2"
                 class="border-0 px-2 py-1.5 text-black bg-white rounded-lg text-sm focus:outline-none focus:ring-0 w-full text-right remove_style_arrow_inputan"
@@ -151,21 +146,15 @@
             <div class="basis-5/12 w-full">
               <!--  -->
               <div class="w-full my-1">
-                <input
-                  type="range"
-                  class="slider"
-                  id="ControlRangeSimulasi3"
-                  min="1"
-                  max="5"
-                  step="1"
-                  value="3"
+                <RangePertahun
+                  value={12}
+                  min={5}
+                  max={20}
+                  initialValue={value}
+                  on:change={(e) => (value = e.detail.value)}
                 />
               </div>
               <!--  -->
-              <div class="flex justify-between text-xs w-full mt-1">
-                <div class="">10</div>
-                <div class="">20</div>
-              </div>
             </div>
           </div>
 
