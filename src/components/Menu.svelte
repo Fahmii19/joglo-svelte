@@ -24,6 +24,7 @@
 
 <a
   class="flex col justify-center py-{padding_y}"
+  data-tooltip-id="menu-tooltip"
   {href}
   on:mouseenter={onHover}
   on:click

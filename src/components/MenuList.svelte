@@ -94,6 +94,24 @@
           runningTeks: true,
         });
         break;
+      case "menu_pengaturan":
+        RunningTeksAktif.set("Teks dinamis untuk Pengaturan");
+        activeComponents.set({
+          searchBar: false,
+          buttonChip: false,
+          ButtonCari: false,
+          runningTeks: true,
+        });
+        break;
+      case "menu_logout":
+        RunningTeksAktif.set("Teks dinamis untuk Keluar");
+        activeComponents.set({
+          searchBar: false,
+          buttonChip: false,
+          ButtonCari: false,
+          runningTeks: true,
+        });
+        break;
       default:
         RunningTeksAktif.set("");
         activeComponents.set({
@@ -205,11 +223,11 @@
 
   <!--  -->
 
-  <!-- <Tooltip
-    triggeredBy="[id^='menu_']"
+  <Tooltip
+    triggeredBy="[data-tooltip-id='menu-tooltip']"
     placement="right"
     class="bg-white text-black z-[9999]"
   >
     {tooltipValue}
-  </Tooltip> -->
+  </Tooltip>
 </div>
