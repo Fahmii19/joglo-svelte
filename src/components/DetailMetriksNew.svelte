@@ -1,3 +1,7 @@
+<script>
+  import RadarChart from "./RadarChart.svelte";
+</script>
+
 <div class="h-[65vh] overflow-y-hidden hide-scrollbar">
   <div
     class="h-[67vh] overflow-x-hidden overflow-y-hidden hide-scrollbar text-black"
@@ -695,8 +699,12 @@
 
         <!-- b -->
         <div class="h-full flex flex-col">
-          <div class="radarChart mt-[1rem] ml-[1rem]"></div>
-          <span class="text-sm text-center font-bold -mt-[4.25rem]"
+          <!-- <div class="radarChart mt-[1rem] ml-[1rem]"></div> -->
+
+          <div class="h-[30vh] flex justify-center">
+            <RadarChart />
+          </div>
+          <span class="mt-8 text-sm text-center font-bold"
             >Livability Chart</span
           >
         </div>
