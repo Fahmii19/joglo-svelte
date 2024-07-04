@@ -13,7 +13,7 @@
       </div>
 
       <div class="grid grid-cols-2 gap-y-1 gap-x-5">
-        <!-- a -->
+        <!-- aa -->
         <div>
           <!-- Harga Properti -->
           <div class="relative w-full flex flex-row mb-2">
