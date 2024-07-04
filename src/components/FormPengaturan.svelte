@@ -1,5 +1,5 @@
 <div
-  class="bg-transparent rounded-lg h-[73vh] overflow-y-auto overflow-x-hidden hide-scrollbar border border-red-500"
+  class="bg-transparent rounded-lg h-[73vh] overflow-y-auto overflow-x-hidden hide-scrollbar"
 >
   <form class="mt-2.5" action="#">
     <div class="grid grid-cols-2 gap-y-3 gap-x-3">

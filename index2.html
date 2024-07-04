@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hasil Survei Pengguna Potensial SmartPay</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      .chart-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .chart-item {
+        width: 30%;
+        min-width: 300px;
+        margin: 10px;
+      }
+      canvas {
+        width: 100% !important;
+        height: auto !important;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hasil Survei Pengguna Potensial SmartPay</h1>
+
+    <div class="chart-container">
+      <!-- Chart untuk Demografi Usia -->
+      <div class="chart-item">
+        <h2>Demografi Usia</h2>
+        <canvas id="usiaChart"></canvas>
+      </div>
+
+      <!-- Chart untuk Penggunaan E-Wallet Sebelumnya -->
+      <div class="chart-item">
+        <h2>Penggunaan E-Wallet Sebelumnya</h2>
+        <canvas id="penggunaanSebelumnyaChart"></canvas>
+      </div>
+
+      <!-- Chart untuk Preferensi Fitur -->
+      <div class="chart-item">
+        <h2>Preferensi Fitur</h2>
+        <canvas id="preferensiFiturChart"></canvas>
+      </div>
+
+      <!-- Chart untuk Tingkat Kepuasan Terhadap Fitur Keamanan -->
+      <div class="chart-item">
+        <h2>Tingkat Kepuasan Terhadap Fitur Keamanan</h2>
+        <canvas id="kepuasanKeamananChart"></canvas>
+      </div>
+
+      <!-- Chart untuk Kesulitan yang Dihadapi Pengguna -->
+      <div class="chart-item">
+        <h2>Kesulitan yang Dihadapi Pengguna</h2>
+        <canvas id="kesulitanPenggunaChart"></canvas>
+      </div>
+    </div>
+
+    <script>
+      // Data untuk chart
+      const usiaData = {
+        labels: ["18-25 tahun", "26-35 tahun", "36-45 tahun", ">45 tahun"],
+        datasets: [
+          {
+            label: "Usia",
+            data: [40, 35, 15, 10],
+            backgroundColor: "rgba(75, 192, 192, 0.2)",
+            borderColor: "rgba(75, 192, 192, 1)",
+            borderWidth: 1,
+          },
+        ],
+      };
+
+      const penggunaanSebelumnyaData = {
+        labels: ["Sudah pernah menggunakan", "Belum pernah menggunakan"],
+        datasets: [
+          {
+            label: "Penggunaan E-Wallet Sebelumnya",
+            data: [85, 15],
+            backgroundColor: [
+              "rgba(153, 102, 255, 0.2)",
+              "rgba(255, 159, 64, 0.2)",
+            ],
+            borderColor: ["rgba(153, 102, 255, 1)", "rgba(255, 159, 64, 1)"],
+            borderWidth: 1,
+          },
+        ],
+      };
+
+      const preferensiFiturData = {
+        labels: [
+          "Transfer Uang",
+          "Pembayaran Tagihan",
+          "Pembelian Pulsa/Token",
+          "Cashback/Promo",
+          "Keamanan Transaksi",
+        ],
+        datasets: [
+          {
+            label: "Preferensi Fitur",
+            data: [90, 85, 70, 65, 95],
+            backgroundColor: "rgba(255, 206, 86, 0.2)",
+            borderColor: "rgba(255, 206, 86, 1)",
+            borderWidth: 1,
+          },
+        ],
+      };
+
+      const kepuasanKeamananData = {
+        labels: ["Sangat Puas", "Puas", "Cukup Puas", "Tidak Puas"],
+        datasets: [
+          {
+            label: "Tingkat Kepuasan Terhadap Fitur Keamanan",
+            data: [50, 40, 8, 2],
+            backgroundColor: "rgba(54, 162, 235, 0.2)",
+            borderColor: "rgba(54, 162, 235, 1)",
+            borderWidth: 1,
+          },
+        ],
+      };
+
+      const kesulitanPenggunaData = {
+        labels: [
+          "Proses Transaksi Lambat",
+          "Kendala Teknis",
+          "Kurangnya Informasi tentang Promo",
+          "Keamanan",
+        ],
+        datasets: [
+          {
+            label: "Kesulitan yang Dihadapi Pengguna",
+            data: [40, 25, 20, 15],
+            backgroundColor: "rgba(255, 99, 132, 0.2)",
+            borderColor: "rgba(255, 99, 132, 1)",
+            borderWidth: 1,
+          },
+        ],
+      };
+
+      // Konfigurasi untuk masing-masing chart
+      const configUsia = {
+        type: "bar",
+        data: usiaData,
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      };
+
+      const configPenggunaanSebelumnya = {
+        type: "pie",
+        data: penggunaanSebelumnyaData,
+        options: {
+          responsive: true,
+        },
+      };
+
+      const configPreferensiFitur = {
+        type: "bar",
+        data: preferensiFiturData,
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      };
+
+      const configKepuasanKeamanan = {
+        type: "bar",
+        data: kepuasanKeamananData,
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      };
+
+      const configKesulitanPengguna = {
+        type: "bar",
+        data: kesulitanPenggunaData,
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      };
+
+      // Inisialisasi chart
+      new Chart(document.getElementById("usiaChart"), configUsia);
+      new Chart(
+        document.getElementById("penggunaanSebelumnyaChart"),
+        configPenggunaanSebelumnya
+      );
+      new Chart(
+        document.getElementById("preferensiFiturChart"),
+        configPreferensiFitur
+      );
+      new Chart(
+        document.getElementById("kepuasanKeamananChart"),
+        configKepuasanKeamanan
+      );
+      new Chart(
+        document.getElementById("kesulitanPenggunaChart"),
+        configKesulitanPengguna
+      );
+    </script>
+  </body>
+</html>

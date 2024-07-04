@@ -97,7 +97,7 @@
           </div>
 
           <div class="slider-card-stories-persegi w-full h-full z-index-10">
-            <div class="w-[24.2vw] h-[63.5vh] border border-red-500">
+            <div class="w-[24.2vw] h-[63.5vh]">
               <video
                 autoplay
                 muted

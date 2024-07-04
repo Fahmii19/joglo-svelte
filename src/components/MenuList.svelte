@@ -110,10 +110,7 @@
   data-tabs-toggle="#kontenMenuContent"
   role="tablist"
 >
-  <div
-    class="h-full border border-red-500 flex flex-col justify-between"
-    use:links
-  >
+  <div class="h-full flex flex-col justify-between" use:links>
     <div>
       <Menu
         href="/"
