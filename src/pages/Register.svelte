@@ -8,12 +8,12 @@
   import { onMount } from "svelte";
   import AuthService from "../service/auth/auth";
   import type { AuthUser, RegisterUser } from "../service/auth/type";
-  import { Alert, Spinner } from "flowbite-svelte";
-  import type { ColorAlert } from "../types/color-alert";
+  import { Spinner, Alert, Button, Modal } from "flowbite-svelte";
   import { authUserTemp } from "../store/auth";
   import { markerStore } from "../store/map";
 
-  $: colorResponse = "red" as ColorAlert;
+  let showModal = false;
+  let errors: string[] = [];
 
   onMount(() => {
     const togglePassword = document.querySelector(".toggle-password");
@@ -79,30 +79,27 @@
     spinner.classList.remove("hidden");
 
     // Validate input required all field
-    if (
-      phone.value === "" ||
-      email.value === "" ||
-      firstName.value === "" ||
-      lastName.value === "" ||
-      password.value === ""
-    ) {
-      // Show register text and hide spinner
+    errors = [];
+    if (phone.value === "") {
+      errors.push("Nomor Ponsel harus diisi");
+    }
+    if (email.value === "") {
+      errors.push("Email harus diisi");
+    }
+    if (firstName.value === "") {
+      errors.push("Nama Depan harus diisi");
+    }
+    if (lastName.value === "") {
+      errors.push("Nama Belakang harus diisi");
+    }
+    if (password.value === "") {
+      errors.push("Kata Sandi harus diisi");
+    }
+
+    if (errors.length > 0) {
+      showModal = true;
       registerText.classList.remove("hidden");
       spinner.classList.add("hidden");
-
-      //  Show alert
-      const alert = document.querySelector(
-        ".response-register"
-      ) as HTMLDivElement;
-      const alertMessage = document.querySelector(
-        ".response-register-message"
-      ) as HTMLSpanElement;
-      alert.classList.remove("hidden");
-      alertMessage.textContent = "Semua field harus diisi";
-
-      setTimeout(() => {
-        alert.classList.add("hidden");
-      }, 3000);
       return;
     }
 
@@ -124,25 +121,9 @@
       registerText.classList.remove("hidden");
       spinner.classList.add("hidden");
 
-      //  Show alert
-      const alert = document.querySelector(
-        ".response-register"
-      ) as HTMLDivElement;
-      const alertMessage = document.querySelector(
-        ".response-register-message"
-      ) as HTMLSpanElement;
-      const alertCategory = document.querySelector(
-        ".response-register-category"
-      ) as HTMLSpanElement;
-      alert.classList.remove("hidden");
-      alertCategory.textContent = "Gagal!";
-      alertMessage.textContent = "Registrasi gagal";
-
-      colorResponse = "red";
-
-      setTimeout(() => {
-        alert.classList.add("hidden");
-      }, 3000);
+      // Show modal with error
+      errors = ["Registrasi gagal"];
+      showModal = true;
     }
   };
 
@@ -152,13 +133,10 @@
 
 <div class="flex flex-col show-form-registrasi">
   <!-- Judul Beranda -->
-
   <div class="w-full flex justify-between border-b border-gray-300">
     <div class="font-sf_pro_bold_judul text-2xl px-3 py-2 judulStory w-80">
       Registrasi
     </div>
-    <!--  -->
-
     <div class="flex col justify-center py-1 mt-1">
       <div
         class="flex justify-center items-center flex-col menus w-9 h-9 cursor-pointer hover:bg-slate-200 hover:rounded-full text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 border-blue-600 dark:border-blue-500"
@@ -166,8 +144,7 @@
         <a
           href="/login"
           use:link
-          class="w-5 h-5 mt-0.5 mr-0.5 flex justify-center items-center
-          relative"
+          class="w-5 h-5 mt-0.5 mr-0.5 flex justify-center items-center relative"
         >
           <img src={BackIcon} alt="" />
         </a>
@@ -179,7 +156,6 @@
   <div
     class="h-[76.5vh] flex justify-center items-center overflow-y-hidden overflow-x-hidden hide-scrollbar form-registrasi"
   >
-    <!-- Registration v2 -->
     <div
       class="h-[76.5vh] flex justify-center items-center overflow-y-hidden overflow-x-hidden hide-scrollbar form-registration"
     >
@@ -200,137 +176,140 @@
             </button>
           </div>
 
-          <Alert color={colorResponse} class="response-register hidden">
-            <span class="font-bold response-register-category">Gagal!</span>
-            <span class="response-register-message">-</span>
-          </Alert>
-
           <div class="flex justify-center items-center">
             <span class="w-full border border-gray-300"></span>
             <span class="px-4 text-xs text-gray-500">atau</span>
             <span class="w-full border border-gray-300"></span>
           </div>
 
-          <div class="flex flex-col">
-            <div class="flex flex-col space-y-3 mb-3">
-              <div>
-                <label
-                  for="phone-input"
-                  class="block mb-2 text-sm font-medium text-gray-900"
-                  >Nomor Ponsel</label
-                >
-                <input
-                  type="text"
-                  id="phone-input"
-                  class="border-0 px-2 py-2 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring-0 w-full"
-                />
-              </div>
+          <div class="flex flex-col space-y-3 mb-3">
+            <div>
+              <label
+                for="phone-input"
+                class="block mb-2 text-sm font-medium text-gray-900"
+                >Nomor Ponsel</label
+              >
+              <input
+                type="text"
+                id="phone-input"
+                class="border-0 px-2 py-2 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring-0 w-full"
+              />
             </div>
-
-            <div class="flex flex-col space-y-3 mb-3">
-              <div>
-                <label
-                  for="email-input"
-                  class="block mb-2 text-sm font-medium text-gray-900"
-                  >Email</label
-                >
-                <input
-                  type="email"
-                  id="email-input"
-                  class="border-0 px-2 py-2 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring-0 w-full"
-                />
-              </div>
-            </div>
-
-            <div class="flex flex-col space-y-3 mb-3">
-              <div>
-                <label
-                  for="nama-depan-input"
-                  class="block mb-2 text-sm font-medium text-gray-900"
-                  >Nama Depan</label
-                >
-                <input
-                  type="text"
-                  id="nama-depan-input"
-                  class="border-0 px-2 py-2 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring-0 w-full"
-                />
-              </div>
-            </div>
-
-            <div class="flex flex-col space-y-3 mb-3">
-              <div>
-                <label
-                  for="nama-belakang-input"
-                  class="block mb-2 text-sm font-medium text-gray-900"
-                  >Nama Belakang</label
-                >
-                <div class="relative">
-                  <input
-                    id="nama-belakang-input"
-                    type="text"
-                    class="nama-belakang-input border-0 px-2 py-2 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring-0 w-full pr-10"
-                  />
-                  <span
-                    class="validation-icon absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5"
-                  >
-                    <img
-                      class="tick-icon w-4 h-4 object-contain m-0.5 mt-0.5 hidden"
-                      src={TickIcon}
-                      alt="Benar"
-                    />
-                    <img
-                      class="close-icon w-3.5 h-3.5 object-contain ml-2 mt-0.5 hidden"
-                      src={CloseIcon}
-                      alt="Salah"
-                    />
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div class="flex flex-col space-y-3 mb-2">
-              <div>
-                <label
-                  for="password-input"
-                  class="block mb-2 text-sm font-medium text-gray-900"
-                  >Kata Sandi</label
-                >
-                <div class="relative">
-                  <input
-                    id="password-input"
-                    type="text"
-                    class="password-input border-0 px-2 py-2 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring-0 w-full pr-10"
-                  />
-                  <span
-                    class="toggle-password absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5 cursor-pointer"
-                  >
-                    <img
-                      class="view-icon w-4 h-4 object-contain mt-0.5"
-                      src={ViewIcon}
-                      alt="Lihat"
-                    />
-                    <img
-                      class="hide-icon w-4 h-4 object-contain mt-0.5 hidden"
-                      src={HideIcon}
-                      alt="Sembunyikan"
-                    />
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <button
-              class="w-full py-2 mt-6 mb-5 font-medium text-white text-sm bg-[#0394F7] hover:bg-[#1877F2] rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center"
-              on:click={Register}
-            >
-              <span class="register-text">Register</span>
-              <Spinner color="white" class="hidden spinner" size="6" />
-            </button>
           </div>
+
+          <div class="flex flex-col space-y-3 mb-3">
+            <div>
+              <label
+                for="email-input"
+                class="block mb-2 text-sm font-medium text-gray-900"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="email-input"
+                class="border-0 px-2 py-2 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring-0 w-full"
+              />
+            </div>
+          </div>
+
+          <div class="flex flex-col space-y-3 mb-3">
+            <div>
+              <label
+                for="nama-depan-input"
+                class="block mb-2 text-sm font-medium text-gray-900"
+                >Nama Depan</label
+              >
+              <input
+                type="text"
+                id="nama-depan-input"
+                class="border-0 px-2 py-2 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring-0 w-full"
+              />
+            </div>
+          </div>
+
+          <div class="flex flex-col space-y-3 mb-3">
+            <div>
+              <label
+                for="nama-belakang-input"
+                class="block mb-2 text-sm font-medium text-gray-900"
+                >Nama Belakang</label
+              >
+              <div class="relative">
+                <input
+                  id="nama-belakang-input"
+                  type="text"
+                  class="nama-belakang-input border-0 px-2 py-2 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring-0 w-full pr-10"
+                />
+                <span
+                  class="validation-icon absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5"
+                >
+                  <img
+                    class="tick-icon w-4 h-4 object-contain m-0.5 mt-0.5 hidden"
+                    src={TickIcon}
+                    alt="Benar"
+                  />
+                  <img
+                    class="close-icon w-3.5 h-3.5 object-contain ml-2 mt-0.5 hidden"
+                    src={CloseIcon}
+                    alt="Salah"
+                  />
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col space-y-3 mb-2">
+            <div>
+              <label
+                for="password-input"
+                class="block mb-2 text-sm font-medium text-gray-900"
+                >Kata Sandi</label
+              >
+              <div class="relative">
+                <input
+                  id="password-input"
+                  type="text"
+                  class="password-input border-0 px-2 py-2 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring-0 w-full pr-10"
+                />
+                <span
+                  class="toggle-password absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5 cursor-pointer"
+                >
+                  <img
+                    class="view-icon w-4 h-4 object-contain mt-0.5"
+                    src={ViewIcon}
+                    alt="Lihat"
+                  />
+                  <img
+                    class="hide-icon w-4 h-4 object-contain mt-0.5 hidden"
+                    src={HideIcon}
+                    alt="Sembunyikan"
+                  />
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <button
+            class="w-full py-2 mt-6 mb-5 font-medium text-white text-sm bg-[#0394F7] hover:bg-[#1877F2] rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center"
+            on:click={Register}
+          >
+            <span class="register-text">Register</span>
+            <Spinner color="white" class="hidden spinner" size="6" />
+          </button>
         </div>
       </div>
     </div>
-
-    <!--  -->
   </div>
+
+  <Modal title="Pesan Validasi" bind:open={showModal} autoclose outsideclose>
+    {#each errors as error}
+      <Alert>
+        <span class="font-bold tracking-[.07em]">Kesalahan: </span>
+        {error}
+      </Alert>
+    {/each}
+    <svelte:fragment slot="footer">
+      <Button on:click={() => (showModal = false)}>Tutup</Button>
+    </svelte:fragment>
+  </Modal>
 </div>
