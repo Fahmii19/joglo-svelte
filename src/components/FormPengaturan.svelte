@@ -56,23 +56,6 @@
           />
         </div>
 
-        <!-- Deskripsi singkat -->
-        <div class="relative w-full mb-2">
-          <label
-            class="block text-xs font-bold mb-1"
-            for="deskripsi_singkat_pengaturan"
-          >
-            Bio Singkat (maks. 70 karakter)
-          </label>
-          <textarea
-            name="deskripsi_singkat_pengaturan"
-            id="deskripsi_singkat_pengaturan"
-            class="block py-1.5 px-2 h-[7vh] remove-scroll-textarea resize-none w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-200 focus:outline-none focus:ring-0 focus:border-gray-200"
-            required=""
-            rows="9"
-          ></textarea>
-        </div>
-
         <!-- Status -->
         <div class="relative w-full mb-2 mt-[3vh]">
           <label class="block text-xs font-bold mb-1" for="Status">Status</label
@@ -172,6 +155,23 @@
 
       <!-- a -->
       <div class="flex flex-col">
+        <!-- Deskripsi singkat -->
+        <div class="relative w-full mb-2">
+          <label
+            class="block text-xs font-bold mb-1"
+            for="deskripsi_singkat_pengaturan"
+          >
+            Bio Singkat (maks. 70 karakter)
+          </label>
+          <textarea
+            name="deskripsi_singkat_pengaturan"
+            id="deskripsi_singkat_pengaturan"
+            class="block py-1.5 px-2 h-[7vh] remove-scroll-textarea resize-none w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-200 focus:outline-none focus:ring-0 focus:border-gray-200"
+            required=""
+            rows="9"
+          ></textarea>
+        </div>
+
         <!-- Deskripsi Panjang -->
         <div class="relative w-full mb-2">
           <label
@@ -183,13 +183,13 @@
           <textarea
             name="deskripsi_postingannn"
             id="deskripsi_postingannn_pengaturan"
-            class="block px-2 h-[44.5vh] remove-scroll-textarea resize-none w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-200 focus:outline-none focus:ring-0 focus:border-gray-200"
+            class="block px-2 h-[23vh] remove-scroll-textarea resize-none w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-200 focus:outline-none focus:ring-0 focus:border-gray-200"
             required=""
             rows="9"
           ></textarea>
         </div>
 
-        <div class="relative w-full mb-2 flex flex-col">
+        <div class="relative w-full mb-1 flex flex-col">
           <div class="block text-xs font-bold">Spesialisasi Aset</div>
           <div class="w-full grid grid-cols-2 tipe-aset-pengaturan-disable">
             <div class="flex items-center mb-0.5">
@@ -277,7 +277,7 @@
       </div>
     </div>
 
-    <div class="px-5 my-5 flex w-full">
+    <div class="px-5 my-8 flex w-full">
       <div class="w-full flex justify-center">
         <button
           type="button"
