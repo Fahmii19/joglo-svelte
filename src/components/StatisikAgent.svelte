@@ -1,7 +1,9 @@
 <script lang="ts">
+  import PengunjungChart from "./pengunjungChart.svelte";
+  import PendapatanChart from "./pendapatanChart.svelte";
 </script>
 
-<div class="h-[62.5vh] overflow-y-auto overflow-x-hidden hide-scrollbar">
+<div class="h-[63.5vh] overflow-hidden">
   <!--  -->
   <div
     class="grid grid-row-3 pb-5 px-5 pt-4 gap-4 mode-card-kedua bg-white cursor-pointer rounded-lg shadow w-full mb-3"
@@ -50,13 +52,12 @@
 
   <!--  -->
 
-  <div class="h-[46vh] w-full grid grid-cols-2 gap-x-3">
-    <div class="h-full bg-white rounded-lg px-3 h-[22.5vh]">
-      <canvas width="700" height="680" id="pengunjungChart"></canvas>
+  <div class="!h-[41.5vh] w-full grid grid-cols-2 gap-x-3">
+    <div class="h-full w-full bg-white rounded-lg px-3">
+      <PengunjungChart />
     </div>
-
-    <div class="h-full bg-white rounded-lg px-3 h-[22.5vh]">
-      <canvas width="700" height="680" id="pendapatanChart"></canvas>
+    <div class="h-full w-full bg-white rounded-lg px-3">
+      <PendapatanChart />
     </div>
   </div>
 
