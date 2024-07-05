@@ -34,7 +34,7 @@
   <!--  -->
 
   {#if $loggedIn}
-    <a href="/profile/{$authUser?.user_id}" use:link>
+    <a href="/detail-agent" use:link>
       <div class="flex cursor-pointer items-center">
         <span class="text-sm font-medium text-gray-700 mr-2">
           {$authUser?.first_name || "Adi"}
