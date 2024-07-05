@@ -31,6 +31,7 @@
   // ie. hover events on other elements while dragging. Especially for Safari
   const mouseEventShield = document.createElement("div");
   mouseEventShield.setAttribute("class", "mouse-over-shield");
+  mouseEventShield.setAttribute("role", "presentation"); // ARIA role for mouse shield
   mouseEventShield.addEventListener("mouseover", (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -188,12 +189,19 @@
       <div class="range__track--highlighted" bind:this={progressBar} />
       <div
         class="range__thumb"
+        role="slider"
+        tabindex="0"
+        aria-valuemin={min}
+        aria-valuemax={max}
+        aria-valuenow={value}
         class:range__thumb--holding={holding}
         bind:this={thumb}
         on:touchstart={onDragStart}
         on:mousedown={onDragStart}
         on:mouseover={() => (thumbHover = true)}
         on:mouseout={() => (thumbHover = false)}
+        on:focus={() => (thumbHover = true)}
+        on:blur={() => (thumbHover = false)}
       ></div>
     </div>
     <div class="flex justify-between text-xs mt-2.5">
@@ -282,32 +290,5 @@
       0 1px 1px 0 rgba(0, 0, 0, 0.14),
       0 1px 2px 1px rgba(0, 0, 0, 0.2),
       0 0 0 6px var(--thumb-holding-outline, rgba(113, 119, 250, 0.3));
-  }
-
-  .range__tooltip {
-    pointer-events: none;
-    position: absolute;
-    top: -33px;
-    color: var(--tooltip-text, white);
-    width: 38px;
-    padding: 4px 0;
-    border-radius: 4px;
-    text-align: center;
-    background-color: var(--tooltip-bgcolor, #0394f7);
-    background: var(--tooltip-bg, linear-gradient(45deg, #6185ff, #0394f7));
-  }
-
-  .range__tooltip::after {
-    content: "";
-    display: block;
-    position: absolute;
-    height: 7px;
-    width: 7px;
-    background-color: var(--tooltip-bgcolor, #0394f7);
-    bottom: -3px;
-    left: calc(50% - 3px);
-    clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
-    transform: rotate(-45deg);
-    border-radius: 0 0 0 3px;
   }
 </style>

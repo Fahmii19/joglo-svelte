@@ -29,8 +29,8 @@
                     class="w-full h-full p-[0.15rem] bg-white rounded-full relative"
                     src="https://www.joglopro.com/bucket/soaraja/image/joglopro/model/model11.jpg"
                     alt="Profile Picture"
+                    aria-hidden="true"
                   />
-
                   <svg
                     role="button"
                     tabindex="0"
