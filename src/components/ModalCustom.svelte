@@ -26,8 +26,8 @@
 <style>
   dialog {
     position: fixed;
-    top: 25%;
-    right: 0%;
+    top: 30%;
+    right: -50%;
     transform: translateY(-50%);
     max-width: 32em;
     border-radius: 0.6em;
