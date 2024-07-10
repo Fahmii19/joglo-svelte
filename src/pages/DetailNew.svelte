@@ -154,7 +154,7 @@
             class:bg_aktif_detail={activeTab === 0}
             on:click={() => (activeTab = 0)}
           >
-            Foto
+            Fotoo
           </button>
           <button
             type="button"
@@ -203,6 +203,7 @@
         <SimulasiKprNew />
       {/if}
       <!-- KontenTabMenuDetail -->
+      <!--  -->
     </div>
   </div>
 
