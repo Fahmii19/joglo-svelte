@@ -8,12 +8,21 @@
   import { onMount } from "svelte";
   import AuthService from "../service/auth/auth";
   import type { AuthUser, RegisterUser } from "../service/auth/type";
-  import { Spinner, Alert, Button, Modal } from "flowbite-svelte";
+  import { Spinner } from "flowbite-svelte";
   import { authUserTemp } from "../store/auth";
   import { markerStore } from "../store/map";
+  import ModalCustom from "../components/ModalCustom.svelte";
+  import { writable } from "svelte/store";
 
-  let showModal = false;
-  let errors: string[] = [];
+  let showModal = writable(false);
+  let errors = writable([]);
+  let placement = "center-right";
+
+  let phone = "";
+  let email = "";
+  let firstName = "";
+  let lastName = "";
+  let password = "";
 
   onMount(() => {
     const togglePassword = document.querySelector(".toggle-password");
@@ -26,7 +35,7 @@
     if (togglePassword) {
       togglePassword.addEventListener("click", () => {
         if (passwordInput && passwordInput.type === "password") {
-          (passwordInput as HTMLInputElement).type = "text";
+          passwordInput.type = "text";
           viewIcon.classList.add("hidden");
           hideIcon.classList.remove("hidden");
         } else {
@@ -36,38 +45,21 @@
         }
       });
     }
-    if (passwordInput.type === "password") {
-      passwordInput.type = "text";
-      viewIcon.classList.add("hidden");
-      hideIcon.classList.remove("hidden");
-    } else {
-      passwordInput.type = "password";
-      viewIcon.classList.remove("hidden");
-      hideIcon.classList.add("hidden");
-    }
   });
+
+  const validate = () => {
+    let validationErrors = [];
+    if (phone === "") validationErrors.push("Nomor Ponsel harus diisi");
+    if (email === "") validationErrors.push("Email harus diisi");
+    if (firstName === "") validationErrors.push("Nama Depan harus diisi");
+    if (lastName === "") validationErrors.push("Nama Belakang harus diisi");
+    if (password === "") validationErrors.push("Kata Sandi harus diisi");
+    errors.set(validationErrors);
+    return validationErrors.length === 0;
+  };
 
   const Register = async () => {
     const AuthServices = new AuthService();
-    const phone = document.getElementById("phone-input") as HTMLInputElement;
-    const email = document.getElementById("email-input") as HTMLInputElement;
-    const firstName = document.getElementById(
-      "nama-depan-input"
-    ) as HTMLInputElement;
-    const lastName = document.getElementById(
-      "nama-belakang-input"
-    ) as HTMLInputElement;
-    const password = document.getElementById(
-      "password-input"
-    ) as HTMLInputElement;
-
-    let param: RegisterUser = {
-      phone_number: phone.value,
-      email: email.value,
-      first_name: firstName.value,
-      last_name: lastName.value,
-      password: password.value,
-    };
 
     // Hide register text and show spinner
     const registerText = document.querySelector(
@@ -78,30 +70,20 @@
     registerText.classList.add("hidden");
     spinner.classList.remove("hidden");
 
-    // Validate input required all field
-    errors = [];
-    if (phone.value === "") {
-      errors.push("Nomor Ponsel harus diisi");
-    }
-    if (email.value === "") {
-      errors.push("Email harus diisi");
-    }
-    if (firstName.value === "") {
-      errors.push("Nama Depan harus diisi");
-    }
-    if (lastName.value === "") {
-      errors.push("Nama Belakang harus diisi");
-    }
-    if (password.value === "") {
-      errors.push("Kata Sandi harus diisi");
-    }
-
-    if (errors.length > 0) {
-      showModal = true;
+    if (!validate()) {
+      showModal.set(true);
       registerText.classList.remove("hidden");
       spinner.classList.add("hidden");
       return;
     }
+
+    let param: RegisterUser = {
+      phone_number: phone,
+      email: email,
+      first_name: firstName,
+      last_name: lastName,
+      password: password,
+    };
 
     try {
       await AuthServices.register(param);
@@ -111,8 +93,8 @@
       spinner.classList.add("hidden");
 
       authUserTemp.set({
-        email: email.value,
-        password: password.value,
+        email: email,
+        password: password,
       } as AuthUser);
 
       navigate("/login");
@@ -122,8 +104,8 @@
       spinner.classList.add("hidden");
 
       // Show modal with error
-      errors = ["Registrasi gagal"];
-      showModal = true;
+      errors.set(["Registrasi gagal"]);
+      showModal.set(true);
     }
   };
 
@@ -192,6 +174,7 @@
               <input
                 type="text"
                 id="phone-input"
+                bind:value={phone}
                 class="border-0 px-2 py-2 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring-0 w-full"
               />
             </div>
@@ -207,6 +190,7 @@
               <input
                 type="email"
                 id="email-input"
+                bind:value={email}
                 class="border-0 px-2 py-2 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring-0 w-full"
               />
             </div>
@@ -222,6 +206,7 @@
               <input
                 type="text"
                 id="nama-depan-input"
+                bind:value={firstName}
                 class="border-0 px-2 py-2 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring-0 w-full"
               />
             </div>
@@ -238,6 +223,7 @@
                 <input
                   id="nama-belakang-input"
                   type="text"
+                  bind:value={lastName}
                   class="nama-belakang-input border-0 px-2 py-2 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring-0 w-full pr-10"
                 />
                 <span
@@ -269,6 +255,7 @@
                 <input
                   id="password-input"
                   type="text"
+                  bind:value={password}
                   class="password-input border-0 px-2 py-2 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring-0 w-full pr-10"
                 />
                 <span
@@ -301,15 +288,7 @@
     </div>
   </div>
 
-  <Modal title="Pesan Validasi" bind:open={showModal} autoclose outsideclose>
-    {#each errors as error}
-      <Alert>
-        <span class="font-bold tracking-[.07em]">Kesalahan: </span>
-        {error}
-      </Alert>
-    {/each}
-    <svelte:fragment slot="footer">
-      <Button on:click={() => (showModal = false)}>Tutup</Button>
-    </svelte:fragment>
-  </Modal>
+  <ModalCustom {showModal} {errors}>
+    <!-- <div slot="header">Registrasi Gagal</div> -->
+  </ModalCustom>
 </div>
