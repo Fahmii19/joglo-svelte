@@ -1,7 +1,8 @@
 <script>
-  import { activePesan } from "../store/store";
+  import { activePesan, activeChatId } from "../store/store";
   import { onMount } from "svelte";
   import UserChatRandom from "./UserChatRandom.svelte";
+  import { get } from "svelte/store";
 
   let randomChats = [];
 
@@ -40,7 +41,7 @@
     randomChats = [];
     for (let i = 0; i < 5; i++) {
       randomChats.push({
-        id: i,
+        id: i + 2, // Ensure IDs start from 2 to avoid conflict with Co-Broking
         name: getRandomName(),
         message: getRandomMessage(),
         status: getRandomStatus(i),
@@ -52,16 +53,30 @@
   onMount(() => {
     generateRandomChats();
   });
+
+  function handleChatClick(chatId) {
+    activePesan.set(2);
+    activeChatId.set(chatId);
+  }
 </script>
 
 <ul>
   <li>
     <div
-      class="menu-pesan-area flex items-center px-3 py-2.5 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none hover:bg-slate-200"
-      on:click={() => activePesan.set(1)}
+      class="menu-pesan-area flex items-center px-3 py-2.5 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none"
+      class:bg-slate-200={$activeChatId === 1}
+      on:click={() => {
+        activePesan.set(1);
+        activeChatId.set(1);
+      }}
       role="button"
       tabindex="0"
-      on:keydown={(e) => e.key === "Enter" && activePesan.set(1)}
+      on:keydown={(e) => {
+        if (e.key === "Enter") {
+          activePesan.set(1);
+          activeChatId.set(1);
+        }
+      }}
     >
       <div class="w-10 h-10 flex justify-center items-center relative">
         <img

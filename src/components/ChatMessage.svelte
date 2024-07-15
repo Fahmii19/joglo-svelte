@@ -20,7 +20,7 @@
     <div
       class="w-full flex flex-col-reverse overflow-y-auto hide-scrollbar overflow-x-hidden scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch"
     >
-      <div class="chat-message pt-3.5">
+      <div class="chat-message pt-3.5 px-3.5">
         <div class="flex items-end">
           <div
             class="flex flex-col space-y-2 text-sm max-w-xs mx-2 order-2 items-start"
@@ -39,7 +39,7 @@
           />
         </div>
       </div>
-      <div class="chat-message pt-3.5">
+      <div class="chat-message pt-3.5 px-3.5">
         <div class="flex items-end justify-end">
           <div
             class="flex flex-col space-y-2 text-sm max-w-sm mx-2 order-1 items-end"
@@ -57,7 +57,7 @@
           </div>
         </div>
       </div>
-      <div class="chat-message pt-3.5">
+      <div class="chat-message pt-3.5 px-3.5">
         <div class="flex items-end">
           <div
             class="flex flex-col space-y-2 text-sm max-w-xs mx-2 order-2 items-start"
@@ -76,7 +76,7 @@
           />
         </div>
       </div>
-      <div class="chat-message pt-3.5">
+      <div class="chat-message pt-3.5 px-3.5">
         <div class="flex items-end justify-end">
           <div
             class="flex flex-col space-y-2 text-sm max-w-sm mx-2 order-1 items-end"
@@ -94,7 +94,7 @@
           </div>
         </div>
       </div>
-      <div class="chat-message pt-3.5">
+      <div class="chat-message pt-3.5 px-3.5">
         <div class="flex items-end">
           <div
             class="flex flex-col space-y-2 text-sm max-w-xs mx-2 order-2 items-start"

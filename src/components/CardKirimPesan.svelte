@@ -1,4 +1,4 @@
-<div class="chat-message">
+<div class="chat-message pt-3.5 px-3.5">
   <div class="flex items-end justify-end">
     <div
       class="flex flex-col space-y-2 text-xs w-[18rem] mx-2 order-1 items-end"

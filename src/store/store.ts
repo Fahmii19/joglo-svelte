@@ -21,3 +21,6 @@ export const loggedIn = writable(false);
 
 // untuk user
 export const activeUser = writable(null);
+
+// untuk chat yang aktif
+export const activeChatId = writable(null);
