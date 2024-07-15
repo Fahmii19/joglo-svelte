@@ -12,6 +12,7 @@
   import { markerStore } from "../store/map";
   import { page } from "../store/page";
   import { activePesan } from "../store/store";
+  import { get } from "svelte/store";
 
   let users = [] as AuthUser[];
   let count_users = 0;
@@ -41,24 +42,24 @@
   <div class="h-full flex flex-col">
     <div class="w-full grid grid-cols-[210px,1fr]">
       <div
-        class="font-sf_pro_bold_judul text-2xl px-3 py-2 judulStory border border-red-500"
+        class="font-sf_pro_bold_judul text-2xl px-3 py-2 judulStory border-b border-r border-gray-300"
       >
         Pesann
       </div>
-      <div class="flex items-center border border-red-500 p-2">
-        <img
-          class="object-cover w-8 h-8 rounded-full"
-          src="https://www.joglopro.com/bucket/soaraja/image/joglopro/model/model11.jpg"
-          alt=""
-        />
-        <div class="ml-2 text-black text-sm">Delia Amanda</div>
+      <div class="p-2 border-b border-gray-300">
+        <div
+          class="flex items-center avatar_username_pengguna_chat_aktif"
+          class:hidden={$activePesan !== 0}
+        >
+          <img
+            class="object-cover w-8 h-8 rounded-full"
+            src="https://www.joglopro.com/bucket/soaraja/image/joglopro/model/model11.jpg"
+            alt=""
+          />
+          <div class="ml-2 text-black text-sm">Delia Amanda</div>
+        </div>
       </div>
     </div>
-    <!-- <div class="w-full flex justify-between border-b border-gray-300">
-      <div class="font-sf_pro_bold_judul text-2xl px-3 py-2 judulStory">
-        Pesann
-      </div>
-    </div> -->
     <div class="h-[76.2vh] w-full">
       <div
         class="flex justify-between w-full h-full grid grid-cols-[210px,1fr]"
@@ -71,18 +72,16 @@
         </ul>
         <!--  -->
         <!-- Isi Pesan -->
-
         {#if $activePesan === 0}
           <ChatDefault />
-          <!-- <ChatCoBroking /> -->
         {:else if $activePesan === 1}
           <ChatCoBroking />
         {:else if $activePesan === 2}
           <ChatMessage />
         {/if}
-
         <!--  -->
       </div>
     </div>
   </div>
 </div>
+<!--  -->
