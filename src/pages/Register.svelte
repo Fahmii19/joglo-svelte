@@ -24,6 +24,8 @@
   let lastName = "";
   let password = "";
 
+  let formRegistrasiJoglopro;
+
   onMount(() => {
     const togglePassword = document.querySelector(".toggle-password");
     const passwordInput = document.querySelector(
@@ -46,6 +48,16 @@
       });
     }
   });
+
+  $: {
+    if (formRegistrasiJoglopro) {
+      if ($showModal) {
+        formRegistrasiJoglopro.classList.add("bg-custom");
+      } else {
+        formRegistrasiJoglopro.classList.remove("bg-custom");
+      }
+    }
+  }
 
   const validate = () => {
     let validationErrors = [];
@@ -135,155 +147,152 @@
   </div>
 
   <!--  Registrasi -->
+
   <div
-    class="h-[76.5vh] flex justify-center items-center overflow-y-hidden overflow-x-hidden hide-scrollbar form-registrasi"
+    class="h-[76.5vh] flex justify-center items-center overflow-y-hidden overflow-x-hidden hide-scrollbar form-registrasi-joglopro"
+    bind:this={formRegistrasiJoglopro}
   >
     <div
-      class="h-[76.5vh] flex justify-center items-center overflow-y-hidden overflow-x-hidden hide-scrollbar form-registration"
+      class="h-[60vh] w-[25vw] flex justify-center items-center p-5 rounded-xl"
     >
-      <div
-        class="h-[60vh] w-[25vw] flex justify-center items-center p-5 rounded-xl"
-      >
-        <div class="w-full">
-          <div class="my-5">
-            <button
-              class="w-full text-center text-sm py-2 my-2 border-2 border-gray-300 flex space-x-2 items-center justify-center rounded-lg text-gray-700"
-            >
-              <img
-                src="https://www.svgrepo.com/show/355037/google.svg"
-                class="w-5 h-5"
-                alt=""
-              />
-              <span>Register dengan Google</span>
-            </button>
-          </div>
-
-          <div class="flex justify-center items-center">
-            <span class="w-full border border-gray-300"></span>
-            <span class="px-4 text-xs text-gray-500">atau</span>
-            <span class="w-full border border-gray-300"></span>
-          </div>
-
-          <div class="flex flex-col space-y-3 mb-3">
-            <div>
-              <label
-                for="phone-input"
-                class="block mb-2 text-sm font-medium text-gray-900"
-                >Nomor Ponsel</label
-              >
-              <input
-                type="text"
-                id="phone-input"
-                bind:value={phone}
-                class="border-0 px-2 py-2 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring-0 w-full"
-              />
-            </div>
-          </div>
-
-          <div class="flex flex-col space-y-3 mb-3">
-            <div>
-              <label
-                for="email-input"
-                class="block mb-2 text-sm font-medium text-gray-900"
-                >Email</label
-              >
-              <input
-                type="email"
-                id="email-input"
-                bind:value={email}
-                class="border-0 px-2 py-2 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring-0 w-full"
-              />
-            </div>
-          </div>
-
-          <div class="flex flex-col space-y-3 mb-3">
-            <div>
-              <label
-                for="nama-depan-input"
-                class="block mb-2 text-sm font-medium text-gray-900"
-                >Nama Depan</label
-              >
-              <input
-                type="text"
-                id="nama-depan-input"
-                bind:value={firstName}
-                class="border-0 px-2 py-2 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring-0 w-full"
-              />
-            </div>
-          </div>
-
-          <div class="flex flex-col space-y-3 mb-3">
-            <div>
-              <label
-                for="nama-belakang-input"
-                class="block mb-2 text-sm font-medium text-gray-900"
-                >Nama Belakang</label
-              >
-              <div class="relative">
-                <input
-                  id="nama-belakang-input"
-                  type="text"
-                  bind:value={lastName}
-                  class="nama-belakang-input border-0 px-2 py-2 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring-0 w-full pr-10"
-                />
-                <span
-                  class="validation-icon absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5"
-                >
-                  <img
-                    class="tick-icon w-4 h-4 object-contain m-0.5 mt-0.5 hidden"
-                    src={TickIcon}
-                    alt="Benar"
-                  />
-                  <img
-                    class="close-icon w-3.5 h-3.5 object-contain ml-2 mt-0.5 hidden"
-                    src={CloseIcon}
-                    alt="Salah"
-                  />
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="flex flex-col space-y-3 mb-2">
-            <div>
-              <label
-                for="password-input"
-                class="block mb-2 text-sm font-medium text-gray-900"
-                >Kata Sandi</label
-              >
-              <div class="relative">
-                <input
-                  id="password-input"
-                  type="text"
-                  bind:value={password}
-                  class="password-input border-0 px-2 py-2 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring-0 w-full pr-10"
-                />
-                <span
-                  class="toggle-password absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5 cursor-pointer"
-                >
-                  <img
-                    class="view-icon w-4 h-4 object-contain mt-0.5"
-                    src={ViewIcon}
-                    alt="Lihat"
-                  />
-                  <img
-                    class="hide-icon w-4 h-4 object-contain mt-0.5 hidden"
-                    src={HideIcon}
-                    alt="Sembunyikan"
-                  />
-                </span>
-              </div>
-            </div>
-          </div>
-
+      <div class="w-full">
+        <div class="my-5">
           <button
-            class="w-full py-2 mt-6 mb-5 font-medium text-white text-sm bg-[#0394F7] hover:bg-[#1877F2] rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center"
-            on:click={Register}
+            class="w-full text-center text-sm py-2 my-2 border-2 border-gray-300 flex space-x-2 items-center justify-center rounded-lg text-gray-700"
           >
-            <span class="register-text">Register</span>
-            <Spinner color="white" class="hidden spinner" size="6" />
+            <img
+              src="https://www.svgrepo.com/show/355037/google.svg"
+              class="w-5 h-5"
+              alt=""
+            />
+            <span>Register dengan Google</span>
           </button>
         </div>
+
+        <div class="flex justify-center items-center">
+          <span class="w-full border border-gray-300"></span>
+          <span class="px-4 text-xs text-gray-500">atau</span>
+          <span class="w-full border border-gray-300"></span>
+        </div>
+
+        <div class="flex flex-col space-y-3 mb-3">
+          <div>
+            <label
+              for="phone-input"
+              class="block mb-2 text-sm font-medium text-gray-900"
+              >Nomor Ponsel</label
+            >
+            <input
+              type="text"
+              id="phone-input"
+              bind:value={phone}
+              class="border-0 px-2 py-2 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring-0 w-full"
+            />
+          </div>
+        </div>
+
+        <div class="flex flex-col space-y-3 mb-3">
+          <div>
+            <label
+              for="email-input"
+              class="block mb-2 text-sm font-medium text-gray-900">Email</label
+            >
+            <input
+              type="email"
+              id="email-input"
+              bind:value={email}
+              class="border-0 px-2 py-2 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring-0 w-full"
+            />
+          </div>
+        </div>
+
+        <div class="flex flex-col space-y-3 mb-3">
+          <div>
+            <label
+              for="nama-depan-input"
+              class="block mb-2 text-sm font-medium text-gray-900"
+              >Nama Depan</label
+            >
+            <input
+              type="text"
+              id="nama-depan-input"
+              bind:value={firstName}
+              class="border-0 px-2 py-2 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring-0 w-full"
+            />
+          </div>
+        </div>
+
+        <div class="flex flex-col space-y-3 mb-3">
+          <div>
+            <label
+              for="nama-belakang-input"
+              class="block mb-2 text-sm font-medium text-gray-900"
+              >Nama Belakang</label
+            >
+            <div class="relative">
+              <input
+                id="nama-belakang-input"
+                type="text"
+                bind:value={lastName}
+                class="nama-belakang-input border-0 px-2 py-2 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring-0 w-full pr-10"
+              />
+              <span
+                class="validation-icon absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5"
+              >
+                <img
+                  class="tick-icon w-4 h-4 object-contain m-0.5 mt-0.5 hidden"
+                  src={TickIcon}
+                  alt="Benar"
+                />
+                <img
+                  class="close-icon w-3.5 h-3.5 object-contain ml-2 mt-0.5 hidden"
+                  src={CloseIcon}
+                  alt="Salah"
+                />
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col space-y-3 mb-2">
+          <div>
+            <label
+              for="password-input"
+              class="block mb-2 text-sm font-medium text-gray-900"
+              >Kata Sandi</label
+            >
+            <div class="relative">
+              <input
+                id="password-input"
+                type="text"
+                bind:value={password}
+                class="password-input border-0 px-2 py-2 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring-0 w-full pr-10"
+              />
+              <span
+                class="toggle-password absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5 cursor-pointer"
+              >
+                <img
+                  class="view-icon w-4 h-4 object-contain mt-0.5"
+                  src={ViewIcon}
+                  alt="Lihat"
+                />
+                <img
+                  class="hide-icon w-4 h-4 object-contain mt-0.5 hidden"
+                  src={HideIcon}
+                  alt="Sembunyikan"
+                />
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="w-full py-2 mt-6 mb-5 font-medium text-white text-sm bg-[#0394F7] hover:bg-[#1877F2] rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center"
+          on:click={Register}
+        >
+          <span class="register-text">Register</span>
+          <Spinner color="white" class="hidden spinner" size="6" />
+        </button>
       </div>
     </div>
   </div>
@@ -292,3 +301,14 @@
     <!-- <div slot="header">Registrasi Gagal</div> -->
   </ModalCustom>
 </div>
+
+<style>
+  .bg-custom {
+    background-color: rgba(0, 0, 0, 9); /* Warna gelap dengan transparansi */
+  }
+
+  .modal-content {
+    position: relative;
+    z-index: 10; /* Membuat modal berada di atas background */
+  }
+</style>

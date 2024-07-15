@@ -16,9 +16,17 @@
 >
   <div class="modal-content" on:click|stopPropagation>
     <slot name="header" />
-    <Listgroup items={$errors} let:item class="w-[25vw]">
-      {item}
-    </Listgroup>
+    <ul
+      class="bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-700 divide-y divide-gray-200 dark:divide-gray-600 w-[25vw] text-center"
+    >
+      {#each $errors as error}
+        <li
+          class="py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg border-item"
+        >
+          {error}
+        </li>
+      {/each}
+    </ul>
     <slot />
   </div>
 </dialog>
@@ -33,5 +41,10 @@
     border-radius: 0.6em;
     border: none;
     padding: 0;
+  }
+
+  .border-item {
+    padding: 10px;
+    margin: 5px 0;
   }
 </style>
