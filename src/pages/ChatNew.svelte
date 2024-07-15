@@ -11,7 +11,7 @@
   import { agentList } from "../store/agent";
   import { markerStore } from "../store/map";
   import { page } from "../store/page";
-  import { activePesan } from "../store/store";
+  import { activePesan, activeUser } from "../store/store";
   import { get } from "svelte/store";
 
   let users = [] as AuthUser[];
@@ -47,17 +47,16 @@
         Pesann
       </div>
       <div class="p-2 border-b border-gray-300">
-        <div
-          class="flex items-center avatar_username_pengguna_chat_aktif"
-          class:hidden={$activePesan !== 0}
-        >
-          <img
-            class="object-cover w-8 h-8 rounded-full"
-            src="https://www.joglopro.com/bucket/soaraja/image/joglopro/model/model11.jpg"
-            alt=""
-          />
-          <div class="ml-2 text-black text-sm">Delia Amanda</div>
-        </div>
+        {#if $activeUser && $activePesan !== 1}
+          <div class="flex items-center avatar_username_pengguna_chat_aktif">
+            <img
+              class="object-cover w-8 h-8 rounded-full"
+              src={$activeUser.image}
+              alt=""
+            />
+            <div class="ml-2 text-black text-sm">{$activeUser.name}</div>
+          </div>
+        {/if}
       </div>
     </div>
     <div class="h-[76.2vh] w-full">
@@ -84,4 +83,3 @@
     </div>
   </div>
 </div>
-<!--  -->

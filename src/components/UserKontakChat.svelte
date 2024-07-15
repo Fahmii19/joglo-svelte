@@ -87,4 +87,3 @@
     <UserChatRandom {chat} />
   {/each}
 </ul>
-<!--  -->

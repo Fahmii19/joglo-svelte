@@ -18,3 +18,6 @@ export const activeComponents = writable({
 
 // untuk login
 export const loggedIn = writable(false);
+
+// untuk user
+export const activeUser = writable(null);
