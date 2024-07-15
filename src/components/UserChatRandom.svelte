@@ -21,7 +21,7 @@
   <div class="relative">
     <img class="object-cover w-10 h-10 rounded-full" src={chat.image} alt="" />
     <span
-      class="-bottom-0.5 left-7 absolute w-2.5 h-2.5 {chat.status} border-2 border-white dark:border-gray-800 rounded-full"
+      class="-bottom-0.5 left-7 absolute w-2.5 h-2.5 {chat.status}  dark:border-gray-800 rounded-full"
     ></span>
   </div>
   <div class="py-2">

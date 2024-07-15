@@ -22,7 +22,7 @@
   }
 
   function getRandomStatus(index) {
-    return index < 3 ? "bg-green-500" : "bg-[#ffb500]";
+    return index < 4 ? "bg-[#ffb500] border-2 border-white" : "";
   }
 
   function getRandomImage() {

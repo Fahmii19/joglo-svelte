@@ -1,4 +1,4 @@
-<div class="h-[6.2vh] w-full relative px-1.5">
+<div class="w-full h-[8.2vh] relative px-3 end">
   <div class="w-full h-full flex items-center">
     <input
       type="text"

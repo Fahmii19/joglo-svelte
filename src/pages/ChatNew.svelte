@@ -42,7 +42,7 @@
   <div class="h-full flex flex-col">
     <div class="w-full grid grid-cols-[210px,1fr]">
       <div
-        class="font-sf_pro_bold_judul text-2xl px-3 py-2 judulStory border-b border-r border-gray-300"
+        class="font-sf_pro_bold_judul text-2xl px-3 py-2 judulStory border-b border-gray-300"
       >
         Pesann
       </div>
