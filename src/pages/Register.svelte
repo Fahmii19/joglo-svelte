@@ -49,13 +49,11 @@
     }
   });
 
-  $: {
-    if (formRegistrasiJoglopro) {
-      if ($showModal) {
-        formRegistrasiJoglopro.classList.add("bg-custom");
-      } else {
-        formRegistrasiJoglopro.classList.remove("bg-custom");
-      }
+  $: if (formRegistrasiJoglopro) {
+    if ($showModal) {
+      formRegistrasiJoglopro.classList.add("bg-custom");
+    } else {
+      formRegistrasiJoglopro.classList.remove("bg-custom");
     }
   }
 
@@ -73,7 +71,7 @@
   const Register = async () => {
     const AuthServices = new AuthService();
 
-    // Hide register text and show spinner
+    // Sembunyikan teks register dan tampilkan spinner
     const registerText = document.querySelector(
       ".register-text"
     ) as HTMLSpanElement;
@@ -100,7 +98,7 @@
     try {
       await AuthServices.register(param);
 
-      // Show register text and hide spinner
+      // Tampilkan teks register dan sembunyikan spinner
       registerText.classList.remove("hidden");
       spinner.classList.add("hidden");
 
@@ -111,11 +109,11 @@
 
       navigate("/login");
     } catch (error) {
-      // Show register text and hide spinner
+      // Tampilkan teks register dan sembunyikan spinner
       registerText.classList.remove("hidden");
       spinner.classList.add("hidden");
 
-      // Show modal with error
+      // Tampilkan modal dengan pesan error
       errors.set(["Registrasi gagal"]);
       showModal.set(true);
     }
@@ -264,7 +262,7 @@
             <div class="relative">
               <input
                 id="password-input"
-                type="text"
+                type="password"
                 bind:value={password}
                 class="password-input border-0 px-2 py-2 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring-0 w-full pr-10"
               />
@@ -297,18 +295,24 @@
     </div>
   </div>
 
+  <!-- Backdrop -->
+  {#if $showModal}
+    <div class="backdrop"></div>
+  {/if}
+
   <ModalCustom {showModal} {errors}>
     <!-- <div slot="header">Registrasi Gagal</div> -->
   </ModalCustom>
 </div>
 
 <style>
-  .bg-custom {
-    background-color: rgba(0, 0, 0, 9); /* Warna gelap dengan transparansi */
-  }
-
-  .modal-content {
-    position: relative;
-    z-index: 10; /* Membuat modal berada di atas background */
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
   }
 </style>
