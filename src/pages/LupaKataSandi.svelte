@@ -1,7 +1,6 @@
 <script lang="ts">
-  import { link, navigate } from "svelte-routing";
+  import { navigate } from "svelte-routing";
   import BackIcon from "../assets/images/back.png";
-
   import FormLupaKataSandi from "../components/FormLupaKataSandi.svelte";
 
   function KembaliLogin() {
@@ -11,7 +10,6 @@
 
 <div class="flex flex-col show-form-registrasi">
   <!-- Judul Beranda -->
-
   <div class="w-full flex justify-between border-b border-gray-300">
     <div class="font-sf_pro_bold_judul text-2xl px-3 py-2 judulStory w-80">
       Lupa Kata Sandiii
@@ -25,9 +23,14 @@
         <div
           class="w-5 h-5 mt-0.5 mr-0.5 flex justify-center items-center relative"
         >
-          <a on:click={KembaliLogin}>
-            <img src={BackIcon} alt="" />
-          </a>
+          <!-- Ganti <a> dengan <button> untuk aksesibilitas yang lebih baik -->
+          <button
+            on:click={KembaliLogin}
+            class="flex items-center justify-center"
+            aria-label="Kembali ke login"
+          >
+            <img src={BackIcon} alt="Kembali" />
+          </button>
         </div>
       </div>
     </div>
@@ -39,7 +42,6 @@
   >
     <!-- Login  -->
     <FormLupaKataSandi />
-
     <!--  -->
   </div>
 </div>

@@ -1,12 +1,14 @@
+<script>
+  const pinlock =
+    "https://www.joglopro.com/bucket/soaraja/image/joglopro/padlock.png";
+</script>
+
 <div
   class="h-[60vh] w-[25vw] flex justify-center items-center p-5 rounded-xl bg-white rounded-lg"
 >
   <div class="w-full">
     <div class="w-full flex justify-center">
-      <img
-        class="w-14 h-14 object-contain"
-        src="https://www.joglopro.com/bucket/soaraja/image/joglopro/padlock.png"
-      />
+      <img class="w-14 h-14 object-contain" src={pinlock} alt="Padlock" />
     </div>
 
     <p class="text-center text-sm text-black mt-10">

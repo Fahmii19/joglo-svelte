@@ -171,9 +171,13 @@
         <div
           class="w-5 h-5 mt-0.5 mr-0.5 flex justify-center items-center relative"
         >
-          <a on:click={handleBack}>
+          <button
+            on:click={handleBack}
+            class="flex items-center justify-center"
+            aria-label="Kembali"
+          >
             <img src={BackIcon} alt="Kembali" />
-          </a>
+          </button>
         </div>
       </div>
     </div>
@@ -263,14 +267,13 @@
             </div>
 
             <p class="text-right text-xs">
-              <!-- svelte-ignore a11y-missing-attribute -->
-              <a
+              <button
                 on:click={lupaKataSandi}
-                class="text-[#2074D8] font-medium inline-flex space-x-1 items-center cursor-pointer"
-                target="_blank"
+                class="text-[#2074D8] font-medium inline-flex space-x-1 items-center cursor-pointer bg-transparent border-none p-0"
+                aria-label="Lupa kata sandi?"
               >
                 <span> Lupa kata sandi? </span>
-              </a>
+              </button>
             </p>
 
             <!-- <button
