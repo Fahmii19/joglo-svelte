@@ -5,6 +5,7 @@
   import { loggedIn } from "../store/store";
   import UserIcon from "../assets/images/user_model.jpg";
   import { navigate } from "svelte-routing";
+  import { activeMenu } from "../store/activeMenuStore";
 
   let UserIconNew =
     "https://www.joglopro.com/bucket/soaraja/image/joglopro/model/model6.png";
@@ -12,6 +13,7 @@
   // Login
   function handleLogin() {
     loggedIn.set(true);
+    activeMenu.set("");
   }
 </script>
 
@@ -49,7 +51,10 @@
     </a>
   {:else}
     <button
-      on:click={() => navigate("/login")}
+      on:click={() => {
+        handleLogin();
+        navigate("/login");
+      }}
       class="text-sm text-gray-700 cursor-pointer">Login</button
     >
   {/if}
