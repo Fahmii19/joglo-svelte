@@ -12,7 +12,6 @@
 
   // Login
   function handleLogin() {
-    loggedIn.set(true);
     activeMenu.set("");
   }
 </script>
@@ -46,10 +45,10 @@
   {:else}
     <button
       on:click={() => {
-        handleLogin();
         navigate("/login");
+        handleLogin();
       }}
-      class="text-sm text-gray-700 cursor-pointer">Login</button
+      class="text-sm text-gray-700 cursor-pointer">Loginn</button
     >
   {/if}
 
