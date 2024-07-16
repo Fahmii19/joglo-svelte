@@ -1,3 +1,11 @@
+<script>
+  let landscape =
+    "https://www.joglopro.com/bucket/soaraja/image/joglopro/landscape.png";
+
+  let avatar =
+    "https://www.joglopro.com/bucket/soaraja/image/joglopro/model/model6.png";
+</script>
+
 <div
   class="bg-transparent rounded-lg h-[73vh] overflow-y-auto overflow-x-hidden hide-scrollbar"
 >
@@ -20,7 +28,7 @@
             />
             <img
               id="preview-img-avatar"
-              src="https://www.joglopro.com/bucket/soaraja/image/joglopro/model/model6.png"
+              src={avatar}
               alt=""
               class="w-full h-full bg-white rounded-full object-cover relative"
             />
@@ -107,7 +115,7 @@
 
             <div class="w-full flex flex-col">
               <div class="ml-2.5 w-full h-full flex items-center justify-start">
-                <label class="block text-xs font-bold mb-1"> Logo </label>
+                <div class="block text-xs font-bold mb-1">Logo</div>
               </div>
 
               <div
@@ -121,7 +129,7 @@
                 >
                   <img
                     class="h-full w-full object-contain"
-                    src="https://www.joglopro.com/bucket/soaraja/image/joglopro/landscape.png"
+                    src={landscape}
                     alt=""
                   />
                   <!-- Hidden File Input -->

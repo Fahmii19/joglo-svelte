@@ -6,12 +6,31 @@
   let dialog; // HTMLDialogElement
 
   $: if (dialog && $showModal) dialog.showModal();
+
+  function handleDialogClose() {
+    showModal.set(false);
+  }
+
+  function handleDialogClick(event) {
+    if (event.target === dialog) {
+      dialog.close();
+    }
+  }
+
+  function handleKeyDown(event) {
+    if (event.key === "Escape") {
+      dialog.close();
+    }
+  }
 </script>
 
 <dialog
   bind:this={dialog}
-  on:close={() => showModal.set(false)}
-  on:click|self={() => dialog.close()}
+  on:close={handleDialogClose}
+  on:click={handleDialogClick}
+  on:keydown={handleKeyDown}
+  aria-modal="true"
+  role="dialog"
 >
   <div class="modal-content" on:click|stopPropagation>
     <slot name="header" />
