@@ -29,6 +29,7 @@
 
   function handleLogout() {
     loggedIn.set(false);
+    activeMenu.set("");
     navigate("/login");
   }
 

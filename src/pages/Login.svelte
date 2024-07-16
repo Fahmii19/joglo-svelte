@@ -11,6 +11,7 @@
   import { authUser, authUserTemp, isLogged } from "../store/auth";
   import type { ColorAlert } from "../types/color-alert";
   import { markerStore } from "../store/map";
+  import { activeMenu } from "../store/activeMenuStore";
 
   $: colorResponse = "red" as ColorAlert;
 
@@ -136,12 +137,18 @@
 
   import { loggedIn } from "../store/store";
   function handleLogin() {
+    activeMenu.set("menu_galeri");
     loggedIn.set(true);
     navigate("/");
   }
 
   function lupaKataSandi() {
     navigate("/lupa-kata-sandi");
+  }
+
+  function handleBack() {
+    activeMenu.set("menu_galeri"); // Set activeId ke menu_galeri
+    navigate("/"); // Arahkan ke halaman utama
   }
 
   // Remove Marker
@@ -153,7 +160,7 @@
 
   <div class="w-full flex justify-between border-b border-gray-300">
     <div class="font-sf_pro_bold_judul text-2xl px-3 py-2 judulStory w-80">
-      Login
+      Loginnnn
     </div>
     <!--  -->
 
@@ -164,8 +171,8 @@
         <div
           class="w-5 h-5 mt-0.5 mr-0.5 flex justify-center items-center relative"
         >
-          <a href="/" use:link>
-            <img src={BackIcon} alt="" />
+          <a on:click={handleBack}>
+            <img src={BackIcon} alt="Kembali" />
           </a>
         </div>
       </div>
