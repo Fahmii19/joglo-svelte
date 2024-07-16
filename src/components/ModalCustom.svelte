@@ -30,6 +30,7 @@
     <slot />
   </div>
 </dialog>
+<!--  -->
 
 <style>
   dialog {
