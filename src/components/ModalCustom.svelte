@@ -1,5 +1,4 @@
 <script>
-  import { Listgroup } from "flowbite-svelte";
   import { writable } from "svelte/store";
   export let showModal; // writable(boolean)
   export let errors; // writable(array)
@@ -30,8 +29,6 @@
     <slot />
   </div>
 </dialog>
-
-<!-- test -->
 
 <style>
   dialog {
