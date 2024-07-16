@@ -59,11 +59,11 @@
 
   const validate = () => {
     let validationErrors = [];
-    if (phone === "") validationErrors.push("Nomor Ponsel harus diisi");
+    if (phone === "") validationErrors.push("Nomor ponsel harus diisi");
     if (email === "") validationErrors.push("Email harus diisi");
-    if (firstName === "") validationErrors.push("Nama Depan harus diisi");
-    if (lastName === "") validationErrors.push("Nama Belakang harus diisi");
-    if (password === "") validationErrors.push("Kata Sandi harus diisi");
+    if (firstName === "") validationErrors.push("Nama depan harus diisi");
+    if (lastName === "") validationErrors.push("Nama belakang harus diisi");
+    if (password === "") validationErrors.push("Kata sandi harus diisi");
     errors.set(validationErrors);
     return validationErrors.length === 0;
   };
