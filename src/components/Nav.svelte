@@ -20,18 +20,12 @@
 <div
   class="w-full h-[10vh] bg-slate-50 flex flex-row items-center justify-between pl-3 pr-8 z-10"
 >
-  <a href="/" use:link>
-    <div class="flex items-center space-x-4">
-      <img
-        class="w-12 h-12 object-cover mt-1"
-        src={HomeIcon}
-        alt="Joglo Icon"
-      />
-      <div class="text-3xl font-bold font-sf_pro_bold text-[#2074d8]">
-        JogloProo
-      </div>
+  <div class="flex items-center space-x-4 cursor-pointer">
+    <img class="w-12 h-12 object-cover mt-1" src={HomeIcon} alt="Joglo Icon" />
+    <div class="text-3xl font-bold font-sf_pro_bold text-[#2074d8]">
+      JogloProo
     </div>
-  </a>
+  </div>
 
   <!--  -->
 
