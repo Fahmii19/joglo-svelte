@@ -34,17 +34,17 @@
 >
   <div class="modal-content" on:click|stopPropagation>
     <slot name="header" />
-    <ul
-      class="bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-700 divide-y divide-gray-200 dark:divide-gray-600 w-[25vw] text-center"
+    <div
+      class="bg-white text-black rounded-lg border border-gray-300 divide-y divide-gray-300 w-[25vw] text-center"
     >
       {#each $errors as error}
-        <li
-          class="py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg border-item"
+        <div
+          class="py-2 px-4 w-full text-sm list-none first:rounded-t-lg last:rounded-b-lg border-item"
         >
           {error}
-        </li>
+        </div>
       {/each}
-    </ul>
+    </div>
     <slot />
   </div>
 </dialog>
