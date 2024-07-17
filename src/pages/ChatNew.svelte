@@ -44,16 +44,21 @@
       <div
         class="font-sf_pro_bold_judul text-2xl px-3 py-2 judulStory border-b border-gray-300"
       >
-        Pesann
+        Pesan
       </div>
       <div class="p-2 border-b border-gray-300">
         {#if $activeUser && $activePesan !== 1}
           <div class="flex items-center avatar_username_pengguna_chat_aktif">
-            <img
-              class="object-cover w-8 h-8 rounded-full"
-              src={$activeUser.image}
-              alt=""
-            />
+            <div class="relative">
+              <img
+                class="object-cover w-8 h-8 rounded-full"
+                src={$activeUser.image}
+                alt=""
+              />
+              <span
+                class="-bottom-0.5 left-6 absolute w-2.5 h-2.5 {$activeUser.status} dark:border-gray-800 rounded-full"
+              ></span>
+            </div>
             <div class="ml-2 text-black text-sm">{$activeUser.name}</div>
           </div>
         {/if}
