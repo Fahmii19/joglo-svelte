@@ -1,21 +1,16 @@
 <script>
   import { navigate } from "svelte-routing";
-
-  import { formState } from "../store/store";
-
   const pinlock =
     "https://www.joglopro.com/bucket/soaraja/image/joglopro/padlock.png";
+
+  function MasukAkunLogin() {
+    // Logic untuk reset kata sandi, misalnya mengarahkan ke halaman login atau menampilkan pesan sukses
+    navigate("/login");
+  }
 
   function Batal() {
     // Logic untuk batal, misalnya mengarahkan ke halaman login
     navigate("/login");
-  }
-
-  function handleLanjutkan() {
-    formState.set({
-      state: "GantiPassword",
-      title: "Pilih kata sandi baru",
-    });
   }
 </script>
 
@@ -24,8 +19,8 @@
 >
   <div class="w-full">
     <p class="text-center text-sm text-black">
-      Harap periksa pesan teks berisi kode di ponsel Anda. Kode Anda memiliki
-      panjang 6 karakter.
+      Buat kata sandi baru yang berisi sedikitnya 6 karakter. Kata sandi yang
+      kuat adalah kombinasi huruf, angka, dan tanda baca.
     </p>
   </div>
 
@@ -36,8 +31,8 @@
           <div>
             <div class="mb-3 pt-0">
               <input
-                type="number"
-                placeholder="Masukan OTP"
+                type="text"
+                placeholder="Kata Sandi Baru"
                 class="px-3 py-4 border text-black bg-white rounded-lg text-sm focus:outline-none focus:ring-0 w-full remove_style_arrow_inputan"
               />
             </div>
@@ -51,18 +46,10 @@
   <div class="flex space-x-3">
     <button
       type="button"
-      on:click={handleLanjutkan}
+      on:click={MasukAkunLogin}
       class="w-full py-2 font-medium text-white text-sm bg-[#0394F7] hover:bg-[#1877F2] rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center"
     >
       <span>Kirim</span>
-    </button>
-
-    <button
-      type="button"
-      on:click={Batal}
-      class="w-full py-2 font-medium text-white text-sm bg-gray-400 hover:bg-gray-500 rounded-lg border-gray-500 hover:shadow inline-flex space-x-2 items-center justify-center"
-    >
-      <span>Batal</span>
     </button>
   </div>
 

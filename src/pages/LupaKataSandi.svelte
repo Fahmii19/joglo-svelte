@@ -4,6 +4,7 @@
   import FormLupaKataSandi from "../components/FormLupaKataSandi.svelte";
   import FormKodeOTP from "../components/FormKodeOTP.svelte";
   import { formState } from "../store/store";
+  import FormKataSandiBaru from "../components/FormKataSandiBaru.svelte";
 
   let currentFormState;
   let title;
@@ -54,6 +55,8 @@
       <FormLupaKataSandi />
     {:else if currentFormState === "kodeOTP"}
       <FormKodeOTP />
+    {:else if currentFormState === "GantiPassword"}
+      <FormKataSandiBaru />
     {/if}
   </div>
 </div>
