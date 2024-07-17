@@ -149,8 +149,7 @@
                   <img
                     id="imagePreview"
                     class="h-full w-full object-contain"
-                    src=""
-                    alt="Image preview"
+                    alt=""
                   />
                 </div>
               </div>

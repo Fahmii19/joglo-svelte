@@ -30,9 +30,8 @@
   on:click={handleDialogClick}
   on:keydown={handleKeyDown}
   aria-modal="true"
-  role="dialog"
 >
-  <div class="modal-content" on:click|stopPropagation>
+  <div class="modal-content" role="document">
     <slot name="header" />
     <div
       class="bg-white text-black rounded-lg border border-gray-300 divide-y divide-gray-300 w-[25vw] text-center"
@@ -53,8 +52,8 @@
   dialog {
     position: fixed;
     top: 30%;
-    right: -50%;
-    transform: translateY(-50%);
+    right: -25%;
+    transform: translate(50%, -50%);
     max-width: 32em;
     border-radius: 0.6em;
     border: none;
