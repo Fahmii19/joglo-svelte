@@ -14,7 +14,7 @@
   function handleLanjutkan() {
     formState.set({
       state: "GantiPassword",
-      title: "Pilih kata sandi baru",
+      title: "Buat kata sandi baru",
     });
   }
 </script>
