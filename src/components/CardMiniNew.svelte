@@ -1,8 +1,10 @@
+<script>
+  import { navigate } from "svelte-routing";
+</script>
+
 <div
   class="max-w-sm bg-white cursor-pointer border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
-  data-active-tab="1"
-  data-object-id="1604"
-  onclick="showCardInfoDetail(this)"
+  on:click={() => navigate("/detail-new")}
 >
   <div class="p-1 h-[5vh] bg-white my-1 rounded-t-lg select-none">
     <div class="flex items-center justify-between w-full h-full">

@@ -38,14 +38,23 @@
       togglePassword.addEventListener("click", () => {
         if (passwordInput && passwordInput.type === "password") {
           passwordInput.type = "text";
-          viewIcon.classList.add("hidden");
-          hideIcon.classList.remove("hidden");
+          hideIcon.classList.add("hidden");
+          viewIcon.classList.remove("hidden");
         } else {
           passwordInput.type = "password";
-          viewIcon.classList.remove("hidden");
-          hideIcon.classList.add("hidden");
+          viewIcon.classList.add("hidden");
+          hideIcon.classList.remove("hidden");
         }
       });
+    }
+
+    // Initial state setup
+    if (passwordInput && passwordInput.type === "password") {
+      viewIcon.classList.add("hidden");
+      hideIcon.classList.remove("hidden");
+    } else {
+      hideIcon.classList.add("hidden");
+      viewIcon.classList.remove("hidden");
     }
   });
 
@@ -59,11 +68,11 @@
 
   const validate = () => {
     let validationErrors = [];
-    if (phone === "") validationErrors.push("Nomor ponsel harus diisi");
-    if (email === "") validationErrors.push("Email harus diisi");
-    if (firstName === "") validationErrors.push("Nama depan harus diisi");
-    if (lastName === "") validationErrors.push("Nama belakang harus diisi");
-    if (password === "") validationErrors.push("Kata sandi harus diisi");
+    if (phone === "") validationErrors.push("Nomor ponsel wajib diisi");
+    if (email === "") validationErrors.push("Email wajib diisi");
+    if (firstName === "") validationErrors.push("Nama depan wajib diisi");
+    if (lastName === "") validationErrors.push("Nama belakang wajib diisi");
+    if (password === "") validationErrors.push("Kata sandi wajib diisi");
     errors.set(validationErrors);
     return validationErrors.length === 0;
   };
@@ -270,12 +279,12 @@
                 class="toggle-password absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5 cursor-pointer"
               >
                 <img
-                  class="view-icon w-4 h-4 object-contain mt-0.5"
+                  class="view-icon w-4 h-4 object-contain mt-0.5 hidden"
                   src={ViewIcon}
                   alt="Lihat"
                 />
                 <img
-                  class="hide-icon w-4 h-4 object-contain mt-0.5 hidden"
+                  class="hide-icon w-4 h-4 object-contain mt-0.5"
                   src={HideIcon}
                   alt="Sembunyikan"
                 />

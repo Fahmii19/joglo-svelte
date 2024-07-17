@@ -39,24 +39,24 @@
     if (togglePassword) {
       togglePassword.addEventListener("click", () => {
         if (passwordInput && passwordInput.type === "password") {
-          (passwordInput as HTMLInputElement).type = "text";
-          viewIcon.classList.add("hidden");
-          hideIcon.classList.remove("hidden");
+          passwordInput.type = "text";
+          hideIcon.classList.add("hidden");
+          viewIcon.classList.remove("hidden");
         } else {
           passwordInput.type = "password";
-          viewIcon.classList.remove("hidden");
-          hideIcon.classList.add("hidden");
+          viewIcon.classList.add("hidden");
+          hideIcon.classList.remove("hidden");
         }
       });
     }
-    if (passwordInput.type === "password") {
-      passwordInput.type = "text";
+
+    // Initial state setup
+    if (passwordInput && passwordInput.type === "password") {
       viewIcon.classList.add("hidden");
       hideIcon.classList.remove("hidden");
     } else {
-      passwordInput.type = "password";
-      viewIcon.classList.remove("hidden");
       hideIcon.classList.add("hidden");
+      viewIcon.classList.remove("hidden");
     }
   });
 
@@ -244,7 +244,7 @@
                 <div class="relative">
                   <input
                     id="password-input-login"
-                    type="text"
+                    type="password"
                     value={password}
                     class="password-input border-0 px-2 py-2 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring-0 w-full"
                   />
@@ -252,12 +252,12 @@
                     class="toggle-password absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5 cursor-pointer"
                   >
                     <img
-                      class="view-icon w-4 h-4 object-contain mt-0.5"
+                      class="view-icon w-4 h-4 object-contain mt-0.5 hidden"
                       src={ViewIcon}
                       alt="Lihat"
                     />
                     <img
-                      class="hide-icon w-4 h-4 object-contain mt-0.5 hidden"
+                      class="hide-icon w-4 h-4 object-contain mt-0.5"
                       src={HideIcon}
                       alt="Sembunyikan"
                     />
