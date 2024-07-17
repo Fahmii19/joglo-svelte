@@ -11,7 +11,7 @@
 </script>
 
 <div
-  class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-100 focus:outline-none"
+  class="menu-pesan-area flex items-center px-3 py-1 transition duration-150 ease-in-out cursor-pointer hover:bg-gray-200 focus:outline-none"
   class:bg-slate-200={$activeChatId === chat.id}
   on:click={() => handleChatClick(chat.id)}
   role="button"
