@@ -24,3 +24,9 @@ export const activeUser = writable(null);
 
 // untuk chat yang aktif
 export const activeChatId = writable(null);
+
+// untuk lupa password
+export const formState = writable({
+  state: "lupaKataSandi",
+  title: "Verifikasi Akun",
+});

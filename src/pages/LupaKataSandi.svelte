@@ -2,6 +2,16 @@
   import { navigate } from "svelte-routing";
   import BackIcon from "../assets/images/back.png";
   import FormLupaKataSandi from "../components/FormLupaKataSandi.svelte";
+  import FormKodeOTP from "../components/FormKodeOTP.svelte";
+  import { formState } from "../store/store";
+
+  let currentFormState;
+  let title;
+
+  formState.subscribe((value) => {
+    currentFormState = value.state;
+    title = value.title;
+  });
 
   function KembaliLogin() {
     navigate("/login");
@@ -11,8 +21,8 @@
 <div class="flex flex-col show-form-registrasi">
   <!-- Judul Beranda -->
   <div class="w-full flex justify-between border-b border-gray-300">
-    <div class="font-sf_pro_bold_judul text-2xl px-3 py-2 judulStory w-80">
-      Lupa Kata Sandiii
+    <div class="font-sf_pro_bold_judul text-2xl px-3 py-2 judulStory w-[30vw]">
+      {title}
     </div>
     <!--  -->
 
@@ -23,7 +33,6 @@
         <div
           class="w-5 h-5 mt-0.5 mr-0.5 flex justify-center items-center relative"
         >
-          <!-- Ganti <a> dengan <button> untuk aksesibilitas yang lebih baik -->
           <button
             on:click={KembaliLogin}
             class="flex items-center justify-center"
@@ -40,8 +49,11 @@
   <div
     class="h-[76.5vh] flex justify-center items-center overflow-y-hidden overflow-x-hidden hide-scrollbar form-registrasi"
   >
-    <!-- Login  -->
-    <FormLupaKataSandi />
-    <!--  -->
+    <!-- Kondisional untuk menampilkan form berdasarkan state -->
+    {#if currentFormState === "lupaKataSandi"}
+      <FormLupaKataSandi />
+    {:else if currentFormState === "kodeOTP"}
+      <FormKodeOTP />
+    {/if}
   </div>
 </div>

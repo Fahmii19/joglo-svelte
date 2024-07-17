@@ -1,6 +1,14 @@
 <script>
+  import { formState } from "../store/store";
   const pinlock =
     "https://www.joglopro.com/bucket/soaraja/image/joglopro/padlock.png";
+
+  function handleLanjutkan() {
+    formState.set({
+      state: "kodeOTP",
+      title: "Masukkan Kode Keamanan",
+    });
+  }
 </script>
 
 <div
@@ -12,8 +20,7 @@
     </div>
 
     <p class="text-center text-sm text-black mt-10">
-      Masukkan nomor ponsel atau email dan kami akan kirimkan tautan ke akun
-      anda.
+      Bagaimana Anda ingin mendapatkan kode untuk mereset kata sandi Anda?
     </p>
 
     <form action="" class="my-3">
@@ -23,7 +30,7 @@
             <label
               for="email-input4"
               class="block mb-2 text-sm font-medium text-gray-900"
-              >Nomor Ponsel atau Email</label
+              >Nomor Ponsel atau Email yang terdaftar</label
             >
             <input
               type="text"
@@ -34,10 +41,11 @@
         </div>
 
         <button
-          onclick="MasukAkunLogin()"
+          type="button"
+          on:click={handleLanjutkan}
           class="w-full py-2 mt-3 mb-5 font-medium text-white text-sm bg-[#0394F7] hover:bg-[#1877F2] rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center"
         >
-          <span>Reset</span>
+          <span>Lanjutkan</span>
         </button>
       </div>
     </form>
