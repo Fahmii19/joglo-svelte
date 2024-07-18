@@ -130,7 +130,7 @@
       on:click={handleLanjutkan}
       class="w-full py-2 font-medium text-white text-sm bg-[#0394F7] hover:bg-[#1877F2] rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center"
     >
-      <span>Kirim</span>
+      <span>Lanjut</span>
     </button>
 
     <button
