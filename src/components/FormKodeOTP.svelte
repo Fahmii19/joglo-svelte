@@ -23,7 +23,7 @@
   class="h-[37vh] w-[25vw] flex flex-col justify-between p-5 rounded-xl bg-white"
 >
   <div class="w-full">
-    <p class="text-center text-sm text-black">
+    <p class="text-center text-sm text-gray-900">
       Harap periksa pesan teks berisi kode di ponsel Anda. Kode Anda memiliki
       panjang 6 karakter.
     </p>

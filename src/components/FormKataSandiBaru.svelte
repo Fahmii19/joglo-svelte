@@ -27,7 +27,7 @@
   class="h-[37vh] w-[25vw] flex flex-col justify-between p-5 rounded-xl bg-white"
 >
   <div class="w-full">
-    <p class="text-center text-sm text-black">
+    <p class="text-center text-sm text-gray-900">
       Buat kata sandi baru yang berisi sedikitnya 6 karakter. Kata sandi yang
       kuat adalah kombinasi huruf, angka, dan tanda baca.
     </p>

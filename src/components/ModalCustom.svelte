@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
   import { writable } from "svelte/store";
   export let showModal; // writable(boolean)
   export let errors; // writable(array)
@@ -64,4 +64,4 @@
     padding: 10px;
     margin: 5px 0;
   }
-</style>
+</style> -->
