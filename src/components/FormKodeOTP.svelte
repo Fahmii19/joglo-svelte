@@ -116,7 +116,9 @@
           maxlength="1"
         />
       </div>
-      <div class="w-full flex justify-center text-xs text-blue-500">
+      <div
+        class="w-full flex justify-center text-xs text-blue-500 cursor-pointer"
+      >
         Kirm ulang kode?
       </div>
     </form>
