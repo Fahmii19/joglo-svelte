@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile Phone Verification</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div
+      class="max-w-md mx-auto text-center bg-white px-4 sm:px-8 py-10 rounded-xl shadow"
+    >
+      <form id="otp-form">
+        <div class="flex items-center justify-center gap-3">
+          <input
+            type="text"
+            class="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 bg-slate-100 border border-transparent hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
+            pattern="\d*"
+            maxlength="1"
+          />
+          <input
+            type="text"
+            class="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 bg-slate-100 border border-transparent hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
+            maxlength="1"
+          />
+          <input
+            type="text"
+            class="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 bg-slate-100 border border-transparent hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
+            maxlength="1"
+          />
+          <input
+            type="text"
+            class="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 bg-slate-100 border border-transparent hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
+            maxlength="1"
+          />
+        </div>
+      </form>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("otp-form");
+        const inputs = [...form.querySelectorAll("input[type=text]")];
+        const submit = form.querySelector("button[type=submit]");
+
+        const handleKeyDown = (e) => {
+          if (
+            !/^[0-9]{1}$/.test(e.key) &&
+            e.key !== "Backspace" &&
+            e.key !== "Delete" &&
+            e.key !== "Tab" &&
+            !e.metaKey
+          ) {
+            e.preventDefault();
+          }
+
+          if (e.key === "Delete" || e.key === "Backspace") {
+            const index = inputs.indexOf(e.target);
+            if (index > 0) {
+              inputs[index - 1].value = "";
+              inputs[index - 1].focus();
+            }
+          }
+        };
+
+        const handleInput = (e) => {
+          const { target } = e;
+          const index = inputs.indexOf(target);
+          if (target.value) {
+            if (index < inputs.length - 1) {
+              inputs[index + 1].focus();
+            } else {
+              submit.focus();
+            }
+          }
+        };
+
+        const handleFocus = (e) => {
+          e.target.select();
+        };
+
+        const handlePaste = (e) => {
+          e.preventDefault();
+          const text = e.clipboardData.getData("text");
+          if (!new RegExp(`^[0-9]{${inputs.length}}$`).test(text)) {
+            return;
+          }
+          const digits = text.split("");
+          inputs.forEach((input, index) => (input.value = digits[index]));
+          submit.focus();
+        };
+
+        inputs.forEach((input) => {
+          input.addEventListener("input", handleInput);
+          input.addEventListener("keydown", handleKeyDown);
+          input.addEventListener("focus", handleFocus);
+          input.addEventListener("paste", handlePaste);
+        });
+      });
+    </script>
+  </body>
+</html>
