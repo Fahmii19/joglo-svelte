@@ -43,7 +43,7 @@
                 <input
                   type={passwordVisible ? "text" : "password"}
                   placeholder="Kata Sandi Baru"
-                  class="px-3 py-2 border text-black bg-white rounded-lg text-md font-semibold focus:outline-none focus:ring-0 w-full remove_style_arrow_inputan password-input"
+                  class="px-3 py-1 border text-black bg-white rounded-lg text-sm focus:outline-none focus:ring-0 w-full remove_style_arrow_inputan password-input"
                 />
                 <button
                   type="button"

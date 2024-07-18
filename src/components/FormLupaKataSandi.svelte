@@ -36,7 +36,7 @@
         <label class="text-sm ms-1" for="sms" aria-describedby="helper-sms"
           >Kirim kode melalui SMS</label
         >
-        <p id="helper-sms" class="ps-6 text-gray-500 text-sm">+62+++++++++95</p>
+        <p id="helper-sms" class="ps-6 text-gray-500 text-xs">+62+++++++++95</p>
       </div>
       <div class="w-full">
         <input
@@ -48,7 +48,7 @@
         <label class="text-sm ms-1" for="email" aria-describedby="helper-email"
           >Kirim kode melalui email</label
         >
-        <p id="helper-email" class="ps-6 text-gray-500 text-sm">f***@*******</p>
+        <p id="helper-email" class="ps-6 text-gray-500 text-xs">f***@*******</p>
       </div>
     </div>
 
