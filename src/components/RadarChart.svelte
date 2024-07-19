@@ -1,110 +1,129 @@
 <script>
   import { onMount } from "svelte";
   import Highcharts from "highcharts";
+  import HighchartsMore from "highcharts/highcharts-more";
 
-  let chartContainer;
+  // Load the highcharts-more module
+  HighchartsMore(Highcharts);
 
-  // Data dummy untuk chart, termasuk titik awal dan akhir dengan nilai 0
-  const dummyData = [
-    [0, 0],
-    [1, 279],
-    [2, 350],
-    [3, 932],
-    [4, 504],
-    [5, 622],
-    [6, 289],
-    [7, 0],
-  ];
+  let chart;
 
   onMount(() => {
-    Highcharts.chart(chartContainer, {
+    chart = Highcharts.chart("container", {
       chart: {
+        polar: true,
         type: "area",
-        height: 350, // Menentukan tinggi chart menjadi 350px
-        spacingTop: 20,
-        spacingBottom: 20,
+        backgroundColor: "transparent",
       },
-
-      title: {
-        text: "Grafik Pengunjung",
-        align: "left",
+      pane: {
+        startAngle: 0,
+        endAngle: 360,
       },
-
-      credits: {
-        enabled: false,
-      },
-
       xAxis: {
-        categories: ["", "Jan", "Feb", "Mar", "Apr", "Mei", "Jun", ""],
-        title: {
-          text: "Bulan",
-          style: {
-            fontSize: "16px",
-            fontWeight: "bold",
-          },
-        },
-        max: 6, // Menetapkan nilai maksimum sumbu X agar mentok ke kanan
-        min: 1, // Memperbaiki nilai minimum sumbu X agar sesuai dengan data
-        crosshair: {
-          width: 1,
-          color: "gray",
-          dashStyle: "Dash",
-        }, // Menambahkan crosshair pada sumbu X
-        accessibility: {
-          rangeDescription: "Range: Jan to Jun.",
-        },
+        categories: [
+          "Stability",
+          "Healthcare",
+          "Culture and Environment",
+          "Education",
+          "Infrastructure",
+        ],
+        tickmarkPlacement: "on",
+        lineWidth: 0,
       },
-
       yAxis: {
-        tickPositions: [0, 250, 500, 750, 1000], // Mengatur posisi tick pada Y-axis
-        title: {
-          text: "Orang",
-          style: {
-            fontSize: "16px",
-            fontWeight: "bold",
-          },
-        },
-        labels: {
-          format: "{value}",
-        },
-        accessibility: {
-          description: "Orang",
-          rangeDescription: "Range: 0 to 1000",
-        },
+        gridLineInterpolation: "polygon",
+        lineWidth: 0,
+        min: 0,
+        max: 100, // Ensure y-axis reflects the correct range
       },
-
       tooltip: {
-        headerFormat: "Bulan: {point.key}<br>",
-        pointFormat: "Orang: {point.y}",
         shared: true,
+        pointFormat:
+          '<span style="color:{series.color}">{series.name}: <b>{point.y:,.0f}</b><br/>',
       },
-
-      legend: {
-        enabled: false,
+      plotOptions: {
+        series: {
+          fillOpacity: 0.1,
+        },
       },
-
       series: [
         {
-          data: dummyData,
-          lineColor: Highcharts.getOptions().colors[1],
-          color: Highcharts.getOptions().colors[2],
-          fillOpacity: 0.5,
-          name: "Orang",
-          marker: {
-            enabled: false,
-          },
-          threshold: null,
+          name: "Kebayoran Baru",
+          data: [90, 1, 85, 87, 89],
+          pointPlacement: "on",
+          color: "rgba(223, 83, 83, .5)",
+        },
+        {
+          name: "Cilandak",
+          data: [80, 82, 78, 81, 83],
+          pointPlacement: "on",
+          color: "rgba(119, 152, 191, .5)",
+        },
+        {
+          name: "Mampang Prapatan",
+          data: [85, 84, 83, 86, 82],
+          pointPlacement: "on",
+          color: "rgba(144, 237, 125, .5)",
         },
       ],
     });
+
+    return () => {
+      if (chart) {
+        chart.destroy();
+      }
+    };
   });
 </script>
 
-<div bind:this={chartContainer} class="chart-container"></div>
+<div id="container"></div>
 
 <style>
-  .chart-container {
+  #container {
     width: 100%;
-    height: 350px; /* Menentukan tinggi container chart menjadi 350px */
+    height: 350px;
+  }
+
+  .highcharts-figure,
+  .highcharts-data-table table {
+    min-width: 320px;
+    max-width: 660px;
+    margin: 1em auto;
+  }
+
+  .highcharts-data-table table {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #ebebeb;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+  }
+
+  .highcharts-data-table th {
+    font-weight: 600;
+    padding: 0.5em;
+  }
+
+  .highcharts-data-table td,
+  .highcharts-data-table th,
+  .highcharts-data-table caption {
+    padding: 0.5em;
+  }
+
+  .highcharts-data-table thead tr,
+  .highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+  }
+
+  .highcharts-data-table tr:hover {
+    background: #f1f7ff;
   }
 </style>

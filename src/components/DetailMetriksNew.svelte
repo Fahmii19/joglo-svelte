@@ -704,9 +704,6 @@
           <div class="h-[30vh] flex justify-center">
             <RadarChart />
           </div>
-          <span class="mt-8 text-sm text-center font-bold"
-            >Livability Chart</span
-          >
         </div>
       </div>
 
