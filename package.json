@@ -28,6 +28,7 @@
     "vite": "^5.0.8"
   },
   "dependencies": {
+    "@highcharts/svelte": "^1.1.0",
     "@mapbox/mapbox-gl-draw": "^1.4.3",
     "@popperjs/core": "^2.11.8",
     "@turf/circle": "^6.5.0",
@@ -37,6 +38,7 @@
     "d3": "3.5.6",
     "flowbite": "^2.2.1",
     "flowbite-svelte": "^0.44.22",
+    "highcharts": "^11.4.6",
     "install": "^0.13.0",
     "mapbox-gl": "^3.1.0",
     "mapbox-gl-draw-geodesic": "^2.3.1",

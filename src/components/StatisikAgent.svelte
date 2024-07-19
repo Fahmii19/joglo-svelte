@@ -1,6 +1,7 @@
 <script lang="ts">
   import PengunjungChart from "./pengunjungChart.svelte";
   import PendapatanChart from "./pendapatanChart.svelte";
+  import RadarChart from "./RadarChart.svelte";
 </script>
 
 <div class="h-[63.5vh] overflow-hidden">
@@ -57,7 +58,8 @@
       <PengunjungChart />
     </div>
     <div class="h-full w-full bg-white rounded-lg px-3">
-      <PendapatanChart />
+      <!-- <PendapatanChart /> -->
+      <RadarChart />
     </div>
   </div>
 
