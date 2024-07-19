@@ -4,14 +4,16 @@
 
   let chartContainer;
 
-  // Data dummy untuk chart
+  // Data dummy untuk chart, termasuk titik awal dan akhir dengan nilai 0
   const dummyData = [
-    [0, 279],
-    [1, 350],
-    [2, 932],
-    [3, 504],
-    [4, 622],
-    [5, 289],
+    [0, 0],
+    [1, 279],
+    [2, 350],
+    [3, 932],
+    [4, 504],
+    [5, 622],
+    [6, 289],
+    [7, 0],
   ];
 
   onMount(() => {
@@ -32,48 +34,8 @@
         enabled: false,
       },
 
-      annotations: [
-        {
-          draggable: "",
-          labelOptions: {
-            backgroundColor: "rgba(255,255,255,0.5)",
-            verticalAlign: "top",
-            y: 15,
-          },
-          labels: [
-            {
-              point: {
-                xAxis: 0,
-                yAxis: 0,
-                x: 1,
-                y: 250,
-              },
-              text: "Feb",
-            },
-            {
-              point: {
-                xAxis: 0,
-                yAxis: 0,
-                x: 3,
-                y: 750,
-              },
-              text: "Apr",
-            },
-            {
-              point: {
-                xAxis: 0,
-                yAxis: 0,
-                x: 4,
-                y: 1000,
-              },
-              text: "Mei",
-            },
-          ],
-        },
-      ],
-
       xAxis: {
-        categories: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun"],
+        categories: ["", "Jan", "Feb", "Mar", "Apr", "Mei", "Jun", ""],
         title: {
           text: "Bulan",
           style: {
@@ -81,6 +43,13 @@
             fontWeight: "bold",
           },
         },
+        max: 6, // Menetapkan nilai maksimum sumbu X agar mentok ke kanan
+        min: 1, // Memperbaiki nilai minimum sumbu X agar sesuai dengan data
+        crosshair: {
+          width: 1,
+          color: "gray",
+          dashStyle: "Dash",
+        }, // Menambahkan crosshair pada sumbu X
         accessibility: {
           rangeDescription: "Range: Jan to Jun.",
         },
@@ -105,7 +74,7 @@
       },
 
       tooltip: {
-        headerFormat: "Bulan: {point.x}<br>",
+        headerFormat: "Bulan: {point.key}<br>",
         pointFormat: "Orang: {point.y}",
         shared: true,
       },
