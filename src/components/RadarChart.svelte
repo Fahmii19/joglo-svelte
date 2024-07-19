@@ -15,6 +15,9 @@
         type: "area",
         backgroundColor: "transparent",
       },
+      title: {
+        text: "Livability Index", // Menambahkan judul chart
+      },
       pane: {
         startAngle: 0,
         endAngle: 360,
