@@ -4,35 +4,25 @@
 
   let chartContainer;
 
-  // Data dummy untuk chart, termasuk titik awal dan akhir dengan nilai 0
+  // Data untuk chart, hanya sampai bulan Mei
   const dummyData = [
     [0, 0],
-    [1, 75],
-    [2, 35],
-    [3, 42],
-    [4, 12],
-    [5, 54],
-    [6, 78],
-    [7, 63],
+    [1, 4],
+    [2, 40],
+    [3, 82],
+    [4, 36],
+    [5, 6],
+    [6, 0],
   ];
 
-  const monthNamesFull = [
-    "",
-    "Januari",
-    "Februari",
-    "Maret",
-    "April",
-    "Mei",
-    "Juni",
-    "",
-  ];
-  const monthNamesShort = ["", "Jan", "Feb", "Mar", "Apr", "Mei", "Jun", ""];
+  const monthNamesFull = ["", "Januari", "Februari", "Maret", "April", "Mei"];
+  const monthNamesShort = ["", "Jan", "Feb", "Mar", "Apr", "Mei"];
 
   onMount(() => {
     Highcharts.chart(chartContainer, {
       chart: {
         type: "area",
-        height: 350, // Menentukan tinggi chart menjadi 350px
+        height: 300, // Menentukan tinggi chart menjadi 300px
         spacingTop: 20,
         spacingBottom: 10,
         spacingLeft: 0,
@@ -61,7 +51,7 @@
             fontWeight: "bold",
           },
         },
-        max: 6, // Menetapkan nilai maksimum sumbu X agar mentok ke kanan
+        max: 5, // Menetapkan nilai maksimum sumbu X agar mentok ke kanan
         min: 1, // Memperbaiki nilai minimum sumbu X agar sesuai dengan data
         tickmarkPlacement: "on",
         tickWidth: 1,
@@ -73,7 +63,7 @@
           dashStyle: "Dash",
         }, // Menambahkan crosshair pada sumbu X
         accessibility: {
-          rangeDescription: "Range: Jan to Jun.",
+          rangeDescription: "Range: Jan to Mei.",
         },
       },
 
@@ -91,7 +81,7 @@
         },
         accessibility: {
           description: "Unit",
-          rangeDescription: "Range: 0 to 1000",
+          rangeDescription: "Range: 0 to 100",
         },
       },
 
@@ -133,6 +123,6 @@
 <style>
   .chart-container {
     width: 100%;
-    height: 350px; /* Menentukan tinggi container chart menjadi 350px */
+    height: 300px; /* Menentukan tinggi container chart menjadi 300px */
   }
 </style>
