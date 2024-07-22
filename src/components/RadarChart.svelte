@@ -16,28 +16,53 @@
         backgroundColor: "transparent",
       },
       title: {
-        text: "Livability Index", // Menambahkan judul chart
+        text: null, // Remove chart title
       },
       pane: {
+        size: "80%", // Adjust the size of the pane to provide more padding
         startAngle: 0,
         endAngle: 360,
+        background: {
+          backgroundColor: "#f8f8f8",
+          borderWidth: 1,
+          borderColor: "#ddd",
+        },
       },
       xAxis: {
         categories: [
-          "Stability",
-          "Healthcare",
-          "Culture and Environment",
-          "Education",
-          "Infrastructure",
+          "Konektivitas Pejalan Kaki",
+          "Ruang Terbuka dan Publik",
+          "Fasilitas Komunitas",
+          "Aktivitas Budaya Perkotaan",
+          "Lokasi Bekerja",
+          "Pelayanan Kesehatan",
+          "Pendidikan",
+          "Transportasi Publik",
+          "Campuran Guna Lahan",
         ],
         tickmarkPlacement: "on",
         lineWidth: 0,
+        labels: {
+          style: {
+            color: "#333",
+            fontSize: "10px", // Reduced font size
+          },
+          distance: 20, // Added distance for spacing
+        },
       },
       yAxis: {
         gridLineInterpolation: "polygon",
         lineWidth: 0,
-        min: 0,
-        max: 100, // Ensure y-axis reflects the correct range
+        min: 1, // Start from 1
+        max: 6, // Ensure y-axis reflects the correct range
+        tickInterval: 1, // Set interval for y-axis ticks
+        gridLineColor: "#ddd",
+        labels: {
+          style: {
+            color: "#333",
+            fontSize: "10px", // Reduced font size
+          },
+        },
       },
       tooltip: {
         shared: true,
@@ -46,27 +71,26 @@
       },
       plotOptions: {
         series: {
-          fillOpacity: 0.1,
+          fillOpacity: 0.4,
+          marker: {
+            radius: 4,
+            lineColor: "#666",
+            lineWidth: 1,
+          },
         },
+      },
+      legend: {
+        enabled: false, // Hide legend
+      },
+      credits: {
+        enabled: false, // Hide Highcharts watermark
       },
       series: [
         {
-          name: "Kebayoran Baru",
-          data: [90, 1, 85, 87, 89],
+          name: "Parameter",
+          data: [5, 4, 5, 3, 3, 2, 4, 3, 5], // Updated data to match the chart
           pointPlacement: "on",
-          color: "rgba(223, 83, 83, .5)",
-        },
-        {
-          name: "Cilandak",
-          data: [80, 82, 78, 81, 83],
-          pointPlacement: "on",
-          color: "rgba(119, 152, 191, .5)",
-        },
-        {
-          name: "Mampang Prapatan",
-          data: [85, 84, 83, 86, 82],
-          pointPlacement: "on",
-          color: "rgba(144, 237, 125, .5)",
+          color: "#9E57CC", // Use a purple color to match the provided image
         },
       ],
     });
@@ -84,7 +108,7 @@
 <style>
   #container {
     width: 100%;
-    height: 350px;
+    height: 270px; /* Adjusted height for better readability */
   }
 
   .highcharts-figure,
