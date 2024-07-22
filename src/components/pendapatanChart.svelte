@@ -105,7 +105,7 @@
         {
           data: dummyData,
           lineColor: Highcharts.getOptions().colors[1],
-          color: Highcharts.getOptions().colors[2],
+          color: "#73c8e5", // Mengubah background area dalam grafik menjadi warna biru
           fillOpacity: 0.5,
           name: "Unit",
           marker: {

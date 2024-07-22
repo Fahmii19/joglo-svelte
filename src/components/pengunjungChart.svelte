@@ -105,7 +105,7 @@
         {
           data: dummyData,
           lineColor: Highcharts.getOptions().colors[1],
-          color: Highcharts.getOptions().colors[2],
+          color: "#73c8e5",
           fillOpacity: 0.5,
           name: "Orang",
           marker: {
