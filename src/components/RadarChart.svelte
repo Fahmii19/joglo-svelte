@@ -54,7 +54,7 @@
         gridLineInterpolation: "polygon",
         lineWidth: 0,
         min: 1, // Start from 1
-        max: 6, // Ensure y-axis reflects the correct range
+        max: 5, // Ensure y-axis reflects the correct range
         tickInterval: 1, // Set interval for y-axis ticks
         gridLineColor: "#ddd",
         labels: {
@@ -74,7 +74,7 @@
           fillOpacity: 0.4,
           marker: {
             radius: 4,
-            lineColor: "#666",
+            lineColor: "#5196ad",
             lineWidth: 1,
           },
         },
@@ -90,7 +90,7 @@
           name: "Parameter",
           data: [5, 4, 5, 3, 3, 2, 4, 3, 5], // Updated data to match the chart
           pointPlacement: "on",
-          color: "#9E57CC", // Use a purple color to match the provided image
+          color: "#73C8E5", // Use blue color
         },
       ],
     });
