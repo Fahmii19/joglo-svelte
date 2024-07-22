@@ -4,14 +4,14 @@
 
 <div class="h-[65vh] overflow-y-hidden hide-scrollbar">
   <div
-    class="h-[62vh] overflow-x-hidden overflow-y-auto hide-scrollbar text-black"
+    class="h-[62vh] overflow-x-hidden overflow-y-hidden hide-scrollbar text-black"
   >
     <form class="formEditListingg RemoveClassformEditListingg">
       <div class="grid grid-cols-2 gap-y-1 gap-x-3 mb-4">
         <!-- a -->
-        <div class="">
+        <div class="flex items-center">
           <div class="w-full grid grid-cols-2 gap-x-3">
-            <div class="col-span-2 flex justify-center mb-[2.2rem]">
+            <div class="col-span-2 flex justify-center">
               <!-- Card Livability -->
               <div class="flex flex-col">
                 <div class="w-full flex justify-end">
@@ -680,47 +680,6 @@
           </div>
 
           <!--  -->
-        </div>
-      </div>
-
-      <div class="grid grid-cols-2 gap-y-1 gap-x-3">
-        <!-- a -->
-        <div class="">
-          <div class="w-full grid grid-cols-2 gap-x-3">
-            <div class="col-span-2 flex justify-center mb-[2.2rem]">
-              <!-- Card Livability -->
-              <div class="flex flex-col">
-                <div class="w-full flex justify-end">
-                  <div
-                    class="w-[8vw] h-[12vh] flex justify-center items-center bg-gray-200 rounded-lg"
-                  >
-                    <div class="text-2xl">
-                      <span class="font-bold">4.7</span>
-                      / 5
-                    </div>
-                  </div>
-                </div>
-
-                <div class="w-full flex justify-end">
-                  <div class="w-[8vw] flex flex-col justify-center mt-1.5">
-                    <span class="text-sm text-center font-bold"
-                      >Livability Index</span
-                    >
-                    <span class="text-sm text-center">Kategori Tinggi</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!--  -->
-          </div>
-
-          <!--  -->
-        </div>
-
-        <!--  -->
-        <div class="h-full w-full">
-          <RadarChart />
         </div>
       </div>
 

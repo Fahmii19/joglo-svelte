@@ -77,7 +77,7 @@
           Drag-and-Drop pin di peta
         </label>
         <div class="flex flex-row">
-          <div class="basis-[80%] w-full">
+          <div class="basis-[90%] w-full">
             <input
               value="-6.282301, 106.794109"
               readonly=""
@@ -88,18 +88,18 @@
             />
           </div>
           <!--  -->
-          <div class="basis-[20%] w-full ml-3">
+          <div class="basis-[10%] w-full ml-3">
             <div
-              class="w-[5vw] h-[4.2vh] rounded-lg flex justify-center items-center bg-white relative"
+              class="w-[2.7vw] h-[4.2vh] rounded-lg flex justify-center items-center bg-white relative"
             >
               <img
                 id="draggableImage"
-                class="w-[1.5vw] h-[2.6vh]"
+                class="w-[1.4vw] h-[2.4vh]"
                 src="https://www.joglopro.com/bucket/soaraja/image/joglopro/pin.png"
                 alt=""
               />
               <img
-                class="w-[1.5vw] h-[2.6vh] absolute"
+                class="w-[1.4vw] h-[2.4vh] absolute"
                 src="https://www.joglopro.com/bucket/soaraja/image/joglopro/pin.png"
                 alt=""
               />
@@ -653,8 +653,8 @@
 
       <!-- uploadddd -->
 
-      <div class="relative w-full mb-2.5 flex flex-col">
-        <div class="block text-xs font-bold mb-0.5">Foto</div>
+      <div class="relative w-full mb-2.5 mt-1 flex flex-col">
+        <div class="block text-xs font-bold mb-1">Foto</div>
         <!--  -->
         <div
           class="w-full area_upload cursor-pointer"
@@ -669,7 +669,7 @@
           />
           <div
             id="drop-area"
-            class="w-full bg-white rounded-lg flex position_gambar_upload justify-center items-center"
+            class="w-full h-[24.2vh] bg-white rounded-lg flex position_gambar_upload justify-center items-center"
           >
             <div class="cursor-pointer flex flex-col justify-center">
               <div
@@ -679,7 +679,7 @@
                   class="w-full flex justify-center hidden_foto_after_upload"
                 >
                   <img
-                    class="w-[11rem] h-[9rem] object-contain"
+                    class="w-[6rem] h-[6rem] object-contain"
                     src="https://www.joglopro.com/bucket/soaraja/image/joglopro/landscape.png"
                     alt=""
                   />
