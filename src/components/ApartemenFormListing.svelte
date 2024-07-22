@@ -77,23 +77,6 @@
           Drag-and-Drop pin di peta
         </label>
         <div class="flex flex-row">
-          <div class="basis-[20%] w-full mr-3">
-            <div
-              class="w-[5vw] h-[7vh] rounded-lg flex justify-center items-center bg-white relative"
-            >
-              <img
-                id="draggableImage"
-                class="w-[1.9vw] h-[3.4vh]"
-                src="https://www.joglopro.com/bucket/soaraja/image/joglopro/pin.png"
-                alt=""
-              />
-              <img
-                class="w-[2vw] h-[3.4vh] absolute"
-                src="https://www.joglopro.com/bucket/soaraja/image/joglopro/pin.png"
-                alt=""
-              />
-            </div>
-          </div>
           <div class="basis-[80%] w-full">
             <input
               value="-6.282301, 106.794109"
@@ -104,6 +87,26 @@
               class="border-0 px-2 py-1.5 text-black bg-gray-200 rounded-lg text-sm focus:outline-none focus:ring-0 w-full"
             />
           </div>
+          <!--  -->
+          <div class="basis-[20%] w-full ml-3">
+            <div
+              class="w-[5vw] h-[4.2vh] rounded-lg flex justify-center items-center bg-white relative"
+            >
+              <img
+                id="draggableImage"
+                class="w-[1.5vw] h-[2.6vh]"
+                src="https://www.joglopro.com/bucket/soaraja/image/joglopro/pin.png"
+                alt=""
+              />
+              <img
+                class="w-[1.5vw] h-[2.6vh] absolute"
+                src="https://www.joglopro.com/bucket/soaraja/image/joglopro/pin.png"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <!--  -->
         </div>
       </div>
 

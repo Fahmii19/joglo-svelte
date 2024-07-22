@@ -94,7 +94,7 @@
 }
 
 .deskripsi_postingan_new {
-  @apply h-[56vh];
+  @apply h-[71.5vh];
 }
 
 .slider {
@@ -214,4 +214,18 @@
   border-radius: 50%;
   border: none;
   transition: 0.2s ease-in-out;
+}
+
+/* CUSTOMM */
+
+@layer utilities {
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
 }
