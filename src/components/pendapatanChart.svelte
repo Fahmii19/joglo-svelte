@@ -33,7 +33,7 @@
         align: "center", // Mengatur judul ke tengah
         margin: 20, // Memberikan margin di atas judul
         style: {
-          fontSize: "18px",
+          fontSize: "14px", // Mengubah ukuran huruf judul menjadi lebih kecil
           fontWeight: "bold",
         },
       },
@@ -47,7 +47,7 @@
         title: {
           text: "Bulan",
           style: {
-            fontSize: "16px",
+            fontSize: "12px", // Mengubah ukuran huruf label sumbu X menjadi lebih kecil
             fontWeight: "bold",
           },
         },
@@ -72,7 +72,7 @@
         title: {
           text: "Unit",
           style: {
-            fontSize: "16px",
+            fontSize: "12px", // Mengubah ukuran huruf label sumbu Y menjadi lebih kecil
             fontWeight: "bold",
           },
         },

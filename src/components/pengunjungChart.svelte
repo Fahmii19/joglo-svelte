@@ -22,7 +22,7 @@
     Highcharts.chart(chartContainer, {
       chart: {
         type: "area",
-        height: 300, // Menentukan tinggi chart menjadi 350px
+        height: 300, // Menentukan tinggi chart menjadi 300px
         spacingTop: 20,
         spacingBottom: 10,
         spacingLeft: 0,
@@ -33,7 +33,7 @@
         align: "center", // Mengatur judul ke tengah
         margin: 20, // Memberikan margin di atas judul
         style: {
-          fontSize: "18px",
+          fontSize: "14px", // Mengubah ukuran huruf judul menjadi lebih kecil
           fontWeight: "bold",
         },
       },
@@ -47,7 +47,7 @@
         title: {
           text: "Bulan",
           style: {
-            fontSize: "16px",
+            fontSize: "12px", // Mengubah ukuran huruf label sumbu X menjadi lebih kecil
             fontWeight: "bold",
           },
         },
@@ -72,7 +72,7 @@
         title: {
           text: "Orang",
           style: {
-            fontSize: "16px",
+            fontSize: "12px", // Mengubah ukuran huruf label sumbu Y menjadi lebih kecil
             fontWeight: "bold",
           },
         },
@@ -123,6 +123,6 @@
 <style>
   .chart-container {
     width: 100%;
-    height: 300px; /* Menentukan tinggi container chart menjadi 350px */
+    height: 300px; /* Menentukan tinggi container chart menjadi 300px */
   }
 </style>

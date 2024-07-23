@@ -19,7 +19,7 @@
         text: null, // Remove chart title
       },
       pane: {
-        size: "80%", // Adjust the size of the pane to provide more padding
+        size: "71%", // Adjust the size of the pane to provide more padding
         startAngle: 0,
         endAngle: 360,
         background: {
@@ -47,7 +47,7 @@
             color: "#333",
             fontSize: "10px", // Reduced font size
           },
-          distance: 20, // Added distance for spacing
+          distance: 23, // Added distance for spacing
         },
       },
       yAxis: {
@@ -108,7 +108,7 @@
 <style>
   #container {
     width: 100%;
-    height: 270px; /* Adjusted height for better readability */
+    height: 240px; /* Adjusted height */
   }
 
   .highcharts-figure,
