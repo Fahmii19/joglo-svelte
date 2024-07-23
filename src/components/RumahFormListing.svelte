@@ -23,7 +23,9 @@
   });
 </script>
 
-<div class="w-full h-[60.2vh] overflow-y-auto overflow-x-hidden hide-scrollbar">
+<div
+  class="w-full h-[60.2vh] overflow-y-auto overflow-x-hidden hide-scrollbar border border-red-500"
+>
   <div class="grid grid-cols-2 gap-y-1 gap-x-3">
     <!-- b -->
     <div>
@@ -114,7 +116,7 @@
           <!--  -->
           <div class="basis-[40%] w-full ml-3">
             <label class="block text-xs font-bold mb-1" for="koordinat_new">
-              Klik dan geser di peta
+              Klik dan drop di peta
             </label>
             <div
               class="w-[2.7vw] h-[4.2vh] rounded-lg flex justify-center items-center bg-white relative"

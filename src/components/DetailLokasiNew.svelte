@@ -1,4 +1,6 @@
-<div class="w-full h-[60.2vh] overflow-y-auto overflow-x-hidden hide-scrollbar">
+<div
+  class="w-full h-[63.8vh] overflow-y-auto overflow-x-hidden hide-scrollbar border border-red-500"
+>
   <div class="grid grid-cols-2 gap-y-1 gap-x-3">
     <!-- b -->
     <div>
@@ -18,7 +20,7 @@
               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:border-transparent focus:ring-0 hapus_focus_checkbox bg-white"
             />
             <label for="sale-dijual-a" class="ms-2 text-sm text-black"
-              >Dijual</label
+              >Harga jual</label
             >
           </div>
           <div class="flex items-center">

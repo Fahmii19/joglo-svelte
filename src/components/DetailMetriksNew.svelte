@@ -7,7 +7,7 @@
     class="h-[62vh] overflow-x-hidden overflow-y-hidden hide-scrollbar text-black"
   >
     <form class="formEditListingg RemoveClassformEditListingg">
-      <div class="grid grid-cols-2 gap-y-1 gap-x-3 mb-3.5 px-4">
+      <div class="grid grid-cols-2 gap-y-1 gap-x-3 mb-3.5">
         <!-- pktc -->
         <div class="grid col-span-2 mb-5">
           <div class="w-full grid grid-cols-2 gap-x-3">
