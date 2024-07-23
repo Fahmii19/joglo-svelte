@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@highcharts/svelte':
+    specifier: ^1.1.0
+    version: 1.1.0(highcharts@11.4.6)(svelte@4.2.9)
   '@mapbox/mapbox-gl-draw':
     specifier: ^1.4.3
     version: 1.4.3
@@ -32,6 +35,9 @@ dependencies:
   flowbite-svelte:
     specifier: ^0.44.22
     version: 0.44.22(svelte@4.2.9)
+  highcharts:
+    specifier: ^11.4.6
+    version: 11.4.6
   install:
     specifier: ^0.13.0
     version: 0.13.0
@@ -352,6 +358,17 @@ packages:
 
   /@floating-ui/utils@0.2.1:
     resolution: {integrity: sha512-9TANp6GPoMtYzQdt54kfAyMmz1+osLlXdg2ENroU7zzrtflTLrrC/lgrIfaSe+Wu0b89GKccT7vxXA0MoAIO+Q==}
+    dev: false
+
+  /@highcharts/svelte@1.1.0(highcharts@11.4.6)(svelte@4.2.9):
+    resolution: {integrity: sha512-oviNfYkgTeC/++QuMOHsGo3Wnp2e0Me6hqARXjczhDQCeXpk2hN/KoHHvv8fJ/elprXpfgB0FAOKFITjqWJmdA==}
+    peerDependencies:
+      highcharts: '>11.0.0'
+      svelte: '>=3.0.0 <5.0.0'
+    dependencies:
+      highcharts: 11.4.6
+      lodash.clonedeep: 4.5.0
+      svelte: 4.2.9
     dev: false
 
   /@isaacs/cliui@8.0.2:
@@ -2485,6 +2502,10 @@ packages:
 
   /hat@0.0.3:
     resolution: {integrity: sha512-zpImx2GoKXy42fVDSEad2BPKuSQdLcqsCYa48K3zHSzM/ugWuYjLDr8IXxpVuL7uCLHw56eaiLxCRthhOzf5ug==}
+    dev: false
+
+  /highcharts@11.4.6:
+    resolution: {integrity: sha512-ntFZ053giEEquAxza+HlOWiLQyCLOjQ3M3EV4r6LoSNKS/fz2S0EKGl8G7Jls9EaYmdAHecB/vL4hGI2J1Ud9g==}
     dev: false
 
   /ieee754@1.2.1:
