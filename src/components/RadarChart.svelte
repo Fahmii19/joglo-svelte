@@ -2,9 +2,11 @@
   import { onMount } from "svelte";
   import Highcharts from "highcharts";
   import HighchartsMore from "highcharts/highcharts-more";
+  import Highcharts3D from "highcharts/highcharts-3d";
 
-  // Load the highcharts-more module
+  // Load the highcharts-more and highcharts-3d modules
   HighchartsMore(Highcharts);
+  Highcharts3D(Highcharts);
 
   let chart;
 
@@ -14,12 +16,20 @@
         polar: true,
         type: "area",
         backgroundColor: "transparent",
+        height: 200, // Set chart height to 200px
+        options3d: {
+          enabled: true,
+          alpha: 10,
+          beta: 10,
+          depth: 70,
+          viewDistance: 25,
+        },
       },
       title: {
         text: null, // Remove chart title
       },
       pane: {
-        size: "71%", // Adjust the size of the pane to provide more padding
+        size: "80%", // Adjust the size of the pane to provide more padding
         startAngle: 0,
         endAngle: 360,
         background: {
@@ -44,24 +54,21 @@
         labels: {
           style: {
             color: "#333",
-            fontSize: "10px", // Reduced font size
-            whiteSpace: "nowrap", // Ensure labels stay in one line
+            fontSize: "10px",
+            whiteSpace: "nowrap",
           },
-          distance: 14, // Added distance for spacing
+          distance: 15, // Adjusted distance for spacing
         },
       },
       yAxis: {
         gridLineInterpolation: "polygon",
         lineWidth: 0,
-        min: 1, // Start from 1
+        min: 0, // Start from 0 to ensure proper spacing
         max: 5, // Ensure y-axis reflects the correct range
         tickInterval: 1, // Set interval for y-axis ticks
         gridLineColor: "#ddd",
         labels: {
-          style: {
-            color: "#333",
-            fontSize: "10px", // Reduced font size
-          },
+          enabled: false, // Disable y-axis labels
         },
       },
       tooltip: {
@@ -77,6 +84,10 @@
             lineColor: "#5196ad",
             lineWidth: 1,
           },
+          pointPlacement: "on", // Ensure points are placed correctly on the categories
+          dataLabels: {
+            enabled: false, // Disable data labels
+          },
         },
       },
       legend: {
@@ -87,10 +98,16 @@
       },
       series: [
         {
-          name: "Parameter",
+          name: "Nilai",
           data: [5, 4, 5, 3, 3, 2, 4, 3], // Updated data to match the chart
           pointPlacement: "on",
-          color: "#73C8E5", // Use blue color
+          color: {
+            linearGradient: { x1: 0, y1: 0, x2: 1, y2: 1 },
+            stops: [
+              [0, "#4CAF50"],
+              [1, "#2196F3"],
+            ],
+          },
         },
       ],
     });
@@ -108,7 +125,7 @@
 <style>
   #container {
     width: 100%;
-    height: 230px; /* Adjusted height */
+    height: 200px; /* Adjust container height to 200px */
   }
 
   .highcharts-figure,

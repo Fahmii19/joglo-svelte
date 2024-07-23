@@ -716,7 +716,7 @@
 
         <!-- b -->
         <div class="flex flex-col">
-          <div class="h-[32vh] flex justify-center">
+          <div class="h-[30vh] flex justify-center">
             <RadarChart />
           </div>
         </div>
