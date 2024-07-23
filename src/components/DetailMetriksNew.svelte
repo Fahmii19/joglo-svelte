@@ -7,9 +7,9 @@
     class="h-[62vh] overflow-x-hidden overflow-y-hidden hide-scrollbar text-black"
   >
     <form class="formEditListingg RemoveClassformEditListingg">
-      <div class="grid grid-cols-2 gap-y-1 gap-x-3 mb-4">
-        <!-- a -->
-        <div class="flex flex-col">
+      <div class="grid grid-cols-2 gap-y-1 gap-x-3 mb-3.5 px-4">
+        <!-- pktc -->
+        <div class="grid col-span-2 mb-5">
           <div class="w-full grid grid-cols-2 gap-x-3">
             <div class="col-span-2 flex justify-center">
               <!-- Card Livability -->
@@ -38,16 +38,9 @@
 
             <!--  -->
           </div>
-
-          <!--  -->
-
-          <div class="h-[30vh] flex justify-center mt-4">
-            <RadarChart />
-          </div>
-
-          <!--  -->
         </div>
 
+        <!-- a -->
         <div class="w-full">
           <!--  -->
           <div class="w-full flex flex-row mb-2">
@@ -719,9 +712,13 @@
               </div>
             </div>
           </div>
-          <!--  -->
+        </div>
 
-          <!--  -->
+        <!-- b -->
+        <div class="flex flex-col">
+          <div class="h-[32vh] flex justify-center">
+            <RadarChart />
+          </div>
         </div>
       </div>
 
