@@ -41,13 +41,13 @@
         </div>
 
         <!-- a -->
-        <div class="w-full">
+        <div class="col-span-2 w-full">
           <!--  -->
-          <div class="w-full flex flex-row mb-2">
-            <div class="basis-6/12 mr-5">
+          <div class="w-full grid grid-cols-2 gap-x-7 mb-3">
+            <div class="basis-6/12">
               <div class="relative w-full">
                 <label
-                  class="block text-xs font-bold -mb-1"
+                  class="block text-xs font-bold -mb-0.5"
                   for="koordinat_new53"
                 >
                   Konektivitas Pejalan Kaki
@@ -127,10 +127,10 @@
                 </div>
               </div>
             </div>
-            <div class="basis-6/12 mr-5">
+            <div class="basis-6/12">
               <div class="relative w-full">
                 <label
-                  class="block text-xs font-bold -mb-1"
+                  class="block text-xs font-bold -mb-0.5"
                   for="koordinat_new54"
                 >
                   Ruang Terbuka
@@ -211,11 +211,11 @@
             </div>
           </div>
           <!--  -->
-          <div class="w-full flex flex-row mb-2">
-            <div class="basis-6/12 mr-5">
+          <div class="w-full grid grid-cols-2 gap-x-7 mb-3">
+            <div class="basis-6/12">
               <div class="relative w-full">
                 <label
-                  class="block text-xs font-bold -mb-1"
+                  class="block text-xs font-bold -mb-0.5"
                   for="koordinat_new53"
                 >
                   Fasilitas Publik
@@ -295,10 +295,10 @@
                 </div>
               </div>
             </div>
-            <div class="basis-6/12 mr-5">
+            <div class="basis-6/12">
               <div class="relative w-full">
                 <label
-                  class="block text-xs font-bold -mb-1"
+                  class="block text-xs font-bold -mb-0.5"
                   for="koordinat_new54"
                 >
                   Budaya Perkotaana
@@ -379,11 +379,11 @@
             </div>
           </div>
           <!--  -->
-          <div class="w-full flex flex-row mb-2">
-            <div class="basis-6/12 mr-5">
+          <div class="w-full grid grid-cols-2 gap-x-7 mb-3">
+            <div class="basis-6/12">
               <div class="relative w-full">
                 <label
-                  class="block text-xs font-bold -mb-1"
+                  class="block text-xs font-bold -mb-0.5"
                   for="koordinat_new55"
                 >
                   Ruang Usaha
@@ -462,10 +462,10 @@
                 </div>
               </div>
             </div>
-            <div class="basis-6/12 mr-5">
+            <div class="basis-6/12">
               <div class="relative w-full">
                 <label
-                  class="block text-xs font-bold -mb-1"
+                  class="block text-xs font-bold -mb-0.5"
                   for="koordinat_new56"
                 >
                   Pelayanan Kesehatan
@@ -546,11 +546,11 @@
             </div>
           </div>
           <!--  -->
-          <div class="w-full flex flex-row mb-2">
-            <div class="basis-6/12 mr-5">
+          <div class="w-full grid grid-cols-2 gap-x-7 mb-3">
+            <div class="basis-6/12">
               <div class="relative w-full">
                 <label
-                  class="block text-xs font-bold -mb-1"
+                  class="block text-xs font-bold -mb-0.5"
                   for="koordinat_new57"
                 >
                   Fasilitas Pendidikan
@@ -629,10 +629,10 @@
                 </div>
               </div>
             </div>
-            <div class="basis-6/12 mr-5">
+            <div class="basis-6/12">
               <div class="relative w-full">
                 <label
-                  class="block text-xs font-bold -mb-1"
+                  class="block text-xs font-bold -mb-0.5"
                   for="koordinat_new57"
                 >
                   Transportasi Publik
@@ -711,13 +711,6 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        <!-- b -->
-        <div class="flex flex-col">
-          <div class="h-[30vh] flex justify-center">
-            <RadarChart />
           </div>
         </div>
       </div>
