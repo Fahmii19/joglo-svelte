@@ -31,14 +31,13 @@
       xAxis: {
         categories: [
           "Konektivitas Pejalan Kaki",
-          "Ruang Terbuka dan Publik",
-          "Fasilitas Komunitas",
-          "Aktivitas Budaya Perkotaan",
-          "Lokasi Bekerja",
+          "Ruang Terbuka",
+          "Fasilitas Publik",
+          "Budaya Perkotaan",
+          "Ruang Usaha",
           "Pelayanan Kesehatan",
-          "Pendidikan",
+          "Fasilitas Pendidikan",
           "Transportasi Publik",
-          "Campuran Guna Lahan",
         ],
         tickmarkPlacement: "on",
         lineWidth: 0,
@@ -46,8 +45,9 @@
           style: {
             color: "#333",
             fontSize: "10px", // Reduced font size
+            whiteSpace: "nowrap", // Ensure labels stay in one line
           },
-          distance: 23, // Added distance for spacing
+          distance: 14, // Added distance for spacing
         },
       },
       yAxis: {
@@ -88,7 +88,7 @@
       series: [
         {
           name: "Parameter",
-          data: [5, 4, 5, 3, 3, 2, 4, 3, 5], // Updated data to match the chart
+          data: [5, 4, 5, 3, 3, 2, 4, 3], // Updated data to match the chart
           pointPlacement: "on",
           color: "#73C8E5", // Use blue color
         },
@@ -108,7 +108,7 @@
 <style>
   #container {
     width: 100%;
-    height: 240px; /* Adjusted height */
+    height: 230px; /* Adjusted height */
   }
 
   .highcharts-figure,
