@@ -18,8 +18,8 @@
               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:border-transparent focus:ring-0 hapus_focus_checkbox bg-white"
             />
             <label for="sale-dijual-a" class="ms-2 text-sm text-black"
-              >Harga jual</label
-            >
+              >Harga
+            </label>
           </div>
           <div class="flex items-center">
             <input
@@ -42,7 +42,7 @@
         <div class="basis-6/12">
           <div class="relative w-full">
             <label class="block text-xs font-bold mb-1" for="harga_new">
-              <span class="dijual block">Harga (Rp)</span>
+              <span class="dijual block">Harga Jual (Rp)</span>
               <span class="disewakan hidden">Sewa Per Tahun (Rp)</span>
             </label>
             <input
