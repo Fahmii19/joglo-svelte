@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
   import { onMount } from "svelte";
   import Highcharts from "highcharts";
   import HighchartsMore from "highcharts/highcharts-more";
@@ -170,4 +170,4 @@
   .highcharts-data-table tr:hover {
     background: #f1f7ff;
   }
-</style>
+</style> -->
