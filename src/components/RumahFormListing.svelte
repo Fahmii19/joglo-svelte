@@ -23,9 +23,7 @@
   });
 </script>
 
-<div
-  class="w-full h-[60.2vh] overflow-y-auto overflow-x-hidden hide-scrollbar border border-red-500"
->
+<div class="w-full h-[60.2vh] overflow-y-auto overflow-x-hidden hide-scrollbar">
   <div class="grid grid-cols-2 gap-y-1 gap-x-3">
     <!-- b -->
     <div>
