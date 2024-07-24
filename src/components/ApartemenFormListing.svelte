@@ -1,3 +1,28 @@
+<script>
+  import { onMount } from "svelte";
+  let transactionType = "dijual"; // Default value
+
+  // Function to get the label text based on the transaction type
+  function updateLabelText() {
+    return transactionType === "dijual"
+      ? "Harga Jual (Rp)"
+      : "Harga Sewa Per Bulan (Rp)";
+  }
+
+  let labelText = updateLabelText();
+
+  // Update label text when transaction type changes
+  function handleTransactionTypeChange(event) {
+    transactionType = event.target.value;
+    labelText = updateLabelText();
+  }
+
+  onMount(() => {
+    // Initial label text setting
+    labelText = updateLabelText();
+  });
+</script>
+
 <div class="w-full h-[60.2vh] overflow-y-auto overflow-x-hidden hide-scrollbar">
   <div class="grid grid-cols-2 gap-y-1 gap-x-3">
     <!-- b -->
@@ -5,18 +30,17 @@
       <!-- Judul -->
       <!-- KelompokA -->
       <div class="relative w-full mb-2.5 flex flex-col" data-group="a">
-        <div class="block text-xs font-bold mb-1.5">
-          Tipe Transaksi apartmen
-        </div>
+        <div class="block text-xs font-bold mb-1.5">Tipe Transaksii</div>
         <div class="grid grid-cols-2">
           <div class="flex items-center">
             <input
-              checked=""
               id="sale-dijual-a"
               type="radio"
               value="dijual"
               name="sale-type-a"
               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:border-transparent focus:ring-0 hapus_focus_checkbox bg-white"
+              checked
+              on:change={handleTransactionTypeChange}
             />
             <label for="sale-dijual-a" class="ms-2 text-sm text-black"
               >Dijual</label
@@ -29,6 +53,7 @@
               value="disewakan"
               name="sale-type-a"
               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:border-transparent focus:ring-0 hapus_focus_checkbox bg-white"
+              on:change={handleTransactionTypeChange}
             />
             <label for="sale-disewakan-a" class="ms-2 text-sm text-black"
               >Disewakan</label
@@ -42,8 +67,7 @@
         <div class="basis-6/12">
           <div class="relative w-full">
             <label class="block text-xs font-bold mb-1" for="harga_new">
-              <span class="dijual block">Harga (Rp)</span>
-              <span class="disewakan hidden">Sewa Per Tahun (Rp)</span>
+              <span>{labelText}</span>
             </label>
             <input
               value="2.500.000.000"
@@ -73,11 +97,11 @@
 
       <!-- Koordinat -->
       <div class="relative w-full mb-2.5">
-        <label class="block text-xs font-bold mb-1" for="koordinat_new">
-          Drag-and-Drop pin di peta
-        </label>
         <div class="flex flex-row">
-          <div class="basis-[90%] w-full">
+          <div class="basis-[49%] w-full">
+            <label class="block text-xs font-bold mb-1" for="koordinat_new">
+              Koordinat
+            </label>
             <input
               value="-6.282301, 106.794109"
               readonly=""
@@ -88,7 +112,10 @@
             />
           </div>
           <!--  -->
-          <div class="basis-[10%] w-full ml-3">
+          <div class="basis-[40%] w-full ml-3">
+            <label class="block text-xs font-bold mb-1" for="koordinat_new">
+              Klik dan drop di peta
+            </label>
             <div
               class="w-[2.7vw] h-[4.2vh] rounded-lg flex justify-center items-center bg-white relative"
             >
@@ -613,7 +640,7 @@
                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:border-transparent focus:ring-0 hapus_focus_checkbox bg-white"
               />
               <label for="default-radio-11" class="ms-2 text-sm text-black"
-                >Rumah Baru</label
+                >Apartemen Baru</label
               >
             </div>
             <div class="flex items-center">
@@ -625,7 +652,7 @@
                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:border-transparent focus:ring-0 hapus_focus_checkbox bg-white"
               />
               <label for="default-radio-12" class="ms-2 text-sm text-black"
-                >Rumah Seken</label
+                >Apartemen Seken</label
               >
             </div>
           </div>
@@ -685,7 +712,7 @@
                   />
                 </div>
                 <div
-                  class="w-full text-center text-md text-gray-500 hidden_foto_after_upload"
+                  class="w-full text-center text-xs text-gray-500 hidden_foto_after_upload"
                 >
                   Drop foto di sini
                 </div>

@@ -128,14 +128,14 @@
             >
               Ruko
             </button>
-            <button
+            <!-- <button
               type="button"
               class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer hover:bg-slate-200 hover:rounded-lg mr-2.5"
               class:bg_aktif_detail={activeTab === 3}
               on:click={() => (activeTab = 3)}
             >
               Tanah
-            </button>
+            </button> -->
           </div>
           {#if isVisible}
             <div class="w-full inline-flex items-end justify-end">

@@ -30,7 +30,7 @@
       <!-- Judul -->
       <!-- KelompokA -->
       <div class="relative w-full mb-2.5 flex flex-col" data-group="a">
-        <div class="block text-xs font-bold mb-1.5">Tipe Transaksi</div>
+        <div class="block text-xs font-bold mb-1.5">Tipe Transaksii</div>
         <div class="grid grid-cols-2">
           <div class="flex items-center">
             <input
