@@ -1,3 +1,6 @@
+<script>
+</script>
+
 <div class="chat-message pt-3.5 px-3.5">
   <div class="flex items-end justify-end">
     <div
@@ -11,21 +14,6 @@
           <div
             class="slider-card-mode-pesan mode-mini-video w-full h-full slick-initialized slick-slider slick-dotted"
           >
-            <button
-              type="button"
-              class="slick-prev slick-arrow slick-disabled"
-              aria-disabled="true"
-              style=""
-            >
-              <div class="img-wrapper-pesan">
-                <img
-                  style="margin-right: 1px;"
-                  class="custom-img-slick"
-                  src="/src/images/prev.png"
-                  alt="Previous"
-                />
-              </div>
-            </button>
             <div class="slick-list draggable">
               <div
                 class="slick-track"
@@ -72,21 +60,6 @@
               </div>
             </div>
 
-            <button
-              type="button"
-              class="slick-next slick-arrow"
-              style=""
-              aria-disabled="false"
-            >
-              <div class="img-wrapper-pesan">
-                <img
-                  style="margin-left: 1px;"
-                  class="custom-img-slick"
-                  src="/src/images/next.png"
-                  alt="Next"
-                />
-              </div>
-            </button>
             <ul class="slick-dots" style="" role="tablist">
               <li class="slick-active" role="presentation">
                 <button
