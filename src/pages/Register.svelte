@@ -1,8 +1,8 @@
 <script lang="ts">
   import { link, navigate } from "svelte-routing";
   import BackIcon from "../assets/images/back.png";
-  import HideIcon from "../assets/images/hide.png";
-  import ViewIcon from "../assets/images/view.png";
+  import HideIcon from "https://www.joglopro.com/bucket/soaraja/image/joglopro/hide.png";
+  import ViewIcon from "https://www.joglopro.com/bucket/soaraja/image/joglopro/view.png";
   import TickIcon from "../assets/images/ticks.png";
   import CloseIcon from "../assets/images/close-simbol.png";
   import { onMount } from "svelte";
