@@ -62,11 +62,12 @@
     reader.onloadend = function () {
       const img = document.createElement("img");
       img.src = reader.result;
-      img.classList.add("w-[6vw]", "h-[8.5vh]", "object-contain", "mt-3");
+      img.classList.add("w-full", "h-full", "object-contain");
 
       const div = document.createElement("div");
       div.classList.add(
-        "border",
+        "border-r",
+        "border-b",
         "border-gray-200",
         "overflow-hidden",
         "w-[6vw]",
@@ -81,36 +82,21 @@
       const actionsDiv = document.createElement("div");
       actionsDiv.classList.add(
         "absolute",
-        "bottom-0",
-        "left-1/2",
-        "transform",
-        "-translate-x-1/2",
+        "top-0",
+        "right-0",
         "inline-flex",
         "bg-white",
-        "p-0.5"
+        "p-0.5",
+        "border",
+        "rounded-bl-sm"
       );
-
-      const syncIcon = document.createElement("img");
-      syncIcon.classList.add(
-        "w-[1.5vw]",
-        "h-[1.5vh]",
-        "cursor-pointer",
-        "object-contain"
-      );
-      syncIcon.src =
-        "https://www.joglopro.com/bucket/soaraja/image/joglopro/sync.png";
-      syncIcon.addEventListener("click", (event) => {
-        event.stopPropagation();
-        rotateImage(img);
-      });
 
       const deleteIcon = document.createElement("img");
       deleteIcon.classList.add(
-        "w-[1.5vw]",
-        "h-[1.5vh]",
+        "w-[1.4vw]",
+        "h-[1.4vh]",
         "cursor-pointer",
-        "object-contain",
-        "ml-1.5"
+        "object-contain"
       );
       deleteIcon.src =
         "https://www.joglopro.com/bucket/soaraja/image/joglopro/delete.png";
@@ -122,7 +108,6 @@
         }
       });
 
-      actionsDiv.appendChild(syncIcon);
       actionsDiv.appendChild(deleteIcon);
       div.appendChild(actionsDiv);
       previewContainer.appendChild(div);
@@ -130,16 +115,6 @@
       showPreviewContainer();
     };
     reader.readAsDataURL(file);
-  }
-
-  function rotateImage(image) {
-    let currentRotation = parseInt(image.getAttribute("data-rotation")) || 0;
-    currentRotation += 90;
-    if (currentRotation >= 360) {
-      currentRotation = 0;
-    }
-    image.style.transform = `rotate(${currentRotation}deg)`;
-    image.setAttribute("data-rotation", currentRotation);
   }
 
   function hideUploadImage() {
@@ -183,7 +158,7 @@
     <input id="fileElem" type="file" class="hidden" multiple accept="image/*" />
     <div
       id="drop-area"
-      class="w-full h-[25.4vh] bg-white rounded-lg flex position_gambar_upload justify-center items-center"
+      class="w-full h-[25.2vh] bg-white rounded-lg flex position_gambar_upload justify-center items-center"
     >
       <!-- default tidak ada gambar -->
       <div
