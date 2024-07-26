@@ -6,6 +6,7 @@
   import { navigate } from "svelte-routing";
   import AlertPesanBerhasil from "../components/AlertPesanBerhasil.svelte";
   import { writable } from "svelte/store";
+  import { activeMenu } from "../store/activeMenuStore"; // Impor store
 
   // Store untuk mengelola visibilitas modal
   export let showModal = writable(false);
@@ -16,7 +17,8 @@
     setTimeout(() => {
       showModal.set(false);
       navigate("/detail-new");
-    }, 3500);
+      activeMenu.set("menu_galeri");
+    }, 4000);
   }
 
   // State untuk tab aktif

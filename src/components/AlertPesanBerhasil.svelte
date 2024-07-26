@@ -43,8 +43,8 @@
         <span class="text-lg font-medium">Berhasil!</span>
       </div>
       <p class="mt-2 mb-4 text-sm">
-        Data listing Anda telah berhasil dikirim. Anda akan diarahkan ke halaman
-        detail untuk melihat hasil yang telah Anda buat.
+        Listing berhasil dikirim. Anda akan diarahkan ke halaman detail untuk
+        melihat hasilnya.
       </p>
     </Alert>
   </div>
