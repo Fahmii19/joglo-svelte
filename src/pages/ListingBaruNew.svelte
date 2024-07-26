@@ -3,6 +3,7 @@
   import RukoFormListing from "../components/RukoFormListing.svelte";
   import RumahFormListing from "../components/RumahFormListing.svelte";
   import TanahFormListing from "../components/TanahFormListing.svelte";
+  import { navigate } from "svelte-routing";
 
   document.addEventListener("DOMContentLoaded", function () {
     // First set of menu functions
@@ -174,10 +175,11 @@
 
         <div class="w-full flex justify-end items-center pb-6">
           <button
+            on:click={() => navigate("/detail-new")}
             type="button"
             class="h-8 bg-[#0394F7] hover:bg-[#1877F2] text-white font-medium rounded-[5px] text-xs px-3"
           >
-            Submit
+            Kirim
           </button>
         </div>
 
