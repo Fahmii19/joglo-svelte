@@ -1,7 +1,8 @@
 <script>
   import { writable } from "svelte/store";
-  import { Alert, Button } from "flowbite-svelte";
-  import { InfoCircleSolid, EyeSolid } from "flowbite-svelte-icons";
+
+  import IconSukses from "../assets/images/icon_sukses.png";
+
   export let showModal; // writable(boolean)
 
   let dialog; // HTMLDialogElement
@@ -37,16 +38,20 @@
   aria-modal="true"
 >
   <div class="modal-content" role="document">
-    <Alert color="green">
-      <div class="flex items-center gap-3">
-        <InfoCircleSolid class="w-5 h-5" />
-        <span class="text-lg font-medium">Berhasil!</span>
+    <div
+      class="bg-white text-black rounded-lg border border-gray-300 divide-y divide-gray-300 h-[30vh] w-[20vw] text-center"
+    >
+      <div
+        class="py-2 px-4 w-full h-full text-xl font-bold flex flex-col relative"
+      >
+        <div class="flex flex-col py-8">
+          <div class="w-full flex justify-center mb-3">
+            <img src={IconSukses} class="w-16 h-16 mb-4" alt="Icon Sukses" />
+          </div>
+          <div>Data berhasil disimpan</div>
+        </div>
       </div>
-      <p class="mt-2 mb-4 text-sm">
-        Listing berhasil dikirim. Anda akan diarahkan ke halaman detail untuk
-        melihat hasilnya.
-      </p>
-    </Alert>
+    </div>
   </div>
 </dialog>
 
@@ -63,8 +68,8 @@
 
   dialog {
     position: fixed;
-    top: 15%;
-    right: 35%;
+    top: 35%;
+    left: 30%;
     transform: translate(50%, -50%);
     max-width: 32em;
     border-radius: 0.6em;

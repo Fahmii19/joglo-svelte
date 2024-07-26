@@ -51,8 +51,8 @@
 <style>
   dialog {
     position: fixed;
-    top: 30%;
-    right: -25%;
+    top: 5%;
+    left: 50%;
     /* transform: translate(50%, -50%); */
     max-width: 32em;
     border-radius: 0.6em;

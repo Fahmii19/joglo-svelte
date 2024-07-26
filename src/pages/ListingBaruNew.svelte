@@ -18,7 +18,7 @@
       showModal.set(false);
       navigate("/detail-new");
       activeMenu.set("menu_galeri");
-    }, 4000);
+    }, 3000);
   }
 
   // State untuk tab aktif
