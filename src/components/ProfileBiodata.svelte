@@ -5,7 +5,7 @@
   import MedalIcon from "../assets/images/medal_1.png";
   import MedalIcon2 from "../assets/images/medal_2.png";
   import MedalIcon3 from "../assets/images/medal_3.png";
-  import ViewIcon from "https://www.joglopro.com/bucket/soaraja/image/joglopro/view.png";
+  import ViewIcon from "../assets/images/view.png";
   import { authUser } from "../store/auth";
   import type { AuthUser } from "../service/auth/type";
   import { ExtractToken } from "../utils/auth";

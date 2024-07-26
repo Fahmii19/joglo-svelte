@@ -1,8 +1,7 @@
 <script>
   import { navigate } from "svelte-routing";
-  import HideIcon from "https://www.joglopro.com/bucket/soaraja/image/joglopro/hide.png";
-  import ViewIcon from "https://www.joglopro.com/bucket/soaraja/image/joglopro/view.png";
-
+  import HideIcon from "../assets/images/hide.png";
+  import ViewIcon from "../assets/images/view.png";
   const pinlock =
     "https://www.joglopro.com/bucket/soaraja/image/joglopro/padlock.png";
 
