@@ -4,9 +4,32 @@
   import RumahFormListing from "../components/RumahFormListing.svelte";
   import TanahFormListing from "../components/TanahFormListing.svelte";
   import { navigate } from "svelte-routing";
+  import AlertPesanBerhasil from "../components/AlertPesanBerhasil.svelte";
+  import { writable } from "svelte/store";
+
+  // Store untuk mengelola visibilitas modal
+  export let showModal = writable(false);
+
+  // Fungsi untuk menampilkan modal, menunggu 2 detik, lalu mengarahkan
+  function handleSend() {
+    showModal.set(true);
+    setTimeout(() => {
+      showModal.set(false);
+      navigate("/detail-new");
+    }, 3500);
+  }
+
+  // State untuk tab aktif
+  let activeTab = 0;
+
+  // State untuk visibilitas button edit listing
+  import { buttonEditListing } from "../store/agent";
+  let isVisible = false;
+  buttonEditListing.subscribe((value) => {
+    isVisible = value;
+  });
 
   document.addEventListener("DOMContentLoaded", function () {
-    // First set of menu functions
     function activateMenuDua1(target) {
       document
         .querySelectorAll(".menu_pengaturaan_detail div")
@@ -41,7 +64,6 @@
       defaultActiveMenu1.classList.add("font-bold");
     }
 
-    // Second set of menu functions
     function activateMenuDua2(target) {
       document
         .querySelectorAll(".menu_pengaturaan_detail_dua div")
@@ -78,32 +100,19 @@
       defaultActiveMenu2.classList.add("font-bold");
     }
   });
-
-  // Untuk Button Edit Listing
-  import { buttonEditListing } from "../store/agent";
-
-  let isVisible = false;
-  buttonEditListing.subscribe((value) => {
-    isVisible = value;
-  });
-
-  //
-  let activeTab = 0;
 </script>
 
 <div class="h-full w-full">
   <div class="h-full flex flex-col">
     <div class="w-full flex justify-between border-b border-gray-300">
       <div class="font-sf_pro_bold_judul text-2xl px-3 py-2 judulStory">
-        Listing Baruu
+        Listing Baru
       </div>
     </div>
     <div class="h-[76.2vh] story-galeri-off">
       <div class="h-full px-3 flex flex-col">
         <!-- Menu Button -->
-
         <div class="w-full flex flex-row pt-6 pb-2">
-          <!--  -->
           <div id="" class="w-[32vw] flex flex-row menu_pengaturaan_detail_dua">
             <button
               type="button"
@@ -129,14 +138,6 @@
             >
               Ruko
             </button>
-            <!-- <button
-              type="button"
-              class="px-4 pb-1 pt-1 text-sm text-black cursor-pointer hover:bg-slate-200 hover:rounded-lg mr-2.5"
-              class:bg_aktif_detail={activeTab === 3}
-              on:click={() => (activeTab = 3)}
-            >
-              Tanah
-            </button> -->
           </div>
           {#if isVisible}
             <div class="w-full inline-flex items-end justify-end">
@@ -148,18 +149,14 @@
                   Terjual
                 </button>
               </div>
-
               <div class="ml-3">
                 <button
                   type="button"
                   class="h-7 bg-[#0394F7] hover:bg-[#1877F2] text-white font-medium rounded-[5px] text-xs px-3"
                 >
-                  Non Aktifx
+                  Non Aktif
                 </button>
-
-                <!--  -->
               </div>
-
               <div class="ml-3">
                 <button
                   type="button"
@@ -169,13 +166,12 @@
                 </button>
               </div>
             </div>
-            <!--  -->
           {/if}
         </div>
 
         <div class="w-full flex justify-end items-center pb-6">
           <button
-            on:click={() => navigate("/detail-new")}
+            on:click={handleSend}
             type="button"
             class="h-8 bg-[#0394F7] hover:bg-[#1877F2] text-white font-medium rounded-[5px] text-xs px-3"
           >
@@ -183,19 +179,16 @@
           </button>
         </div>
 
-        <!-- kondisi disini -->
         {#if activeTab === 0}
           <RumahFormListing />
         {:else if activeTab === 1}
           <ApartemenFormListing />
         {:else if activeTab === 2}
           <RukoFormListing />
-        {:else if activeTab === 3}
-          <TanahFormListing />
         {/if}
-
-        <!--  -->
       </div>
     </div>
   </div>
 </div>
+
+<AlertPesanBerhasil {showModal} />
