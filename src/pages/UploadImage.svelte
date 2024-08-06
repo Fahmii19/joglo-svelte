@@ -5,6 +5,8 @@
   let dropArea;
   let previewContainer;
 
+  import IconHapus from "../assets/images/icon_hapus.png";
+
   const HIDE_CLASS = "hidden";
   const UPLOAD_WFULL_CLASS = "add_wfull_upload";
   const HIGHLIGHT_CLASS = "border-blue-500";
@@ -98,8 +100,7 @@
         "cursor-pointer",
         "object-contain"
       );
-      deleteIcon.src =
-        "https://www.joglopro.com/bucket/soaraja/image/joglopro/delete.png";
+      deleteIcon.src = IconHapus;
       deleteIcon.addEventListener("click", (event) => {
         event.stopPropagation();
         div.remove();
