@@ -39,16 +39,14 @@
 >
   <div class="modal-content" role="document">
     <div
-      class="bg-white text-black rounded-lg border border-gray-300 divide-y divide-gray-300 h-[30vh] w-[20vw] text-center"
+      class="bg-white text-black rounded-lg border border-gray-300 divide-y divide-gray-300 h-[32vh] w-[25vw]"
     >
-      <div
-        class="py-2 px-4 w-full h-full text-xl font-bold flex flex-col relative"
-      >
-        <div class="flex flex-col py-8">
-          <div class="w-full flex justify-center mb-3">
-            <img src={IconSukses} class="w-16 h-16 mb-4" alt="Icon Sukses" />
-          </div>
-          <div>Data berhasil disimpan</div>
+      <div class="w-full h-full flex flex-col relative">
+        <div class="w-full text-md text-black border-b py-2 px-4">
+          Listing berhasil disimpan
+        </div>
+        <div class="h-full w-full flex flex-col items-center justify-center">
+          <img src={IconSukses} class="w-20 h-20" alt="Icon Sukses" />
         </div>
       </div>
     </div>

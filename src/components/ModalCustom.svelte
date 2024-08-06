@@ -34,7 +34,7 @@
   <div class="modal-content" role="document">
     <slot name="header" />
     <div
-      class="bg-white text-black rounded-lg border border-gray-300 divide-y divide-gray-300 w-[25vw] text-center"
+      class="bg-white text-black rounded-lg border border-gray-300 divide-y divide-gray-300 h-[32vh] w-[25vw] text-center overflow-hidden"
     >
       {#each $errors as error}
         <div
