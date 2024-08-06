@@ -95,7 +95,7 @@
 
       const deleteIcon = document.createElement("img");
       deleteIcon.classList.add(
-        "w-[1.4vw]",
+        "w-[1.2vw]",
         "h-[1.4vh]",
         "cursor-pointer",
         "object-contain"
@@ -174,7 +174,7 @@
             />
           </div>
           <div
-            class="w-full text-center text-xs text-gray-500 hidden_foto_after_upload"
+            class="w-full text-center text-xs text-gray-500 hidden_foto_after_upload -mt-2"
           >
             Drop foto di sini
           </div>
