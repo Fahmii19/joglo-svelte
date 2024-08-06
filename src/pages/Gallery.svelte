@@ -9,8 +9,12 @@
   import { property_count, property_list } from "../store/property";
   import type { Feature } from "../service/list_property/type";
   import { markerStore } from "../store/map";
+  import { onMount } from "svelte";
 
   let property_lists: Feature[] = [];
+  let cardNews: number[] = Array(10).fill(0); // Inisialisasi dengan 10 elemen
+  let isLoading = false;
+  let maxCards = 60;
 
   property_list.subscribe((value) => {
     property_lists = value;
@@ -42,6 +46,40 @@
   function toggleMode() {
     isCardMode = !isCardMode;
   }
+
+  // Function untuk menambah lebih banyak CardNew
+  function loadMoreCards() {
+    if (cardNews.length < maxCards) {
+      isLoading = true;
+      setTimeout(() => {
+        cardNews = [...cardNews, ...Array(10).fill(0)];
+        isLoading = false;
+      }, 1000);
+    }
+  }
+
+  // Event listener untuk scroll
+  function handleScroll(event) {
+    const element = event.target;
+    if (
+      element.scrollHeight - element.scrollTop <= element.clientHeight * 1.5 &&
+      !isLoading
+    ) {
+      loadMoreCards();
+    }
+  }
+
+  onMount(() => {
+    const element = document.querySelector(".story-galeri-off");
+    if (element) {
+      element.addEventListener("scroll", handleScroll);
+    }
+    return () => {
+      if (element) {
+        element.removeEventListener("scroll", handleScroll);
+      }
+    };
+  });
 </script>
 
 <div class="h-full w-full">
@@ -52,9 +90,6 @@
       </div>
     </div>
 
-    <!--  -->
-
-    <!--  -->
     <div
       class="h-[76vh] overflow-y-auto overflow-x-hidden hide-scrollbar story-galeri-off"
     >
@@ -88,6 +123,7 @@
           </div>
         </div>
       </div>
+
       <!-- Default Card -->
       <div
         class="px-3 pt-3 grid grid-cols-2 gap-2 card_default"
@@ -96,16 +132,9 @@
         {#each property_lists ?? [] as item}
           <Card previous_page="/" {item} />
         {/each}
-        <CardNew />
-        <CardNew />
-        <CardNew />
-        <CardNew />
-        <CardNew />
-        <CardNew />
-        <CardNew />
-        <CardNew />
-        <CardNew />
-        <CardNew />
+        {#each cardNews as _}
+          <CardNew />
+        {/each}
       </div>
 
       <!-- MiniCard -->
@@ -113,19 +142,23 @@
         class="px-3 pt-3 grid grid-cols-3 gap-2 card_mini"
         class:hidden={isCardMode}
       >
-        <CardMiniNew />
-        <CardMiniNew />
-        <CardMiniNew />
-        <CardMiniNew />
-        <CardMiniNew />
-        <CardMiniNew />
-        <CardMiniNew />
-        <CardMiniNew />
-        <CardMiniNew />
-        <CardMiniNew />
-        <CardMiniNew />
-        <CardMiniNew />
+        {#each cardNews as _}
+          <CardMiniNew />
+        {/each}
       </div>
+
+      {#if isLoading}
+        <div class="loading">Loading...</div>
+      {/if}
     </div>
   </div>
 </div>
+
+<style>
+  .loading {
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    color: gray;
+  }
+</style>
