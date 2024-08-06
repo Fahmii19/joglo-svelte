@@ -87,7 +87,7 @@
       {/if}
     </div>
   </div>
-  <div class="w-full h-[27vh] relative">
+  <div class="w-full h-[29vh] relative">
     <div class="grid grid-cols-1 items-center justify-center">
       <div class="w-full col-span-full relative">
         <Carousel

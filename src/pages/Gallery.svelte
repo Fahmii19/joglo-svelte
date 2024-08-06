@@ -98,6 +98,14 @@
         {/each}
         <CardNew />
         <CardNew />
+        <CardNew />
+        <CardNew />
+        <CardNew />
+        <CardNew />
+        <CardNew />
+        <CardNew />
+        <CardNew />
+        <CardNew />
       </div>
 
       <!-- MiniCard -->
@@ -105,6 +113,12 @@
         class="px-3 pt-3 grid grid-cols-3 gap-2 card_mini"
         class:hidden={isCardMode}
       >
+        <CardMiniNew />
+        <CardMiniNew />
+        <CardMiniNew />
+        <CardMiniNew />
+        <CardMiniNew />
+        <CardMiniNew />
         <CardMiniNew />
         <CardMiniNew />
         <CardMiniNew />
