@@ -64,7 +64,8 @@
     const element = event.target;
     if (
       element.scrollHeight - element.scrollTop <= element.clientHeight * 1.5 &&
-      !isLoading
+      !isLoading &&
+      cardNews.length < maxCards
     ) {
       loadMoreCards();
     }
@@ -127,7 +128,10 @@
 
       <!-- Default Card -->
       <div
-        class="px-3 pt-3 grid grid-cols-2 gap-2 card_default"
+        class="px-3 pt-3 grid grid-cols-2 gap-2 card_default {cardNews.length <
+        maxCards
+          ? 'mb-10'
+          : ''}"
         class:hidden={!isCardMode}
       >
         {#each property_lists ?? [] as item}
@@ -149,7 +153,11 @@
       </div>
 
       {#if isLoading}
-        <div class="flex justify-center items-center">
+        <div
+          class="flex justify-center items-center {cardNews.length < maxCards
+            ? 'mb-10'
+            : ''}"
+        >
           <Spinner
             options={{
               lines: 13,
@@ -158,7 +166,7 @@
               radius: 10, // Ukuran radius spinner lebih kecil
               scale: 1,
               corners: 1,
-              color: "#FFF",
+              color: "#888", // Warna spinner sedikit lebih gelap
               opacity: 0.25,
               rotate: 0,
               direction: 1,
@@ -167,7 +175,7 @@
               fps: 20,
               zIndex: 2e9,
               className: "spinner",
-              top: "50%",
+              top: "70%", // Atur jarak vertikal dari atas
               left: "50%",
               shadow: false,
               hwaccel: false,

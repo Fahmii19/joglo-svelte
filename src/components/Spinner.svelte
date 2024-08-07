@@ -5,12 +5,12 @@
 
   export let options = {
     lines: 13,
-    length: 7, // Ukuran panjang spinner lebih kecil
-    width: 4, // Ukuran lebar spinner lebih kecil
-    radius: 10, // Ukuran radius spinner lebih kecil
+    length: 7,
+    width: 4,
+    radius: 10,
     scale: 1,
     corners: 1,
-    color: "#FFF",
+    color: "#333", // Warna spinner lebih gelap
     opacity: 0.25,
     rotate: 0,
     direction: 1,
@@ -19,7 +19,7 @@
     fps: 20,
     zIndex: 2e9,
     className: "spinner",
-    top: "50%",
+    top: "50%", // Atur jarak vertikal dari atas
     left: "50%",
     shadow: false,
     hwaccel: false,
