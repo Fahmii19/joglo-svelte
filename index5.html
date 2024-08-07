@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        background: rgba(0, 0, 0, 0.9);
+      }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
+  </head>
+  <body>
+    <div id="spinner"></div>
+
+    <script>
+      let opts = {
+        lines: 13,
+        length: 28,
+        width: 14,
+        radius: 42,
+        scale: 1,
+        corners: 1,
+        color: "#FFF",
+        opacity: 0.25,
+        rotate: 0,
+        direction: 1,
+        speed: 1,
+        trail: 60,
+        fps: 20,
+        zIndex: 2e9,
+        className: "spinner",
+        top: "50%",
+        left: "50%",
+        shadow: false,
+        hwaccel: false,
+        position: "absolute",
+      };
+      let target = document.getElementById("spinner");
+      let spinner = new Spinner(opts).spin(target);
+    </script>
+  </body>
+</html>

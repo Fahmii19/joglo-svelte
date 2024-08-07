@@ -10,6 +10,7 @@
   import type { Feature } from "../service/list_property/type";
   import { markerStore } from "../store/map";
   import { onMount } from "svelte";
+  import Spinner from "../components/Spinner.svelte"; // Import Spinner
 
   let property_lists: Feature[] = [];
   let cardNews: number[] = Array(10).fill(0); // Inisialisasi dengan 10 elemen
@@ -148,17 +149,33 @@
       </div>
 
       {#if isLoading}
-        <div class="loading">Loading...</div>
+        <div class="flex justify-center items-center">
+          <Spinner
+            options={{
+              lines: 13,
+              length: 7, // Ukuran panjang spinner lebih kecil
+              width: 4, // Ukuran lebar spinner lebih kecil
+              radius: 10, // Ukuran radius spinner lebih kecil
+              scale: 1,
+              corners: 1,
+              color: "#FFF",
+              opacity: 0.25,
+              rotate: 0,
+              direction: 1,
+              speed: 1,
+              trail: 60,
+              fps: 20,
+              zIndex: 2e9,
+              className: "spinner",
+              top: "50%",
+              left: "50%",
+              shadow: false,
+              hwaccel: false,
+              position: "absolute",
+            }}
+          />
+        </div>
       {/if}
     </div>
   </div>
 </div>
-
-<style>
-  .loading {
-    text-align: center;
-    padding: 10px;
-    font-size: 14px;
-    color: gray;
-  }
-</style>
