@@ -43,6 +43,15 @@
     };
 
     loadFonts();
+
+    // Fungsi window.onload untuk menangani reload halaman
+    window.onload = () => {
+      if (localStorage.getItem("isRefreshing") === "true") {
+        localStorage.removeItem("isRefreshing");
+        window.location.reload(); // Mengganti navigate("/") dengan window.location.reload()
+      }
+    };
+    //
   });
 
   // Import routing and other necessary components dynamically
