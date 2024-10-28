@@ -10,7 +10,7 @@
   import type { Feature } from "../service/list_property/type";
   import { markerStore } from "../store/map";
   import { onMount } from "svelte";
-  import Spinner from "../components/Spinner.svelte"; // Import Spinner
+  import FourDotsLoader from "../components/FourDotsLoader.svelte"; // Import FourDotsLoader
 
   let property_lists: Feature[] = [];
   let cardNews: number[] = Array(10).fill(0); // Inisialisasi dengan 10 elemen
@@ -130,7 +130,7 @@
       <div
         class="px-3 pt-3 grid grid-cols-2 gap-2 card_default {cardNews.length <
         maxCards
-          ? 'mb-10'
+          ? 'mb-5'
           : ''}"
         class:hidden={!isCardMode}
       >
@@ -155,33 +155,10 @@
       {#if isLoading}
         <div
           class="flex justify-center items-center {cardNews.length < maxCards
-            ? 'mb-10'
+            ? 'mb-5'
             : ''}"
         >
-          <Spinner
-            options={{
-              lines: 13,
-              length: 7, // Ukuran panjang spinner lebih kecil
-              width: 4, // Ukuran lebar spinner lebih kecil
-              radius: 10, // Ukuran radius spinner lebih kecil
-              scale: 1,
-              corners: 1,
-              color: "#888", // Warna spinner sedikit lebih gelap
-              opacity: 0.25,
-              rotate: 0,
-              direction: 1,
-              speed: 1,
-              trail: 60,
-              fps: 20,
-              zIndex: 2e9,
-              className: "spinner",
-              top: "70%", // Atur jarak vertikal dari atas
-              left: "50%",
-              shadow: false,
-              hwaccel: false,
-              position: "absolute",
-            }}
-          />
+          <FourDotsLoader color="#888" size="10px" margin="5px" speed="0.6s" />
         </div>
       {/if}
     </div>
